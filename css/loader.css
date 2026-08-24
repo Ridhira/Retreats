@@ -1,0 +1,50 @@
+ /* ── FULL-SCREEN LOADING SCREEN (rotating brand mark) ── */
+  body.is-loading {
+    overflow: hidden;
+  }
+  .loader {
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--cream);
+    perspective: 700px;
+    transition: opacity 0.6s ease, visibility 0.6s ease;
+  }
+  .loader.is-done {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+  .loader-logo {
+    width: clamp(56px, 9vw, 108px);
+    height: auto;
+    aspect-ratio: 826 / 1299;
+    object-fit: contain;
+    display: block;
+    transform-style: preserve-3d;
+    animation: loader-spin 1.7s linear infinite;
+    will-change: transform;
+  }
+  /* Rotation stops the instant loading completes — fade handles the exit */
+  .loader.is-done .loader-logo {
+    animation-play-state: paused;
+  }
+
+  /* Left-to-right revolve around the logo's vertical center axis */
+  @keyframes loader-spin {
+    from { transform: rotateY(0deg); }
+    to   { transform: rotateY(360deg); }
+  }
+
+  @media (max-width: 768px) {
+    .loader-logo { width: clamp(48px, 14vw, 84px); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .loader-logo { animation: none; }
+    .loader { transition-duration: 0.01ms !important; }
+  }

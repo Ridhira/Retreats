@@ -1,0 +1,1713 @@
+/* ══════════════════════════════════════════════
+     CASA DE MELLO — LOCATION & SOCIAL SECTION
+  ══════════════════════════════════════════════ */
+
+  .cdm-location-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 680px;
+    overflow: hidden;
+  }
+
+  /* ── Left: Image panel ────────────────────── */
+  .cdm-loc-visual {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cdm-loc-img-wrap {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 600px;
+    overflow: hidden;
+  }
+
+  .cdm-loc-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    /* Warm colour-grade: slight sepia warmth over the image */
+    filter: brightness(0.88) saturate(1.08);
+    transform: scale(1.04);
+    transition: transform 1.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    will-change: transform;
+  }
+
+  /* Parallax-style zoom on scroll-reveal */
+  .cdm-location-section.in-view .cdm-loc-img {
+    transform: scale(1.0);
+  }
+
+  /* Subtle warm-to-transparent overlay — bottom fade for blending */
+  .cdm-loc-img-overlay {
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(to right,  rgba(42,36,32,0.04) 0%, rgba(42,36,32,0.28) 100%),
+      linear-gradient(to bottom, transparent 50%, rgba(42,36,32,0.30) 100%);
+  }
+
+  /* Floating label — anchored bottom-left of image */
+  .cdm-loc-img-label {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.7s ease 0.4s, transform 0.7s ease 0.4s;
+  }
+  .cdm-location-section.in-view .cdm-loc-img-label {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .cdm-loc-img-label-eyebrow {
+    font-family: var(--sans);
+    font-size: 9px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: rgba(250,248,244,0.5);
+  }
+
+  .cdm-loc-img-label-name {
+    font-family: var(--serif);
+    font-weight: 300;
+    font-size: 20px;
+    color: rgba(250,248,244,0.88);
+    letter-spacing: 0.04em;
+  }
+
+  /* ── Right: Content panel ─────────────────── */
+  .cdm-loc-content {
+    background: var(--cream);
+    padding: 80px 72px 80px 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0;
+  }
+
+  /* Intro block */
+  .cdm-loc-intro {
+    margin-bottom: 0;
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 0.8s ease 0.15s, transform 0.8s ease 0.15s;
+  }
+  .cdm-location-section.in-view .cdm-loc-intro {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .cdm-loc-eyebrow {
+    font-family: var(--sans);
+    font-size: 9px;
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
+    color: var(--bark);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .cdm-loc-eyebrow::before {
+    content: '';
+    display: block;
+    width: 28px;
+    height: 0.5px;
+    background: var(--bark);
+    flex-shrink: 0;
+  }
+
+  .cdm-loc-heading {
+    font-family: var(--serif);
+    font-weight: 300;
+    font-size: clamp(36px, 3.5vw, 52px);
+    line-height: 1.08;
+    color: var(--charcoal);
+    margin-bottom: 24px;
+    letter-spacing: -0.01em;
+  }
+  .cdm-loc-heading em {
+    font-style: italic;
+    color: var(--bark);
+  }
+
+  .cdm-loc-para {
+    font-family: var(--sans);
+    font-size: 15px;
+    line-height: 1.85;
+    color: var(--muted);
+    max-width: 420px;
+    font-weight: 300;
+  }
+
+  /* Gold hairline rule */
+  .cdm-loc-rule {
+    width: 40px;
+    height: 0.5px;
+    background: var(--gold);
+    margin: 36px 0;
+    opacity: 0;
+    transition: opacity 0.6s ease 0.4s, width 0.6s ease 0.4s;
+  }
+  .cdm-location-section.in-view .cdm-loc-rule {
+    opacity: 1;
+    width: 40px;
+  }
+
+  /* ── Location list ─────────────────────────── */
+  .cdm-loc-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    opacity: 0;
+    transform: translateY(14px);
+    transition: opacity 0.8s ease 0.3s, transform 0.8s ease 0.3s;
+  }
+  .cdm-location-section.in-view .cdm-loc-list {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .cdm-loc-item {
+    display: grid;
+    grid-template-columns: 20px 72px 1fr;
+    align-items: center;
+    gap: 0 16px;
+    padding: 16px 0;
+    border-bottom: 0.5px solid rgba(139,115,85,0.12);
+    transition: background 0.25s ease;
+    cursor: default;
+  }
+  .cdm-loc-item:first-child { border-top: 0.5px solid rgba(139,115,85,0.12); }
+
+  /* Hover: subtle left-sweep gold bar */
+  .cdm-loc-item {
+    position: relative;
+  }
+  .cdm-loc-item::before {
+    content: '';
+    position: absolute;
+    left: -80px; /* outside visible area */
+    top: 0; bottom: 0;
+    width: 2px;
+    background: var(--gold);
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  .cdm-loc-item:hover::before { transform: scaleY(1); }
+
+  .cdm-loc-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gold);
+    transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94), color 0.3s;
+  }
+  .cdm-loc-icon svg {
+    width: 16px;
+    height: 16px;
+    stroke-width: 1.2;
+  }
+  .cdm-loc-item:hover .cdm-loc-icon {
+    transform: translateY(-2px);
+    color: var(--bark);
+  }
+
+  .cdm-loc-duration {
+    font-family: var(--serif);
+    font-size: 18px;
+    font-weight: 300;
+    color: var(--charcoal);
+    letter-spacing: 0.02em;
+    transition: color 0.3s;
+    white-space: nowrap;
+  }
+  .cdm-loc-item:hover .cdm-loc-duration { color: var(--earth); }
+
+  .cdm-loc-destination {
+    font-family: var(--sans);
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 300;
+    transition: color 0.3s;
+  }
+  .cdm-loc-item:hover .cdm-loc-destination { color: var(--bark); }
+
+  /* ── Social row ────────────────────────────── */
+  .cdm-social-row {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    flex-wrap: wrap;
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity 0.8s ease 0.45s, transform 0.8s ease 0.45s;
+  }
+  .cdm-location-section.in-view .cdm-social-row {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .cdm-social-label {
+    font-family: var(--sans);
+    font-size: 9px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+
+  .cdm-social-icons {
+    display: flex;
+    gap: 6px;
+  }
+
+  .cdm-social-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    width: 52px;
+    padding: 12px 0 10px;
+    border: 0.5px solid rgba(139,115,85,0.22);
+    text-decoration: none;
+    color: var(--muted);
+    transition:
+      color       0.3s ease,
+      border-color 0.3s ease,
+      background  0.3s ease,
+      transform   0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  .cdm-social-link svg {
+    width: 15px;
+    height: 15px;
+    stroke-width: 1.4;
+  }
+  .cdm-social-link span {
+    font-family: var(--sans);
+    font-size: 8px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+  .cdm-social-link:hover {
+    color: var(--charcoal);
+    border-color: var(--gold);
+    background: rgba(184,154,106,0.06);
+    transform: translateY(-3px);
+  }
+
+  /* ── Responsive ─────────────────────────────── */
+  @media (max-width: 1024px) {
+    .cdm-location-section {
+      grid-template-columns: 1fr;
+    }
+    .cdm-loc-img-wrap { min-height: 400px; }
+    .cdm-loc-content { padding: 60px 48px; }
+  }
+  @media (max-width: 768px) {
+    .cdm-loc-content { padding: 48px 24px; }
+    .cdm-loc-item {
+      grid-template-columns: 20px 64px 1fr;
+      gap: 0 12px;
+    }
+    .cdm-social-row { flex-direction: column; align-items: flex-start; gap: 20px; }
+  }
+
+
+/* ══════════════════════════════════════════════════════════════
+   HERO MUTE / UNMUTE TOGGLE BUTTON
+   Bottom-right, above video, keyboard accessible
+══════════════════════════════════════════════════════════════ */
+
+#hero-mute-btn {
+  /* Position */
+  position: absolute;
+  bottom: 36px;
+  left: 36px;        /* bottom-left — doesn't clash with right-side content */
+  z-index: 10;
+
+  /* Shape */
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+
+  /* Glass background */
+  background: rgba(20, 15, 10, 0.45);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 0.5px solid rgba(250, 248, 244, 0.22);
+
+  /* Flex centre the SVG icon */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* Interaction */
+  cursor: pointer;
+  outline: none;
+  transition:
+    background  0.25s ease,
+    border-color 0.25s ease,
+    transform   0.2s cubic-bezier(0.34, 1.56, 0.64, 1); /* spring */
+
+  /* Remove default button styles */
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+/* Hover */
+#hero-mute-btn:hover {
+  background: rgba(20, 15, 10, 0.68);
+  border-color: rgba(184, 154, 106, 0.55);   /* gold hint on hover */
+  transform: scale(1.08);
+}
+
+/* Focus-visible ring — keyboard accessibility */
+#hero-mute-btn:focus-visible {
+  outline: 2px solid rgba(184, 154, 106, 0.7);
+  outline-offset: 3px;
+}
+
+/* Active (click) */
+#hero-mute-btn:active {
+  transform: scale(0.94);
+}
+
+/* Icon SVGs inside */
+.mute-icon-muted,
+.mute-icon-unmuted {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  color: rgba(250, 248, 244, 0.88);
+  transition: opacity 0.22s ease, transform 0.22s ease;
+}
+
+/* Default state — muted (show muted icon) */
+.mute-icon-muted   { opacity: 1;  transform: scale(1);    }
+.mute-icon-unmuted { opacity: 0;  transform: scale(0.75); }
+
+/* Unmuted state — applied via JS class */
+#hero-mute-btn.is-unmuted .mute-icon-muted   { opacity: 0;  transform: scale(0.75); }
+#hero-mute-btn.is-unmuted .mute-icon-unmuted { opacity: 1;  transform: scale(1);    }
+
+/* Gold dot indicator — unmuted = live audio */
+#hero-mute-btn::after {
+  content: '';
+  position: absolute;
+  top: 9px; right: 9px;
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: rgba(184, 154, 106, 0.0); /* invisible when muted */
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+#hero-mute-btn.is-unmuted::after {
+  background: var(--gold, #D5B881);
+  box-shadow: 0 0 6px rgba(184, 154, 106, 0.6);
+}
+
+/* ── Ripple on click ── */
+@keyframes muteRipple {
+  from { transform: scale(1);   opacity: 0.5; }
+  to   { transform: scale(2.2); opacity: 0;   }
+}
+#hero-mute-btn .mute-ripple {
+  position: absolute; inset: 0;
+  border-radius: 50%;
+  border: 1.5px solid rgba(184, 154, 106, 0.4);
+  animation: muteRipple 0.55s ease-out forwards;
+  pointer-events: none;
+}
+
+/* ── Volume wave animation — only when unmuted ── */
+@keyframes waveBreath {
+  0%, 100% { opacity: 0.6; transform: scaleX(0.9); }
+  50%       { opacity: 1.0; transform: scaleX(1.0); }
+}
+#hero-mute-btn.is-unmuted .wave-paths path {
+  animation: waveBreath 1.8s ease-in-out infinite;
+}
+#hero-mute-btn.is-unmuted .wave-paths path:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  #hero-mute-btn {
+    bottom: 24px;
+    left: 24px;
+    width: 42px;
+    height: 42px;
+  }
+  .mute-icon-muted,
+  .mute-icon-unmuted { width: 17px; height: 17px; }
+}
+@media (max-width: 480px) {
+  #hero-mute-btn {
+    bottom: 20px;
+    left: 20px;
+    width: 38px;
+    height: 38px;
+  }
+}
+
+/* ════════════════════════════════════════════════════════════════
+   MOBILE NAVIGATION v2 — Luxury Glassmorphism Overlay
+   Complete redesign: Belmond/Aman-inspired, fully functional.
+   Desktop nav (nav.desktop-nav + .sec-nav) untouched.
+════════════════════════════════════════════════════════════════ */
+
+/* ── Global: hide mobile-only elements on desktop ─────────── */
+/* Mobile nav & overlay are desktop-hidden, shown via media query below */
+.mobile-nav     { display: none; }
+.mobile-overlay { display: none; }
+
+@media (max-width: 767px) {
+  .mobile-nav     { display: block; }
+  .mobile-overlay { display: block; }
+}
+
+/* ── Scroll-lock (JS toggles .menu-open on <body>) ─────────── */
+body.menu-open {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   BREAKPOINT ≤ 767px  — Mobile only
+══════════════════════════════════════════════════════════════ */
+@media (max-width: 767px) {
+
+  /* 1 ── Hide all desktop elements ─────────────────────────── */
+  nav.desktop-nav { display: none !important; }
+  .sec-nav        { display: none !important; }
+
+  /* 2 ── Page offset for mobile header ─────────────────────── */
+  .page { padding-top: 64px !important; }
+  #page-home.page,
+  .page.active#page-home {
+    padding-top: 64px !important;
+  }
+
+  html, body { overflow-x: hidden; max-width: 100%; }
+
+  /* ══════════════════════════════════════════════════════════
+     MOBILE NAV HEADER BAR
+  ══════════════════════════════════════════════════════════ */
+  .mobile-nav {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 200;
+  }
+
+  .mobile-nav-header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    height: 64px;
+    padding: 0 14px;
+    background: rgba(240, 235, 224, 0.94);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 0.5px solid rgba(139, 115, 85, 0.18);
+    transition: background 0.5s ease, border-color 0.5s ease;
+  }
+
+  body.hero-visible .mobile-nav-header {
+    background: rgba(20, 14, 10, 0.15);
+    border-bottom-color: rgba(255, 255, 255, 0.08);
+  }
+
+  /* ── HAMBURGER BUTTON ─────────────────────────────────────── */
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 5px;
+    width: 38px;
+    height: 38px;
+    min-width: 44px;
+    min-height: 44px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    flex-shrink: 0;
+    z-index: 2;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+
+  .hamburger span {
+    display: block;
+    height: 1px;
+    background: var(--charcoal);
+    border-radius: 1px;
+    transform-origin: left center;
+    transition:
+      transform  0.36s cubic-bezier(0.23, 1, 0.32, 1),
+      opacity    0.24s ease,
+      width      0.3s  ease;
+    will-change: transform;
+  }
+  .hamburger span:nth-child(1) { width: 22px; }
+  .hamburger span:nth-child(2) { width: 14px; }
+  .hamburger span:nth-child(3) { width: 22px; }
+
+  body.hero-visible .hamburger span { background: rgba(250, 248, 244, 0.88); }
+
+  /* Animate to × when menu is open */
+  .hamburger.is-active span:nth-child(1) { width: 22px; transform: translateY(6px) rotate(45deg); }
+  .hamburger.is-active span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+  .hamburger.is-active span:nth-child(3) { width: 22px; transform: translateY(-6px) rotate(-45deg); }
+
+  /* When overlay is open, pull mobile-nav bar behind it so close btn receives clicks */
+  body.menu-open .mobile-nav {
+    pointer-events: none;
+    z-index: 290;
+  }
+
+  .mobile-nav-left { display: none; }
+
+  .mobile-nav-balance {
+    width: 44px;
+    min-width: 44px;
+    height: 44px;
+    flex-shrink: 0;
+  }
+
+  .mobile-nav-logo {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    z-index: 1;
+    pointer-events: auto;
+  }
+  .mobile-nav-logo:active { opacity: 0.72; }
+
+  .mobile-nav-logo img {
+    max-width: 42px;
+    max-height: 56px;
+    width: auto;
+    height: auto;
+    display: block;
+    object-fit: contain;
+    object-position: center;
+    opacity: 0.95;
+  }
+  body.hero-visible .mobile-nav-logo img {
+    filter: brightness(0) invert(1);
+    opacity: 0.95;
+  }
+
+  /* Header book button removed — CTA lives in the hamburger menu */
+  .mobile-book-btn { display: none !important; }
+
+  /* ══════════════════════════════════════════════════════════
+     MOBILE MENU OVERLAY v2
+     Background: dark glassmorphism per spec
+  ══════════════════════════════════════════════════════════ */
+  .mobile-overlay {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 300;
+
+    /* Luxury glassmorphism — per spec */
+    background: rgba(20, 16, 12, 0.92);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+
+    /* Hidden state: invisible + slid fully left */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-100%);
+
+    transition:
+      opacity    0.3s  cubic-bezier(0.25, 0.46, 0.45, 0.94),
+      transform  0.3s  cubic-bezier(0.25, 0.46, 0.45, 0.94),
+      visibility 0s    linear 0.3s;   /* delay hides after fade */
+
+    /* iPhone safe-area */
+    padding-top:    env(safe-area-inset-top,    0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+    overflow: hidden;
+  }
+
+  /* OPEN STATE */
+  .mobile-overlay.is-open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+    transition:
+      opacity    0.3s  cubic-bezier(0.25, 0.46, 0.45, 0.94),
+      transform  0.3s  cubic-bezier(0.25, 0.46, 0.45, 0.94),
+      visibility 0s    linear 0s;     /* show immediately */
+  }
+
+  /* ── OVERLAY INNER: flex column fills full height ─────────── */
+  .mobile-overlay-inner {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  /* ── OVERLAY HEADER ROW: "☰ Menu" | "✕ Close" ─────────────── */
+  .mobile-overlay-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+    padding: 0 24px;
+    flex-shrink: 0;
+    border-bottom: 0.5px solid rgba(250, 248, 244, 0.07);
+    /* Safe-area top offset */
+    padding-top: max(0px, env(safe-area-inset-top, 0px));
+    height: calc(64px + env(safe-area-inset-top, 0px));
+  }
+
+  /* "☰ MENU" label — left side, decorative only */
+  .mobile-overlay-menu-label {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    font-family: var(--sans);
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: rgba(250, 248, 244, 0.30);
+    user-select: none;
+    pointer-events: none;
+  }
+  .mobile-overlay-menu-label svg {
+    width: 15px;
+    height: 15px;
+    color: rgba(250, 248, 244, 0.28);
+  }
+
+  /* "✕ CLOSE" button — right side, fully clickable ────────── */
+  .mobile-close-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0 4px;
+    min-width: 44px;
+    min-height: 44px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: var(--sans);
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 0.20em;
+    text-transform: uppercase;
+    color: rgba(250, 248, 244, 0.42);
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+    transition: color 0.25s ease;
+    position: relative;
+    z-index: 400;
+  }
+  .mobile-close-btn:hover,
+  .mobile-close-btn:active {
+    color: rgba(250, 248, 244, 0.92);
+  }
+  .mobile-close-btn svg {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+    transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  .mobile-close-btn:hover svg,
+  .mobile-close-btn:active svg {
+    transform: rotate(90deg);
+  }
+
+  /* ── SCROLLABLE NAV AREA ───────────────────────────────────── */
+  .mobile-overlay-scroll {
+    flex: 1;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding: 4px 28px 0;
+  }
+  .mobile-overlay-scroll::-webkit-scrollbar { display: none; }
+
+  /* ── NAV LIST WRAPPER ─────────────────────────────────────── */
+  .mobile-overlay-nav { padding: 12px 0 0; margin-top: 0; }
+  .mobile-overlay-nav ul { list-style: none; padding: 0; margin-top: 0; }
+
+  /* Each list item — entry animation state */
+  .mobile-overlay-nav ul li {
+    opacity: 0;
+    transform: translateX(-14px);
+    transition: opacity 0.32s ease, transform 0.32s ease;
+  }
+
+  /* Staggered entrance when overlay opens */
+  .mobile-overlay.is-open .mobile-overlay-nav ul li:nth-child(1) { transition-delay: 0.05s; }
+  .mobile-overlay.is-open .mobile-overlay-nav ul li:nth-child(2) { transition-delay: 0.09s; }
+  .mobile-overlay.is-open .mobile-overlay-nav ul li:nth-child(3) { transition-delay: 0.13s; }
+  .mobile-overlay.is-open .mobile-overlay-nav ul li:nth-child(4) { transition-delay: 0.17s; }
+  .mobile-overlay.is-open .mobile-overlay-nav ul li:nth-child(5) { transition-delay: 0.21s; }
+  .mobile-overlay.is-open .mobile-overlay-nav ul li:nth-child(6) { transition-delay: 0.25s; }
+  .mobile-overlay.is-open .mobile-overlay-nav ul li:nth-child(7) { transition-delay: 0.29s; }
+  .mobile-overlay.is-open .mobile-overlay-nav ul li { opacity: 1; transform: translateX(0); }
+
+  /* ── NAV LINK ITEM ─────────────────────────────────────────── */
+  .mobile-nav-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: var(--serif);
+    font-size: 30px;
+    font-weight: 300;
+    line-height: 1.3;
+    letter-spacing: 0.01em;
+    color: rgba(250, 248, 244, 0.68);
+    text-decoration: none;
+    padding: 18px 0;
+    border-bottom: 0.5px solid rgba(250, 248, 244, 0.07);
+
+    /* Hover: slide right + brighten */
+    transition:
+      color     0.26s ease,
+      transform 0.26s ease;
+
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+
+  .mobile-overlay-nav ul li:last-child .mobile-nav-link { border-bottom: none; }
+
+  .mobile-nav-link:hover,
+  .mobile-nav-link:active {
+    color: rgba(250, 248, 244, 1);
+    transform: translateX(6px);
+  }
+
+  /* Arrow indicator — appears on hover */
+  .link-arrow {
+    font-family: var(--sans);
+    font-size: 14px;
+    font-weight: 300;
+    color: rgba(184, 154, 106, 0.75);   /* --gold */
+    opacity: 0;
+    transform: translateX(-8px);
+    flex-shrink: 0;
+    margin-left: 12px;
+    transition: opacity 0.26s ease, transform 0.26s ease;
+  }
+  .mobile-nav-link:hover .link-arrow,
+  .mobile-nav-link:active .link-arrow {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  /* ══════════════════════════════════════════════════════════
+     STICKY FOOTER — Book CTA + Contact Links
+  ══════════════════════════════════════════════════════════ */
+  .mobile-overlay-footer {
+    flex-shrink: 0;
+    padding: 18px 28px calc(18px + env(safe-area-inset-bottom, 0px));
+    border-top: 0.5px solid rgba(250, 248, 244, 0.07);
+
+    /* Entry animation */
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity 0.32s ease, transform 0.32s ease;
+  }
+  .mobile-overlay.is-open .mobile-overlay-footer {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.32s;
+  }
+
+  /* "Book a Retreat" full-width button */
+  .mobile-overlay-book {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 48px;
+    border-radius: 8px;
+    font-family: var(--sans);
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.20em;
+    text-transform: uppercase;
+    color: rgba(250, 248, 244, 0.82);
+    text-decoration: none;
+    border: 0.5px solid rgba(250, 248, 244, 0.22);
+    background: rgba(250, 248, 244, 0.05);
+    transition:
+      background    0.26s ease,
+      border-color  0.26s ease,
+      color         0.26s ease;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+  .mobile-overlay-book:hover,
+  .mobile-overlay-book:active {
+    background: rgba(250, 248, 244, 0.13);
+    border-color: rgba(250, 248, 244, 0.42);
+    color: rgba(250, 248, 244, 1);
+  }
+
+  /* Contact links row: WhatsApp | Call | Email */
+  .mobile-overlay-contacts {
+    display: flex;
+    align-items: center;
+    margin-top: 14px;
+  }
+
+  .mobile-contact-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    flex: 1;
+    height: 38px;
+    min-height: 44px;
+    font-family: var(--sans);
+    font-size: 8.5px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(250, 248, 244, 0.32);
+    text-decoration: none;
+    border-right: 0.5px solid rgba(250, 248, 244, 0.07);
+    transition: color 0.22s ease;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+  .mobile-contact-link:last-child { border-right: none; }
+  .mobile-contact-link:hover,
+  .mobile-contact-link:active { color: rgba(250, 248, 244, 0.75); }
+
+  .mobile-contact-link svg {
+    width: 13px;
+    height: 13px;
+    flex-shrink: 0;
+  }
+
+} /* end @media (max-width: 767px) */
+
+/* ══════════════════════════════════════════════════════════════
+   Smaller phones ≤ 390px
+══════════════════════════════════════════════════════════════ */
+@media (max-width: 390px) {
+  .mobile-nav-header           { padding: 0 16px; }
+  .mobile-book-btn             { padding: 0 12px; font-size: 10px; }
+  .mobile-nav-logo img         { max-width: 34px; max-height: 50px; }
+  .mobile-overlay-header       { padding-left: 20px; padding-right: 20px; }
+  .mobile-overlay-scroll       { padding-left: 22px; padding-right: 22px; }
+  .mobile-overlay-footer       { padding-left: 22px; padding-right: 22px; }
+  .mobile-nav-link             { font-size: 27px; padding: 16px 0; }
+}
+
+/* ══════════════════════════════════════════════════════════════
+   Tiny phones ≤ 320px
+══════════════════════════════════════════════════════════════ */
+@media (max-width: 320px) {
+  .mobile-book-btn             { padding: 0 10px; font-size: 9px; }
+  .mobile-nav-logo img         { max-width: 30px; max-height: 46px; }
+  .mobile-overlay-scroll       { padding-left: 18px; padding-right: 18px; }
+  .mobile-overlay-footer       { padding-left: 18px; padding-right: 18px; }
+  .mobile-nav-link             { font-size: 24px; padding: 14px 0; }
+  .mobile-contact-link         { font-size: 8px; gap: 4px; }
+}
+
+/* ══════════════════════════════════════════════════════════════
+   HOMEPAGE REFINEMENTS  —  spacing / heading / body size
+   Loaded last, so it overrides EXPERIENCES.css, Destinations.css,
+   8-dimensions.css and editorial.css without editing them.
+   Only vertical rhythm + type size are touched. Layout, colours,
+   fonts and horizontal padding are left exactly as they were.
+══════════════════════════════════════════════════════════════ */
+
+/* ── 1. SECTION SPACING SCALE ─────────────────────────────────
+   One variable drives every section's top/bottom padding, so the
+   gap between any two sections is 2 x --sec-space and stays
+   consistent on every breakpoint.
+   Before: gaps ran 200–240px. Now: 144px desktop.
+─────────────────────────────────────────────────────────────── */
+:root {
+  --sec-space: 72px;      /* half the gap between two sections */
+  --sec-space-lead: 88px; /* first block under the hero — a touch more air */
+  --sec-inner: 56px;      /* intro block → content inside a section */
+}
+
+@media (max-width: 1100px) {
+  :root { --sec-space: 60px; --sec-space-lead: 72px; --sec-inner: 48px; }
+}
+@media (max-width: 900px) {
+  :root { --sec-space: 52px; --sec-space-lead: 64px; --sec-inner: 40px; }
+}
+@media (max-width: 600px) {
+  :root { --sec-space: 44px; --sec-space-lead: 52px; --sec-inner: 36px; }
+}
+
+/* Our Retreats — heading + card grid read as ONE block, so the
+   space between them stays intra-block, not a section gap. */
+.listing-hero {
+  padding-top: var(--sec-space-lead);
+  padding-bottom: var(--sec-inner);
+}
+.retreat-grid {
+  padding-bottom: var(--sec-space);
+}
+
+/* Experiences slider — the card track carries 36px of its own
+   bottom padding for the box-shadows, so subtract that from the
+   section's bottom padding to keep the *visual* gap identical
+   to every other section. The header sits flush at the top. */
+.exp-infinite-section {
+  padding-top: var(--sec-space);
+  padding-bottom: max(0px, calc(var(--sec-space) - 36px));
+}
+.exp-infinite-header {
+  margin-bottom: var(--sec-inner);
+}
+
+/* Destinations */
+.destinations-section {
+  padding-top: var(--sec-space);
+  padding-bottom: var(--sec-space);
+}
+.dest-header {
+  margin-bottom: var(--sec-inner);
+}
+
+/* 8 Dimensions of Wellness */
+.wellness-dims-section {
+  padding-top: var(--sec-space);
+  padding-bottom: var(--sec-space);
+}
+.wd-intro {
+  margin-bottom: var(--sec-inner);
+  padding-bottom: calc(var(--sec-inner) * 0.85);
+}
+
+/* The Ridhira Group  (.rg-intro already zeroes its own margins) */
+.ridhira-group-section {
+  padding-top: var(--sec-space);
+  padding-bottom: var(--sec-space);
+}
+
+
+/* ── 2. "The Place Becomes Part of the Experience." ───────────
+   Must hold one line on desktop/tablet. The flex header lets the
+   left column shrink (min-width:0) while the controls keep their
+   natural width; nowrap + the fit script in the footer then size
+   the type to exactly fill the space available.
+   Below 700px it wraps again so it stays readable.
+─────────────────────────────────────────────────────────────── */
+@media (min-width: 701px) {
+  .exp-infinite-header-left {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+  .exp-infinite-header-right {
+    flex: 0 0 auto;
+  }
+  .exp-infinite-title {
+    white-space: nowrap;
+    font-size: clamp(28px, 3.05vw, 46px);
+    letter-spacing: -0.004em;
+  }
+}
+
+@media (max-width: 700px) {
+  .exp-infinite-title {
+    white-space: normal;   /* wrapping is fine on phones */
+    font-size: clamp(30px, 7.4vw, 38px);
+  }
+}
+
+/* italic "Experience." is inherited from EXPERIENCES.css — untouched */
+
+
+/* ── 3. "Where We Are, and Where We Are Going" body copy ──────
+   Larger, more readable paragraph text across the Destinations
+   section. Heading sizes are unchanged, so the hierarchy holds.
+─────────────────────────────────────────────────────────────── */
+.destinations-section .dest-header-right p {
+  font-size: 17px;
+  line-height: 1.8;
+}
+.destinations-section .dest-featured-desc,
+.destinations-section .dest-featured-side .dest-featured-desc {
+  font-size: 17px !important;
+  line-height: 1.8;
+}
+.destinations-section .dest-featured-sub {
+  font-size: 16px;
+}
+.destinations-section .dest-card-desc {
+  font-size: 13.5px;
+  line-height: 1.75;
+}
+.destinations-section .dest-card:hover .dest-card-desc {
+  max-height: 120px;   /* taller copy needs a taller reveal */
+}
+
+@media (max-width: 1100px) {
+  .destinations-section .dest-header-right p,
+  .destinations-section .dest-featured-desc,
+  .destinations-section .dest-featured-side .dest-featured-desc {
+    font-size: 16px !important;
+  }
+}
+@media (max-width: 600px) {
+  .destinations-section .dest-header-right p,
+  .destinations-section .dest-featured-desc,
+  .destinations-section .dest-featured-side .dest-featured-desc {
+    font-size: 15.5px !important;
+    line-height: 1.75;
+  }
+  .destinations-section .dest-card-desc { font-size: 13px; }
+}
+
+/* ── 8 Dimensions of Wellness — animated GIF visual ────────────
+   Replaces the old static two-photo stack with a single GIF.
+   Reuses the existing .wd-img-primary container (so it keeps
+   whatever sizing/position/radius 8-dimensions.css already gives
+   it) but forces the media itself to behave responsively:
+   never cropped, never stretched, aspect ratio always preserved.
+─────────────────────────────────────────────────────────────── */
+.wd-visuals .wd-img-primary.wd-gif-primary {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;   /* matches the GIF's native 800×450 */
+  max-height: none;
+  overflow: hidden;
+  background: var(--sand, #f4efe7);
+  border-radius: 14px;   /* soft, consistent corner on every breakpoint */
+}
+.wd-visuals .wd-img-primary.wd-gif-primary img.wd-gif {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;   /* no cropping, no distortion */
+  object-position: center;
+  max-width: 100%;
+}
+
+@media (max-width: 1024px) {
+  .wd-visuals .wd-img-primary.wd-gif-primary {
+    aspect-ratio: 16 / 9;
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .wd-visuals {
+    max-width: 100%;
+    overflow: hidden;
+  }
+  .wd-visuals .wd-img-primary.wd-gif-primary {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+  }
+}
+
+/* Belt-and-braces: never allow this section to cause horizontal
+   scroll on any breakpoint, regardless of external CSS rules. */
+.wellness-dims-section,
+.wellness-dims-section .wd-body,
+.wellness-dims-section .wd-visuals {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   HOMEPAGE REFINEMENTS — PART 2
+   Button parity · cursor label · retreat-grid symmetry
+   Same "loaded last" override approach as Part 1 above — nothing
+   below touches EXPERIENCES.css, Destinations.css, 8-dimensions.css,
+   editorial.css or the markup. Structure, copy and section order
+   are unchanged; only surface styling and vertical rhythm move.
+══════════════════════════════════════════════════════════════ */
+:root {
+  --radius-btn: 4px; /* one soft corner radius, shared by every CTA */
+}
+
+/* ── 4. BUTTON SYSTEM — hero parity + one shared corner radius ──
+   "Explore the Retreats" now carries the exact same border,
+   fill, hover and transition behaviour as "Discover the Ridhira
+   Way" — both read as a matched outline pair on the hero. Every
+   boxed CTA on the homepage then picks up the same subtle
+   border-radius so the whole page feels like one button system. */
+.hero-btn-primary {
+  background: transparent;
+  color: var(--white);
+  border: 0.5px solid rgba(250, 248, 244, 0.5);
+  box-shadow: none;
+}
+.hero-btn-primary:hover,
+.hero-btn-primary:focus-visible {
+  background: rgba(250, 248, 244, 0.1);
+  border-color: rgba(250, 248, 244, 0.9);
+  color: var(--white);
+  box-shadow: none;
+  outline: none;
+}
+.hero-btn-primary:active { opacity: 0.8; transform: translateY(1px); }
+
+.hero-btn-primary,
+.hero-btn-ghost,
+.btn-ghost,
+.nav-book,
+.dest-cta-btn,
+.dest-notify-btn,
+.exp-explore-btn,
+.exp-arrow,
+.wl-submit,
+.tag,
+.mobile-book-btn {
+  border-radius: var(--radius-btn);
+}
+
+/* ── 5. CURSOR-FOLLOWING LABEL — smaller, more compact pill ────
+   Same trailing/show-hide behaviour (JS untouched) — just a
+   tighter footprint and a soft rounded corner instead of the
+   larger cut-corner shape, to match the button system above. */
+.cursor-cta {
+  font-size: 10.5px;
+  padding: 9px 18px 9px 14px;
+  clip-path: none;
+  border-radius: var(--radius-btn);
+}
+
+/* ── 6. "OUR RETREATS" GRID — symmetrical, compact pair ────────
+   Casa De Mello and Tiger Hills now share one fixed layout
+   (image always leads, copy always follows) instead of
+   alternating sides, so the two cards read as a true matched
+   pair: identical width, height, image crop and text alignment.
+   The 2px seam between them is closed, image height is trimmed,
+   and the section's bottom padding is tightened for a more
+   compact, premium block. Mobile stack (≤900px) is untouched. */
+.retreat-card { margin-bottom: 0; }
+.retreat-card:nth-child(even) .card-img { order: 0; }
+.retreat-card:nth-child(even) .card-body { order: 0; }
+.retreat-grid { padding-bottom: calc(var(--sec-space) * 0.7); }
+
+@media (min-width: 901px) {
+  .card-img { height: 440px; }
+  .card-body { padding: 48px 48px; }
+  .card-body p { margin-bottom: 32px; }
+  .card-tags { margin-bottom: 32px; }
+}
+
+/* ══════════════════════════════════════════════════════════════
+   HOMEPAGE REFINEMENTS — PART 3
+   Destinations — "Open Now" featured pair made symmetrical
+   Same "loaded last" override approach as Parts 1–2 — nothing
+   below touches Destinations.css, editorial.css or the markup.
+   Copy, photos and typography are unchanged; only the two
+   cards' shared sizing/position is unified so Udaipur (Tiger
+   Hills) and Goa (Casa De Mello) read as one balanced pair
+   instead of the old uneven "hero + side" split.
+══════════════════════════════════════════════════════════════ */
+
+/* ── 7. Equal-width columns, flush seam, matched image height ── */
+.dest-featured-pair {
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  margin-bottom: 1%;
+}
+.dest-featured-img {
+  height: 520px;
+  margin-right: 1%;
+}
+
+/* ── Identical content placement, size cap and heading scale ──
+   The side card previously sat lower/tighter with a smaller
+   headline and narrower copy block — both cards now share one
+   set of values so they start and end at the same points. */
+.destinations-section .dest-featured-content,
+.destinations-section .dest-featured-side .dest-featured-content {
+  left: 56px;
+  bottom: 56px;
+  max-width: 440px;
+}
+.destinations-section .dest-featured-name,
+.destinations-section .dest-featured-name--side {
+  font-size: clamp(42px, 4.6vw, 64px) !important;
+}
+.destinations-section .dest-featured-desc,
+.destinations-section .dest-featured-side .dest-featured-desc {
+  margin-bottom: 28px;
+  max-width: 420px;
+}
+
+/* Same overlay direction on both, so neither card reads darker/
+   heavier than the other */
+.dest-featured-overlay,
+.dest-featured-side .dest-featured-overlay {
+  background: linear-gradient(
+    to right,
+    rgba(42, 36, 32, 0.82) 0%,
+    rgba(42, 36, 32, 0.4) 50%,
+    rgba(42, 36, 32, 0.1) 100%
+  );
+}
+
+@media (max-width: 900px) {
+  .dest-featured-img { height: 420px; }
+  .destinations-section .dest-featured-content,
+  .destinations-section .dest-featured-side .dest-featured-content {
+    left: 24px;
+    bottom: 32px;
+    max-width: calc(100% - 48px);
+  }
+}
+
+/* ══════════════════════════════════════════════════════════════
+   HOMEPAGE REFINEMENTS — PART 4
+   "Our Retreats" grid — image height locked to content height
+   .card-img previously used a fixed 440px height while .card-body
+   sized itself to its own copy (heading, description, tags,
+   button). Copy length made the two columns drift out of sync,
+   so the image edge and the content edge rarely lined up.
+   .retreat-card is already display:grid, so instead of another
+   hand-tuned pixel constant, .card-img now stretches to whatever
+   height .card-body naturally needs — the browser keeps both
+   columns pixel-equal at any content length, on Casa De Mello,
+   Tiger Hills, or any card added later. .card-img img already
+   uses object-fit:cover, so the photo crop stays clean at any
+   height with no stretching or distortion.
+   Scoped to the side-by-side layout (≥901px) only — the ≤900px
+   stacked view keeps its own fixed image height and is untouched.
+══════════════════════════════════════════════════════════════ */
+@media (min-width: 901px) {
+  .retreat-card {
+    align-items: stretch;
+  }
+  .card-img {
+    height: auto;
+    align-self: stretch;
+  }
+}
+
+/* ══════════════════════════════════════════════════════════════
+   HOMEPAGE REFINEMENTS — PART 5
+   Destinations — "Coming Soon" row made small, slim and uniform
+   Ayodhya / Jodhpur / Jaipur previously matched the old 320px
+   card height inherited from the main .dest-card system — tall
+   for three lines of copy (a region label, a name, one link),
+   so the row read heavy under the two big "Open Now" cards above
+   it instead of sitting quietly beneath them.
+   Every value below lives on the single .dest-card-minimal
+   class, so all three tiles share one height, one padding scale
+   and one type scale regardless of how long a city or region
+   name is — nothing here can drift out of sync per-card. Corners
+   take the same soft --radius-btn used by every button and CTA
+   on the site, not a heavier, more rounded "app card" treatment.
+   .dest-card-img/.dest-card-body already fill the tile via
+   inset:0 + object-fit:cover, so a shorter card crops the same
+   photo cleanly with no stretching — no markup or image changes.
+══════════════════════════════════════════════════════════════ */
+.dest-card-minimal {
+  border-radius: var(--radius-btn);
+}
+.dest-card-minimal .dest-card-body {
+  padding: 18px;
+}
+.dest-card-minimal .dest-card-region {
+  font-size: 9px;
+  margin-bottom: 5px;
+}
+.dest-card-minimal .dest-card-name {
+  font-size: 19px;
+  margin-bottom: 8px;
+  line-height: 1.05;
+}
+.dest-card-minimal .dest-notify-btn {
+  font-size: 9.5px;
+}
+
+@media (min-width: 901px) {
+  .dest-card-minimal { height: 230px; }
+}
+@media (max-width: 900px) {
+  .dest-card-minimal { height: 220px; }
+  .dest-card-minimal .dest-card-body { padding: 18px 20px; }
+}
+@media (max-width: 540px) {
+  .footer-brand {
+    gap: 14px;
+  }
+
+  .footer-brand .footer-logo {
+    height: 64px;
+    max-width: 54px;
+  }
+
+  .footer-social {
+    padding-left: 12px;
+  }
+
+  .footer-social-link {
+    width: 36px;
+    height: 36px;
+  }
+
+
+  .dest-card-minimal { height: 200px; }
+}
+
+/* ══════════════════════════════════════════════════════════════
+   HOMEPAGE REFINEMENTS — PART 6
+   8 Dimensions of Wellness — GIF + orbiting buttons
+   Replaces the old two-column "dimensions list + image" layout
+   (markup for the list and the stat block has been removed
+   entirely — this isn't a display:none hide) with a single
+   centered composition: the GIF in the middle, the 8 dimensions
+   as small buttons arranged around it in a fixed compass layout
+   (CSS Grid areas, not trigonometry) so nothing can ever overlap
+   the GIF regardless of how long a label is.
+   .wd-body/.wd-visuals are forced to plain flex-centering here
+   since 8-dimensions.css originally gave .wd-body a two-column
+   track for the list+image pairing that no longer applies now
+   that only one child remains.
+   Buttons start hidden and are revealed by a small script once
+   the GIF's load event fires (see the script block near the
+   bottom of the page) — .is-revealed is the hook. Reduced-motion
+   users skip straight to the visible state.
+══════════════════════════════════════════════════════════════ */
+.wellness-dims-section .wd-body {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.wellness-dims-section .wd-visuals {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.wd-orbit {
+  position: relative;
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(120px, 1fr) min(600px, 48vw) minmax(120px, 1fr);
+  grid-template-areas:
+    ".         spiritual      ."
+    "emotional .              intellectual"
+    "physical  gif            social"
+    "financial .              occupational"
+    ".         environmental  .";
+  align-items: center;
+  justify-items: center;
+  column-gap: clamp(18px, 2.6vw, 40px);
+  row-gap: clamp(14px, 2vw, 26px);
+}
+.wd-orbit .wd-img-primary.wd-gif-primary {
+  grid-area: gif;
+  width: 100%;
+}
+
+/* Compass placement — one area per dimension */
+.wd-orbit-btn[data-dim="spiritual"]     { grid-area: spiritual; }
+.wd-orbit-btn[data-dim="emotional"]     { grid-area: emotional; }
+.wd-orbit-btn[data-dim="intellectual"]  { grid-area: intellectual; }
+.wd-orbit-btn[data-dim="physical"]      { grid-area: physical; }
+.wd-orbit-btn[data-dim="social"]        { grid-area: social; }
+.wd-orbit-btn[data-dim="financial"]     { grid-area: financial; }
+.wd-orbit-btn[data-dim="occupational"]  { grid-area: occupational; }
+.wd-orbit-btn[data-dim="environmental"] { grid-area: environmental; }
+
+/* Button — small, sleek, same corner radius as every other CTA */
+.wd-orbit-btn {
+  font-family: var(--sans);
+  font-size: 11.5px;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--charcoal);
+  background: var(--white);
+  border: 0.5px solid rgba(100, 62, 53, 0.16);
+  border-radius: var(--radius-btn);
+  padding: 12px 20px;
+  min-width: 108px;
+  text-align: center;
+  white-space: nowrap;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(14px) scale(0.9);
+  transition:
+    opacity 0.65s var(--ease-editorial, cubic-bezier(0.22, 1, 0.36, 1)),
+    transform 0.65s var(--ease-editorial, cubic-bezier(0.22, 1, 0.36, 1)),
+    background 0.3s ease,
+    border-color 0.3s ease,
+    color 0.3s ease;
+  transition-delay:
+    calc(var(--d, 0) * 70ms),
+    calc(var(--d, 0) * 70ms),
+    0s, 0s, 0s;
+}
+.wd-orbit.is-revealed .wd-orbit-btn {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+.wd-orbit.is-revealed .wd-orbit-btn:hover,
+.wd-orbit.is-revealed .wd-orbit-btn:focus-visible {
+  background: var(--charcoal);
+  border-color: var(--charcoal);
+  color: var(--white);
+  outline: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wd-orbit-btn {
+    transition: background 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+    transition-delay: 0s;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Tablet — same compass, everything scaled down */
+@media (max-width: 900px) {
+  .wd-orbit {
+    grid-template-columns: minmax(96px, 1fr) min(420px, 56vw) minmax(96px, 1fr);
+    column-gap: clamp(12px, 2.4vw, 24px);
+    row-gap: clamp(10px, 2vw, 18px);
+  }
+  .wd-orbit-btn {
+    font-size: 10.5px;
+    padding: 10px 16px;
+    min-width: 92px;
+  }
+}
+
+/* Mobile — not enough width for three columns either side of the
+   GIF, so the compass collapses to: GIF on top, 8 buttons in a
+   simple 2-column grid underneath. Still centered, still no
+   overlap, still no horizontal scroll. */
+@media (max-width: 680px) {
+  .wd-orbit {
+    max-width: 480px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "gif           gif"
+      "physical      emotional"
+      "spiritual     intellectual"
+      "social        environmental"
+      "occupational  financial";
+    column-gap: 10px;
+    row-gap: 10px;
+  }
+  .wd-orbit .wd-img-primary.wd-gif-primary {
+    width: 100%;
+  }
+  .wd-orbit-btn {
+    width: 100%;
+    min-width: 0;
+    min-height: 44px;
+    font-size: 10px;
+    padding: 12px 10px;
+    transform: translateY(10px) scale(0.94); /* shorter travel — tighter grid */
+  }
+}
+
+/* ══════════════════════════════════════════════════════════════
+   HOMEPAGE REFINEMENTS — PART 7
+   "Our Retreats" cards — smaller, sleeker, editorial
+   Same "loaded last" override approach as Parts 1–6 — markup,
+   copy, image split ratio (1fr/1fr) and the image-first /
+   body-first alternation are all untouched. Only footprint,
+   spacing and type scale are tightened: a narrower, centred
+   container in place of the old edge-to-edge grid; a soft
+   border + radius in place of the flush full-bleed seam; real
+   air between the two cards instead of a 2px gap; and a lighter
+   type scale throughout the content panel so the pair reads as
+   two quiet, compact destination cards rather than two
+   full-height hero panels. .card-img keeps stretching to match
+   .card-body's height (Part 4), so shrinking the body's padding
+   and type automatically shrinks the image by the same amount —
+   both columns stay pixel-equal at any content length.
+══════════════════════════════════════════════════════════════ */
+
+/* ── Container: narrower + centred, more air on the sides ─────── */
+@media (min-width: 901px) {
+  .retreat-grid {
+    max-width: 1080px;
+  }
+}
+
+/* ── Card shell: subtle border + soft radius, real breathing
+   room between cards instead of the old flush 2px seam ───────── */
+.retreat-card {
+  border: 0.5px solid rgba(139, 115, 85, 0.2);
+  border-radius: 10px;
+  margin-bottom: 28px;
+  transition: opacity 0.4s ease, border-color 0.4s ease,
+              transform 0.4s ease, box-shadow 0.4s ease;
+}
+.retreat-card:last-child { margin-bottom: 0; }
+.retreat-card:hover {
+  opacity: 1;
+  border-color: rgba(139, 115, 85, 0.4);
+  transform: translateY(-3px);
+  box-shadow: 0 14px 34px rgba(42, 36, 32, 0.08);
+}
+
+.card-num {
+  top: 20px;
+  left: 20px;
+  font-size: 10.5px;
+}
+
+/* ── Content panel: tighter padding + a quieter type scale ────── */
+@media (min-width: 901px) {
+  .card-body {
+    padding: 40px 44px;
+  }
+  .card-location { margin-bottom: 12px; }
+  .card-body h2 {
+    font-size: clamp(24px, 2.2vw, 32px);
+  }
+  .card-body .subtitle {
+    font-size: 13px;
+    margin-bottom: 18px;
+  }
+  .card-body p {
+    font-size: 13.5px;
+    line-height: 1.75;
+    max-width: 300px;
+    margin-bottom: 24px;
+  }
+  .card-tags {
+    gap: 7px;
+    margin-bottom: 24px;
+  }
+}
+
+.retreat-card .tag {
+  font-size: 9px;
+  padding: 5px 12px;
+}
+.retreat-card .btn-ghost {
+  font-size: 10px;
+}
+
+/* ── Tablet / mobile: same sleek proportions, scaled down ──────── */
+@media (max-width: 900px) {
+  .retreat-grid { max-width: 660px; }
+  .retreat-card { border-radius: 8px; margin-bottom: 20px; }
+  .retreat-card:hover { transform: none; box-shadow: none; }
+  .card-img { height: 240px; }
+  .card-body { padding: 32px 28px; }
+  .card-location { margin-bottom: 10px; }
+  .card-body h2 { font-size: clamp(24px, 6vw, 30px); }
+  .card-body .subtitle { font-size: 12.5px; margin-bottom: 16px; }
+  .card-body p {
+    font-size: 13px;
+    line-height: 1.7;
+    max-width: none;
+    margin-bottom: 20px;
+  }
+  .card-tags { gap: 6px; margin-bottom: 20px; }
+}
+
+@media (max-width: 480px) {
+  .card-img { height: 200px; }
+  .card-body { padding: 28px 22px; }
+}
+
+/* ══════════════════════════════════════════════════════════════
+   HOMEPAGE REFINEMENTS — PART 8
+   Desktop nav — everything on one line, every width down to the
+   768px handoff to the mobile hamburger menu.
+   Two root causes fixed, nothing else touched:
+   1) .nav-links is a <ul>, and its default browser margin/padding
+      (~40px of left padding alone) was never reset — that's
+      invisible space being eaten before the gap system even
+      starts, and it also nudges the row off the logo/button's
+      baseline vertically.
+   2) .nav-links a had no white-space:nowrap, so on a squeezed
+      viewport the flex item would shrink below its text's full
+      width and "The Ridhira Way" / "Coming Soon" would break
+      internally onto a second line instead of the row simply
+      sitting closer together.
+   Font size, letter-spacing, weight, colours, nav height and
+   background are all exactly as before — only spacing, wrap
+   behaviour and vertical alignment are addressed. Gaps are only
+   trimmed at the narrower desktop/tablet widths where the extra
+   room is actually needed; anything above 1240px keeps the
+   original spacing untouched. The existing ≤900px behaviour
+   (nav-links hidden, mobile nav takes over shortly after) is
+   unchanged.
+══════════════════════════════════════════════════════════════ */
+nav,
+.nav-right,
+.nav-links {
+  flex-wrap: nowrap;
+}
+.nav-links {
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+.nav-links li {
+  margin: 0;
+  padding: 0;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+}
+.nav-links a {
+  white-space: nowrap;
+  display: inline-block;
+  padding: 10px 0;
+  line-height: 1;
+  box-sizing: border-box;
+}
+.nav-book {
+  flex-shrink: 0;
+  line-height: 1;
+  box-sizing: border-box;
+}
+
+@media (min-width: 901px) and (max-width: 1240px) {
+  .nav-right { gap: 26px; }
+  .nav-links { gap: 26px; }
+  .nav-book { padding: 10px 18px; }
+}
+@media (min-width: 901px) and (max-width: 1024px) {
+  nav { padding: 0 32px; }
+  .nav-right { gap: 20px; }
+  .nav-links { gap: 20px; }
+  .nav-book { padding: 9px 16px; }
+}

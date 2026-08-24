@@ -1,0 +1,4439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FS2S197XR8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FS2S197XR8');
+</script>
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Ridhira Retreats — Demo V2 | Luxury Wellness Retreats in India</title>
+<meta name="description" content="Ridhira Retreats offers curated luxury wellness experiences at heritage properties across India. Discover Casa De Mello in Goa, Tiger Hills in Udaipur, and more.">
+<link rel="stylesheet" href="EXPERIENCES.css">
+<link rel="stylesheet" href="Destinations.css">
+<link rel="stylesheet" href="8-dimensions.css">
+<link rel="stylesheet" href="editorial.css">
+<link rel="stylesheet" href="css/navbar.css">
+<link rel="stylesheet" href="css/loader.css">
+<link rel="stylesheet" href="css/header.css">
+<link rel="stylesheet" href="css/rooms.css">
+<link rel="stylesheet" href="css/wellness-odespa.css">
+<link rel="stylesheet" href="css/footer.css">
+<!-- <link rel="stylesheet" href="css/casa.css"> -->
+<link rel="stylesheet" href="css/what-awaits-card-radius.css">
+<link href="img/logo/ridhira-retreats-logo.png" rel="shortcut icon" type="image/png">
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-uKQ39gEGiyUJl4AI6L+ekBdGKpGw4xJ55+xyJG7YFlJokPNYegn9KwQ3P8A7aFQAUtUsAQHep+d/lrGqrbPIDQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<style>
+  
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --cream: #EAE4DB;
+    --cream-dark: #E1DAD0;
+    --sand: #D3CABE;
+    --bark: #61574C;
+    --earth: #61574C;
+    --charcoal: #61574C;
+    --white: #EAE4DB;
+    --gold: #D5B881;
+    --muted: #61574C;
+    --serif: 'Cormorant Garamond', Georgia, serif;
+    --sans: 'Jost', sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--sans);
+    background: var(--cream);
+    color: var(--charcoal);
+    font-weight: 300;
+  }
+
+ 
+  /* ── NAV ─────────────────────────────── */
+
+  /* ══════════════════════════════════════════════
+     CASA DE MELLO — LOCATION & SOCIAL SECTION
+  ══════════════════════════════════════════════ */
+
+  .cdm-location-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 680px;
+    overflow: hidden;
+  }
+
+  /* ── Left: Image panel ────────────────────── */
+  .cdm-loc-visual {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cdm-loc-img-wrap {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 600px;
+    overflow: hidden;
+  }
+
+  .cdm-loc-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    /* Warm colour-grade: slight sepia warmth over the image */
+    filter: brightness(0.88) saturate(1.08);
+    transform: scale(1.04);
+    transition: transform 1.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    will-change: transform;
+  }
+
+  /* Parallax-style zoom on scroll-reveal */
+  .cdm-location-section.in-view .cdm-loc-img {
+    transform: scale(1.0);
+  }
+
+  /* Subtle warm-to-transparent overlay — bottom fade for blending */
+  .cdm-loc-img-overlay {
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(to right,  rgba(42,36,32,0.04) 0%, rgba(42,36,32,0.28) 100%),
+      linear-gradient(to bottom, transparent 50%, rgba(42,36,32,0.30) 100%);
+  }
+
+  /* Floating label — anchored bottom-left of image */
+  .cdm-loc-img-label {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.7s ease 0.4s, transform 0.7s ease 0.4s;
+  }
+  .cdm-location-section.in-view .cdm-loc-img-label {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .cdm-loc-img-label-eyebrow {
+    font-family: var(--sans);
+    font-size: 9px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: rgba(250,248,244,0.5);
+  }
+
+  .cdm-loc-img-label-name {
+    font-family: var(--serif);
+    font-weight: 300;
+    font-size: 20px;
+    color: rgba(250,248,244,0.88);
+    letter-spacing: 0.04em;
+  }
+
+  /* ── Right: Content panel ─────────────────── */
+  .cdm-loc-content {
+    background: var(--cream);
+    padding: 80px 72px 80px 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0;
+  }
+
+  /* Intro block */
+  .cdm-loc-intro {
+    margin-bottom: 0;
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 0.8s ease 0.15s, transform 0.8s ease 0.15s;
+  }
+  .cdm-location-section.in-view .cdm-loc-intro {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .cdm-loc-eyebrow {
+    font-family: var(--sans);
+    font-size: 9px;
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
+    color: var(--bark);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .cdm-loc-eyebrow::before {
+    content: '';
+    display: block;
+    width: 28px;
+    height: 0.5px;
+    background: var(--bark);
+    flex-shrink: 0;
+  }
+
+  .cdm-loc-heading {
+    font-family: var(--serif);
+    font-weight: 300;
+    font-size: clamp(36px, 3.5vw, 52px);
+    line-height: 1.08;
+    color: var(--charcoal);
+    margin-bottom: 24px;
+    letter-spacing: -0.01em;
+  }
+  .cdm-loc-heading em {
+    font-style: italic;
+    color: var(--bark);
+  }
+
+  .cdm-loc-para {
+    font-family: var(--sans);
+    font-size: 15px;
+    line-height: 1.85;
+    color: var(--muted);
+    max-width: 420px;
+    font-weight: 300;
+  }
+
+  /* Gold hairline rule */
+  .cdm-loc-rule {
+    width: 40px;
+    height: 0.5px;
+    background: var(--gold);
+    margin: 36px 0;
+    opacity: 0;
+    transition: opacity 0.6s ease 0.4s, width 0.6s ease 0.4s;
+  }
+  .cdm-location-section.in-view .cdm-loc-rule {
+    opacity: 1;
+    width: 40px;
+  }
+
+  /* ── Location list ─────────────────────────── */
+  .cdm-loc-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    opacity: 0;
+    transform: translateY(14px);
+    transition: opacity 0.8s ease 0.3s, transform 0.8s ease 0.3s;
+  }
+  .cdm-location-section.in-view .cdm-loc-list {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .cdm-loc-item {
+    display: grid;
+    grid-template-columns: 20px 72px 1fr;
+    align-items: center;
+    gap: 0 16px;
+    padding: 16px 0;
+    border-bottom: 0.5px solid rgba(139,115,85,0.12);
+    transition: background 0.25s ease;
+    cursor: default;
+  }
+  .cdm-loc-item:first-child { border-top: 0.5px solid rgba(139,115,85,0.12); }
+
+  /* Hover: subtle left-sweep gold bar */
+  .cdm-loc-item {
+    position: relative;
+  }
+  .cdm-loc-item::before {
+    content: '';
+    position: absolute;
+    left: -80px; /* outside visible area */
+    top: 0; bottom: 0;
+    width: 2px;
+    background: var(--gold);
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  .cdm-loc-item:hover::before { transform: scaleY(1); }
+
+  .cdm-loc-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gold);
+    transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94), color 0.3s;
+  }
+  .cdm-loc-icon svg {
+    width: 16px;
+    height: 16px;
+    stroke-width: 1.2;
+  }
+  .cdm-loc-item:hover .cdm-loc-icon {
+    transform: translateY(-2px);
+    color: var(--bark);
+  }
+
+  .cdm-loc-duration {
+    font-family: var(--serif);
+    font-size: 18px;
+    font-weight: 300;
+    color: var(--charcoal);
+    letter-spacing: 0.02em;
+    transition: color 0.3s;
+    white-space: nowrap;
+  }
+  .cdm-loc-item:hover .cdm-loc-duration { color: var(--earth); }
+
+  .cdm-loc-destination {
+    font-family: var(--sans);
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 300;
+    transition: color 0.3s;
+  }
+  .cdm-loc-item:hover .cdm-loc-destination { color: var(--bark); }
+
+  /* ── Social row ────────────────────────────── */
+  .cdm-social-row {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    flex-wrap: wrap;
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity 0.8s ease 0.45s, transform 0.8s ease 0.45s;
+  }
+  .cdm-location-section.in-view .cdm-social-row {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .cdm-social-label {
+    font-family: var(--sans);
+    font-size: 9px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+
+  .cdm-social-icons {
+    display: flex;
+    gap: 6px;
+  }
+
+  .cdm-social-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    width: 52px;
+    padding: 12px 0 10px;
+    border: 0.5px solid rgba(139,115,85,0.22);
+    text-decoration: none;
+    color: var(--muted);
+    transition:
+      color       0.3s ease,
+      border-color 0.3s ease,
+      background  0.3s ease,
+      transform   0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  .cdm-social-link svg {
+    width: 15px;
+    height: 15px;
+    stroke-width: 1.4;
+  }
+  .cdm-social-link span {
+    font-family: var(--sans);
+    font-size: 8px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+  .cdm-social-link:hover {
+    color: var(--charcoal);
+    border-color: var(--gold);
+    background: rgba(184,154,106,0.06);
+    transform: translateY(-3px);
+  }
+
+  /* ── HERO BOOKING BAR ───────────────────────── */
+  .hero-booking-bar {
+    position: absolute;
+    right: clamp(20px, 5vw, 80px);
+    bottom: 34px;
+    left: clamp(20px, 5vw, 80px);
+    z-index: 30;
+    display: grid;
+    grid-template-columns: 1.35fr 1.45fr 1.1fr auto;
+    align-items: stretch;
+    min-height: 84px;
+    padding: 7px;
+    background: rgba(250, 248, 244, 0.97);
+    border: 0.5px solid rgba(139, 115, 85, 0.22);
+    border-radius: 46px;
+    box-shadow: 0 16px 38px rgba(20, 15, 10, 0.22);
+    color: var(--charcoal);
+  }
+  .hero-booking-bar:focus-within,
+  .hero-booking-bar:active {
+    border-color: rgba(139, 115, 85, 0.34);
+    outline: none;
+  }
+  .hero-booking-field {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 0;
+    padding: 12px 22px;
+    /* border-right: 1px solid rgba(97, 87, 76, 0.16); */
+    text-align: left;
+  }
+  .hero-booking-icon {
+    width: 19px;
+    height: 19px;
+    flex: 0 0 auto;
+    color: var(--bark);
+  }
+  .hero-booking-copy {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    min-width: 0;
+  }
+  .hero-booking-label {
+    color: var(--charcoal);
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.07em;
+    line-height: 1.3;
+    text-transform: uppercase;
+  }
+  .hero-booking-value,
+  .hero-booking-date {
+    color: rgba(97, 87, 76, 0.62);
+    font-family: var(--sans);
+    font-size: 12px;
+    font-weight: 300;
+    letter-spacing: 0.02em;
+    line-height: 1.3;
+  }
+  .hero-booking-trigger {
+    width: 100%;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    font: inherit;
+    text-align: left;
+  }
+  .hero-booking-trigger:focus-visible,
+  .hero-booking-date:focus-visible {
+    outline: 1px solid var(--gold);
+    outline-offset: 4px;
+  }
+  .hero-booking-dates {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .hero-booking-date {
+    width: 112px;
+    min-width: 0;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color-scheme: light;
+  }
+  .hero-booking-date::-webkit-calendar-picker-indicator {
+    opacity: 0.52;
+    cursor: pointer;
+  }
+  .hero-booking-arrow { color: var(--gold); font-size: 16px; }
+  .hero-booking-submit {
+    align-self: center;
+    min-width: 132px;
+    min-height: 48px;
+    height: auto;
+    margin-left: 7px;
+    padding: 14px 28px;
+    border: 1px solid var(--gold);
+    border-radius: var(--radius-btn, 4px);
+    background: var(--gold);
+    color: var(--charcoal);
+    cursor: pointer;
+    font-family: var(--sans);
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    transform: translateX(-48px);
+    transition: background-color 0.28s ease, color 0.28s ease, border-color 0.28s ease, box-shadow 0.28s ease, transform 0.2s ease;
+  }
+  .hero-booking-submit:hover,
+  .hero-booking-submit:focus-visible {
+    background: var(--sand);
+    border-color: var(--sand);
+    color: var(--charcoal);
+    box-shadow: 0 10px 24px rgba(201, 168, 76, 0.12);
+    transform: translate(-48px, -1px);
+    outline: none;
+  }
+  .hero-booking-panel {
+    position: absolute;
+    top: calc(100% + 12px);
+    left: 20px;
+    min-width: 270px;
+    padding: 8px;
+    background: rgba(250, 248, 244, 0.99);
+    border: 1px solid rgba(139, 115, 85, 0.18);
+    border-radius: 5px;
+    box-shadow: 0 14px 28px rgba(20, 15, 10, 0.2);
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-8px);
+    transition: opacity 0.24s ease, transform 0.24s ease;
+  }
+  .hero-booking-field.is-open .hero-booking-panel {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+  .hero-booking-option {
+    display: block;
+    width: 100%;
+    padding: 12px 13px;
+    border: 0;
+    background: transparent;
+    color: var(--charcoal);
+    cursor: pointer;
+    font: inherit;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-align: left;
+    text-transform: uppercase;
+  }
+  .hero-booking-option:hover,
+  .hero-booking-option:focus-visible { background: rgba(97, 87, 76, 0.08); outline: none; }
+  .hero-booking-guest-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    padding: 10px 8px;
+    color: var(--charcoal);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .hero-booking-stepper { display: flex; align-items: center; gap: 10px; }
+  .hero-booking-stepper button {
+    width: 26px;
+    height: 26px;
+    border: 1px solid rgba(97, 87, 76, 0.3);
+    border-radius: 50%;
+    background: transparent;
+    color: var(--charcoal);
+    cursor: pointer;
+    font-size: 17px;
+    line-height: 1;
+  }
+  .hero-booking-stepper button:hover,
+  .hero-booking-stepper button:focus-visible { border-color: var(--gold); outline: none; }
+  .hero-booking-count { min-width: 16px; text-align: center; }
+
+  @media (max-width: 1050px) {
+    .hero-booking-bar { grid-template-columns: 1.15fr 1.3fr 1fr auto; }
+    .hero-booking-field { padding: 12px 14px; gap: 8px; }
+    .hero-booking-date { width: 94px; font-size: 11px; }
+    .hero-booking-submit { min-width: 112px; padding: 0 20px; transform: translateX(-40px); }
+  }
+  @media (max-width: 767px) {
+    .hero-booking-bar {
+      position: absolute;
+      right: 16px;
+      bottom: 18px;
+      left: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      min-height: 0;
+      padding: 8px;
+      border-radius: 20px;
+    }
+    .hero-booking-field { min-height: 66px; padding: 10px 12px; 
+      border-right: 0; border-bottom: 1px solid rgba(97, 87, 76, 0.14); }
+    .hero-booking-field:last-of-type { border-bottom: 0; }
+    .hero-booking-panel { top: auto; right: 0; bottom: 90%; left: 0; min-width: 0; }
+    .hero-booking-date { width: 100%; }
+    .hero-booking-submit { width: 100%; min-height: 48px; margin: 8px 0 0; transform: none; }
+    .hero-booking-submit:hover,
+    .hero-booking-submit:focus-visible { transform: translateY(-1px); }
+  }
+
+  /* ── Responsive ─────────────────────────────── */
+  @media (max-width: 1024px) {
+    .cdm-location-section {
+      grid-template-columns: 1fr;
+    }
+    .cdm-loc-img-wrap { min-height: 400px; }
+    .cdm-loc-content { padding: 60px 48px; }
+  }
+  @media (max-width: 768px) {
+    .cdm-loc-content { padding: 48px 24px; }
+    .cdm-loc-item {
+      grid-template-columns: 20px 64px 1fr;
+      gap: 0 12px;
+    }
+    .cdm-social-row { flex-direction: column; align-items: flex-start; gap: 20px; }
+  }
+
+
+/* ══════════════════════════════════════════════════════════════
+   HERO MUTE / UNMUTE TOGGLE BUTTON
+   Bottom-right, above video, keyboard accessible
+══════════════════════════════════════════════════════════════ */
+
+#hero-mute-btn {
+  /* Position */
+  position: absolute;
+  bottom: 36px;
+  left: 36px;        /* bottom-left — doesn't clash with right-side content */
+  z-index: 40;
+
+  /* Shape */
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+
+  /* Glass background */
+  background: rgba(20, 15, 10, 0.45);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 0.5px solid rgba(250, 248, 244, 0.22);
+
+  /* Flex centre the SVG icon */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* Interaction */
+  cursor: pointer;
+  outline: none;
+  transition:
+    background  0.25s ease,
+    border-color 0.25s ease,
+    transform   0.2s cubic-bezier(0.34, 1.56, 0.64, 1); /* spring */
+
+  /* Remove default button styles */
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+/* Hover */
+#hero-mute-btn:hover {
+  background: rgba(20, 15, 10, 0.68);
+  border-color: rgba(184, 154, 106, 0.55);   /* gold hint on hover */
+  transform: scale(1.08);
+}
+
+/* Focus-visible ring — keyboard accessibility */
+#hero-mute-btn:focus-visible {
+  outline: 2px solid rgba(184, 154, 106, 0.7);
+  outline-offset: 3px;
+}
+
+/* Active (click) */
+#hero-mute-btn:active {
+  transform: scale(0.94);
+}
+
+/* Icon SVGs inside */
+.mute-icon-muted,
+.mute-icon-unmuted {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  color: rgba(250, 248, 244, 0.88);
+  transition: opacity 0.22s ease, transform 0.22s ease;
+}
+
+/* Default state — muted (show muted icon) */
+.mute-icon-muted   { opacity: 1;  transform: scale(1);    }
+.mute-icon-unmuted { opacity: 0;  transform: scale(0.75); }
+
+/* Unmuted state — applied via JS class */
+#hero-mute-btn.is-unmuted .mute-icon-muted   { opacity: 0;  transform: scale(0.75); }
+#hero-mute-btn.is-unmuted .mute-icon-unmuted { opacity: 1;  transform: scale(1);    }
+
+/* Gold dot indicator — unmuted = live audio */
+#hero-mute-btn::after {
+  content: '';
+  position: absolute;
+  top: 9px; right: 9px;
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: rgba(184, 154, 106, 0.0); /* invisible when muted */
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+#hero-mute-btn.is-unmuted::after {
+  background: var(--gold, #b89a6a);
+  box-shadow: 0 0 6px rgba(184, 154, 106, 0.6);
+}
+
+/* ── Ripple on click ── */
+@keyframes muteRipple {
+  from { transform: scale(1);   opacity: 0.5; }
+  to   { transform: scale(2.2); opacity: 0;   }
+}
+#hero-mute-btn .mute-ripple {
+  position: absolute; inset: 0;
+  border-radius: 50%;
+  border: 1.5px solid rgba(184, 154, 106, 0.4);
+  animation: muteRipple 0.55s ease-out forwards;
+  pointer-events: none;
+}
+
+/* ── Volume wave animation — only when unmuted ── */
+@keyframes waveBreath {
+  0%, 100% { opacity: 0.6; transform: scaleX(0.9); }
+  50%       { opacity: 1.0; transform: scaleX(1.0); }
+}
+#hero-mute-btn.is-unmuted .wave-paths path {
+  animation: waveBreath 1.8s ease-in-out infinite;
+}
+#hero-mute-btn.is-unmuted .wave-paths path:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  #hero-mute-btn {
+    bottom: 24px;
+    left: 24px;
+    width: 42px;
+    height: 42px;
+  }
+  .mute-icon-muted,
+  .mute-icon-unmuted { width: 17px; height: 17px; }
+}
+@media (max-width: 480px) {
+  #hero-mute-btn {
+    bottom: 20px;
+    left: 20px;
+    width: 38px;
+    height: 38px;
+  }
+}
+
+/* ════════════════════════════════════════════════════════════════
+   MOBILE NAVIGATION v2 — Luxury Glassmorphism Overlay
+   Complete redesign: Belmond/Aman-inspired, fully functional.
+   Desktop nav (nav.desktop-nav + .sec-nav) untouched.
+════════════════════════════════════════════════════════════════ */
+
+/* ── Global: hide mobile-only elements on desktop ─────────── */
+/* Mobile nav & overlay are desktop-hidden, shown via media query below */
+.mobile-nav     { display: none; }
+.mobile-overlay { display: none; }
+
+@media (max-width: 767px) {
+  .mobile-nav     { display: block; }
+  .mobile-overlay { display: block; }
+}
+
+/* ── Scroll-lock (JS toggles .menu-open on <body>) ─────────── */
+body.menu-open {
+  overflow: hidden;
+  position: fixed;
+  inset-inline: 0;
+  width: auto;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   BREAKPOINT ≤ 767px  — Mobile only
+══════════════════════════════════════════════════════════════ */
+@media (max-width: 767px) {
+
+  /* 1 ── Hide all desktop elements ─────────────────────────── */
+  nav.desktop-nav { display: none !important; }
+  .sec-nav        { display: none !important; }
+
+  /* 2 ── Page offset for mobile header ─────────────────────── */
+  .page { padding-top: 64px !important; }
+  #page-home.page,
+  .page.active#page-home {
+    padding-top: 64px !important;
+  }
+
+  html, body { width: 100%; max-width: 100%; }
+  .page,
+  .page.active,
+  .mobile-nav,
+  .mobile-nav-header,
+  .mobile-overlay,
+  .mobile-overlay-inner,
+  .mobile-overlay-scroll,
+  .mobile-overlay-nav,
+  .mobile-overlay-nav ul,
+  .mobile-overlay-footer {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  /* ══════════════════════════════════════════════════════════
+     MOBILE NAV HEADER BAR
+  ══════════════════════════════════════════════════════════ */
+  .mobile-nav {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: auto;
+    z-index: 200;
+  }
+
+  .mobile-nav-header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    height: 64px;
+    padding: 0 14px;
+    width: 100%;
+    background: rgba(240, 235, 224, 0.94);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 0.5px solid rgba(139, 115, 85, 0.18);
+    transition: background 0.5s ease, border-color 0.5s ease;
+  }
+
+  body.hero-visible .mobile-nav-header {
+    background: rgba(20, 14, 10, 0.15);
+    border-bottom-color: rgba(255, 255, 255, 0.08);
+  }
+
+  /* ── HAMBURGER BUTTON ─────────────────────────────────────── */
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 5px;
+    width: 38px;
+    height: 38px;
+    min-width: 44px;
+    min-height: 44px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    flex-shrink: 0;
+    z-index: 2;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+
+  .hamburger span {
+    display: block;
+    height: 1px;
+    background: var(--charcoal);
+    border-radius: 1px;
+    transform-origin: left center;
+    transition:
+      transform  0.36s cubic-bezier(0.23, 1, 0.32, 1),
+      opacity    0.24s ease,
+      width      0.3s  ease;
+    will-change: transform;
+  }
+  .hamburger span:nth-child(1) { width: 22px; }
+  .hamburger span:nth-child(2) { width: 14px; }
+  .hamburger span:nth-child(3) { width: 22px; }
+
+  body.hero-visible .hamburger span { background: rgba(250, 248, 244, 0.88); }
+
+  /* Animate to × when menu is open */
+  .hamburger.is-active span:nth-child(1) { width: 22px; transform: translateY(6px) rotate(45deg); }
+  .hamburger.is-active span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+  .hamburger.is-active span:nth-child(3) { width: 22px; transform: translateY(-6px) rotate(-45deg); }
+
+  /* When overlay is open, pull mobile-nav bar behind it so close btn receives clicks */
+  body.menu-open .mobile-nav {
+    pointer-events: none;
+    z-index: 290;
+  }
+
+  .mobile-nav-left { display: none; }
+
+  .mobile-nav-balance {
+    width: 44px;
+    min-width: 44px;
+    height: 44px;
+    flex-shrink: 0;
+  }
+
+  .mobile-nav-logo {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    z-index: 1;
+    pointer-events: auto;
+  }
+  .mobile-nav-logo:active { opacity: 0.72; }
+
+  .mobile-nav-logo img {
+    max-width: 42px;
+    max-height: 56px;
+    width: auto;
+    height: auto;
+    display: block;
+    object-fit: contain;
+    object-position: center;
+    opacity: 0.95;
+  }
+  body.hero-visible .mobile-nav-logo img {
+    opacity: 0.95;
+  }
+
+  /* Header book button removed — CTA lives in the hamburger menu */
+  .mobile-book-btn { display: none !important; }
+
+  /* ══════════════════════════════════════════════════════════
+     MOBILE MENU OVERLAY v2
+     Background: dark glassmorphism per spec
+  ══════════════════════════════════════════════════════════ */
+  .mobile-overlay {
+    display: block;
+    position: fixed;
+    inset: 0;
+    width: auto;
+    z-index: 300;
+
+    /* Luxury glassmorphism — per spec */
+    background: rgba(20, 16, 12, 0.92);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+
+    /* Hidden state: invisible + slid fully left */
+    opacity: 0;
+    visibility: hidden;
+    transform: translate3d(-100%, 0, 0);
+
+    transition:
+      opacity    0.3s  cubic-bezier(0.25, 0.46, 0.45, 0.94),
+      transform  0.3s  cubic-bezier(0.25, 0.46, 0.45, 0.94),
+      visibility 0s    linear 0.3s;   /* delay hides after fade */
+
+    /* iPhone safe-area */
+    padding-top:    env(safe-area-inset-top,    0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+    overflow: hidden;
+  }
+
+  /* OPEN STATE */
+  .mobile-overlay.is-open {
+    opacity: 1;
+    visibility: visible;
+    transform: translate3d(0, 0, 0);
+    transition:
+      opacity    0.3s  cubic-bezier(0.25, 0.46, 0.45, 0.94),
+      transform  0.3s  cubic-bezier(0.25, 0.46, 0.45, 0.94),
+      visibility 0s    linear 0s;     /* show immediately */
+  }
+
+  /* ── OVERLAY INNER: flex column fills full height ─────────── */
+  .mobile-overlay-inner {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  /* ── OVERLAY HEADER ROW: "☰ Menu" | "✕ Close" ─────────────── */
+  .mobile-overlay-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+    padding: 0 24px;
+    flex-shrink: 0;
+    border-bottom: 0.5px solid rgba(250, 248, 244, 0.07);
+    /* Safe-area top offset */
+    padding-top: max(0px, env(safe-area-inset-top, 0px));
+    height: calc(64px + env(safe-area-inset-top, 0px));
+    width: 100%;
+  }
+
+  /* "☰ MENU" label — left side, decorative only */
+  .mobile-overlay-menu-label {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    font-family: var(--sans);
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: rgba(250, 248, 244, 0.30);
+    user-select: none;
+    pointer-events: none;
+  }
+  .mobile-overlay-menu-label svg {
+    width: 15px;
+    height: 15px;
+    color: rgba(250, 248, 244, 0.28);
+  }
+
+  /* "✕ CLOSE" button — right side, fully clickable ────────── */
+  .mobile-close-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0 4px;
+    min-width: 44px;
+    min-height: 44px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: var(--sans);
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 0.20em;
+    text-transform: uppercase;
+    color: rgba(250, 248, 244, 0.42);
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+    transition: color 0.25s ease;
+    position: relative;
+    z-index: 400;
+  }
+  .mobile-close-btn:hover,
+  .mobile-close-btn:active {
+    color: rgba(250, 248, 244, 0.92);
+  }
+  .mobile-close-btn svg {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+    transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  .mobile-close-btn:hover svg,
+  .mobile-close-btn:active svg {
+    transform: rotate(90deg);
+  }
+
+  /* ── SCROLLABLE NAV AREA ───────────────────────────────────── */
+  .mobile-overlay-scroll {
+    flex: 1;
+    min-height: 0;
+    width: 100%;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding: 4px 28px 0;
+  }
+  .mobile-overlay-scroll::-webkit-scrollbar { display: none; }
+
+  /* ── NAV LIST WRAPPER ─────────────────────────────────────── */
+  .mobile-overlay-nav {
+    position: static;
+    display: block;
+    width: 100%;
+    height: auto;
+    padding: 12px 0 0;
+    margin: 0;
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+    overflow: visible;
+  }
+  .mobile-overlay-nav ul { list-style: none; width: 100%; padding: 0; 
+    margin-top: 0; }
+
+  /* Each list item — entry animation state */
+  .mobile-overlay-nav ul li {
+    min-width: 0;
+    opacity: 0;
+    transform: translateX(-14px);
+    transition: opacity 0.32s ease, transform 0.32s ease;
+  }
+
+  /* Staggered entrance when overlay opens */
+  .mobile-overlay.is-open .mobile-overlay-nav ul li:nth-child(1) { transition-delay: 0.05s; }
+  .mobile-overlay.is-open .mobile-overlay-nav ul li:nth-child(2) { transition-delay: 0.09s; }
+  .mobile-overlay.is-open .mobile-overlay-nav ul li:nth-child(3) { transition-delay: 0.13s; }
+  .mobile-overlay.is-open .mobile-overlay-nav ul li:nth-child(4) { transition-delay: 0.17s; }
+  .mobile-overlay.is-open .mobile-overlay-nav ul li:nth-child(5) { transition-delay: 0.21s; }
+  .mobile-overlay.is-open .mobile-overlay-nav ul li:nth-child(6) { transition-delay: 0.25s; }
+  .mobile-overlay.is-open .mobile-overlay-nav ul li:nth-child(7) { transition-delay: 0.29s; }
+  .mobile-overlay.is-open .mobile-overlay-nav ul li { opacity: 1; transform: translateX(0); }
+
+  /* ── NAV LINK ITEM ─────────────────────────────────────────── */
+  .mobile-nav-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: var(--serif);
+    font-size: 23px;
+    font-weight: 300;
+    line-height: 1.3;
+    letter-spacing: 0.01em;
+    color: rgba(250, 248, 244, 0.68);
+    text-decoration: none;
+    min-width: 0;
+    overflow-wrap: anywhere;
+    padding: 12px 0;
+    border-bottom: 0.5px solid rgba(250, 248, 244, 0.07);
+
+    /* Hover: slide right + brighten */
+    transition:
+      color     0.26s ease,
+      transform 0.26s ease;
+
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+
+  .mobile-overlay-nav ul li:last-child .mobile-nav-link { border-bottom: none; }
+
+  .mobile-nav-link:hover,
+  .mobile-nav-link:active {
+    color: rgba(250, 248, 244, 1);
+    transform: translateX(6px);
+  }
+
+  /* Arrow indicator — appears on hover */
+  .link-arrow {
+    font-family: var(--sans);
+    font-size: 14px;
+    font-weight: 300;
+    color: rgba(184, 154, 106, 0.75);   /* --gold */
+    opacity: 0;
+    transform: translateX(-8px);
+    flex-shrink: 0;
+    margin-left: 12px;
+    transition: opacity 0.26s ease, transform 0.26s ease;
+  }
+  .mobile-nav-link:hover .link-arrow,
+  .mobile-nav-link:active .link-arrow {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .mobile-nav-dropdown-menu {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.28s ease, opacity 0.28s ease;
+  }
+  .mobile-nav-dropdown.is-open .mobile-nav-dropdown-menu {
+    max-height: 220px;
+    opacity: 1;
+  }
+  .mobile-nav-dropdown-toggle .link-arrow {
+    opacity: 1;
+    transform: none;
+    transition: transform 0.28s ease;
+  }
+  .mobile-nav-dropdown-toggle {
+    width: 100%;
+    margin: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    appearance: none;
+    -webkit-appearance: none;
+    text-align: left;
+    cursor: pointer;
+  }
+  .mobile-nav-dropdown.is-open .mobile-nav-dropdown-toggle .link-arrow {
+    transform: rotate(180deg);
+  }
+  .mobile-nav-dropdown-menu .mobile-nav-link {
+    padding: 13px 0 13px 20px;
+    min-height: 48px;
+    border-bottom-color: rgba(250, 248, 244, 0.06);
+    font-family: var(--sans);
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    line-height: 1.4;
+    text-transform: uppercase;
+  }
+
+  /* ══════════════════════════════════════════════════════════
+     STICKY FOOTER — Book CTA + Contact Links
+  ══════════════════════════════════════════════════════════ */
+  .mobile-overlay-footer {
+    flex-shrink: 0;
+    width: 100%;
+    padding: 18px 28px calc(18px + env(safe-area-inset-bottom, 0px));
+    border-top: 0.5px solid rgba(250, 248, 244, 0.07);
+
+    /* Entry animation */
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity 0.32s ease, transform 0.32s ease;
+  }
+  .mobile-overlay.is-open .mobile-overlay-footer {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.32s;
+  }
+
+  /* "Book a Retreat" full-width button */
+  .mobile-overlay-book {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 48px;
+    border-radius: 8px;
+    font-family: var(--sans);
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.20em;
+    text-transform: uppercase;
+    color: rgba(250, 248, 244, 0.82);
+    text-decoration: none;
+    border: 0.5px solid rgba(250, 248, 244, 0.22);
+    background: rgba(250, 248, 244, 0.05);
+    transition:
+      background    0.26s ease,
+      border-color  0.26s ease,
+      color         0.26s ease;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+  .mobile-overlay-book:hover,
+  .mobile-overlay-book:active {
+    background: rgba(250, 248, 244, 0.13);
+    border-color: rgba(250, 248, 244, 0.42);
+    color: rgba(250, 248, 244, 1);
+  }
+
+  /* Contact links row: WhatsApp | Call | Email */
+  .mobile-overlay-contacts {
+    display: flex;
+    align-items: center;
+    margin-top: 14px;
+  }
+
+  .mobile-contact-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    flex: 1;
+    height: 38px;
+    min-height: 44px;
+    font-family: var(--sans);
+    font-size: 8.5px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(250, 248, 244, 0.32);
+    text-decoration: none;
+    border-right: 0.5px solid rgba(250, 248, 244, 0.07);
+    transition: color 0.22s ease;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+  .mobile-contact-link:last-child { border-right: none; }
+  .mobile-contact-link:hover,
+  .mobile-contact-link:active { color: rgba(250, 248, 244, 0.75); }
+
+  .mobile-contact-link svg {
+    width: 13px;
+    height: 13px;
+    flex-shrink: 0;
+  }
+
+  .mobile-nav-enquire {
+    margin-top: 12px;
+    border-top: 1px solid rgba(250, 248, 244, 0.14);
+    color: rgba(213, 184, 129, 0.95);
+  }
+
+} /* end @media (max-width: 767px) */
+
+/* ══════════════════════════════════════════════════════════════
+   Smaller phones ≤ 390px
+══════════════════════════════════════════════════════════════ */
+@media (max-width: 390px) {
+  .mobile-nav-header           { padding: 0 16px; }
+  .mobile-book-btn             { padding: 0 12px; font-size: 10px; }
+  .mobile-nav-logo img         { max-width: 34px; max-height: 50px; }
+  .mobile-overlay-header       { padding-left: 20px; padding-right: 20px; }
+  .mobile-overlay-scroll       { padding-left: 22px; padding-right: 22px; }
+  .mobile-overlay-footer       { padding-left: 22px; padding-right: 22px; }
+  .mobile-nav-link             { font-size: 21px; padding: 11px 0; }
+}
+
+/* ══════════════════════════════════════════════════════════════
+   Tiny phones ≤ 320px
+══════════════════════════════════════════════════════════════ */
+@media (max-width: 320px) {
+  .mobile-book-btn             { padding: 0 10px; font-size: 9px; }
+  .mobile-nav-logo img         { max-width: 30px; max-height: 46px; }
+  .mobile-overlay-scroll       { padding-left: 18px; padding-right: 18px; }
+  .mobile-overlay-footer       { padding-left: 18px; padding-right: 18px; }
+  .mobile-nav-link             { font-size: 19px; padding: 10px 0; }
+  .mobile-contact-link         { font-size: 8px; gap: 4px; }
+}
+
+/* ══════════════════════════════════════════════════════════════
+   HOMEPAGE REFINEMENTS  —  spacing / heading / body size
+   Loaded last, so it overrides EXPERIENCES.css, Destinations.css,
+   8-dimensions.css and editorial.css without editing them.
+   Only vertical rhythm + type size are touched. Layout, colours,
+   fonts and horizontal padding are left exactly as they were.
+══════════════════════════════════════════════════════════════ */
+
+/* ── 1. SECTION SPACING SCALE ─────────────────────────────────
+   One variable drives every section's top/bottom padding, so the
+   gap between any two sections is 2 x --sec-space and stays
+   consistent on every breakpoint.
+   Before: gaps ran 200–240px. Now: 144px desktop.
+─────────────────────────────────────────────────────────────── */
+:root {
+  --sec-space: 72px;      /* half the gap between two sections */
+  --sec-space-lead: 88px; /* first block under the hero — a touch more air */
+  --sec-inner: 56px;      /* intro block → content inside a section */
+}
+
+@media (max-width: 1100px) {
+  :root { --sec-space: 60px; --sec-space-lead: 72px; --sec-inner: 48px; }
+}
+@media (max-width: 900px) {
+  :root { --sec-space: 52px; --sec-space-lead: 64px; --sec-inner: 40px; }
+}
+@media (max-width: 600px) {
+  :root { --sec-space: 44px; --sec-space-lead: 52px; --sec-inner: 36px; }
+}
+
+/* Our Retreats — heading + card grid read as ONE block, so the
+   space between them stays intra-block, not a section gap. */
+.listing-hero {
+  padding-top: var(--sec-space-lead);
+  padding-bottom: var(--sec-inner);
+}
+  .listing-hero-coming-soon {
+    margin-top: 24px;
+    color: rgba(97, 87, 76, 0.72);
+    font-family: var(--serif);
+    font-size: 16px;
+    font-weight: 300;
+    letter-spacing: 0.05em;
+    line-height: 1.5;
+  }
+  .listing-hero-coming-soon a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.25s ease, border-color 0.25s ease;
+    border-bottom: 1px solid transparent;
+  }
+  .listing-hero-coming-soon a:hover,
+  .listing-hero-coming-soon a:focus-visible {
+    color: var(--bark);
+    border-bottom-color: var(--gold);
+    outline: none;
+  }
+  .listing-hero-coming-soon .coming-soon-separator {
+    display: inline-block;
+    margin: 0 8px;
+    color: rgba(97, 87, 76, 0.42);
+  }
+.retreat-grid {
+  padding-bottom: var(--sec-space);
+}
+
+/* Experiences slider — the card track carries 36px of its own
+   bottom padding for the box-shadows, so subtract that from the
+   section's bottom padding to keep the *visual* gap identical
+   to every other section. The header sits flush at the top. */
+.exp-infinite-section {
+  padding-top: var(--sec-space);
+  padding-bottom: max(0px, calc(var(--sec-space) - 36px));
+}
+.exp-infinite-header {
+  margin-bottom: var(--sec-inner);
+}
+
+/* Destinations */
+.destinations-section {
+  padding-top: var(--sec-space);
+  padding-bottom: var(--sec-space);
+}
+.dest-header {
+  margin-bottom: var(--sec-inner);
+}
+
+/* 8 Dimensions of Wellness */
+.wellness-dims-section {
+  padding-top: var(--sec-space);
+  padding-bottom: var(--sec-space);
+}
+.wd-intro {
+  margin-bottom: var(--sec-inner);
+  padding-bottom: calc(var(--sec-inner) * 0.85);
+}
+
+/* The Ridhira Group  (.rg-intro already zeroes its own margins) */
+.ridhira-group-section {
+  padding-top: var(--sec-space);
+  padding-bottom: var(--sec-space);
+}
+
+
+/* ── 2. "The Place Becomes Part of the Experience." ───────────
+   Must hold one line on desktop/tablet. The flex header lets the
+   left column shrink (min-width:0) while the controls keep their
+   natural width; nowrap + the fit script in the footer then size
+   the type to exactly fill the space available.
+   Below 700px it wraps again so it stays readable.
+─────────────────────────────────────────────────────────────── */
+@media (min-width: 701px) {
+  .exp-infinite-header-left {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+  .exp-infinite-header-right {
+    flex: 0 0 auto;
+  }
+  .exp-infinite-title {
+    white-space: nowrap;
+    font-size: clamp(28px, 3.05vw, 46px);
+    letter-spacing: -0.004em;
+  }
+}
+
+@media (max-width: 700px) {
+  .exp-infinite-title {
+    white-space: normal;   /* wrapping is fine on phones */
+    font-size: clamp(30px, 7.4vw, 38px);
+  }
+}
+
+/* italic "Experience." is inherited from EXPERIENCES.css — untouched */
+
+
+/* ── 3. "Where We Are, and Where We Are Going" body copy ──────
+   Larger, more readable paragraph text across the Destinations
+   section. Heading sizes are unchanged, so the hierarchy holds.
+─────────────────────────────────────────────────────────────── */
+.destinations-section .dest-header-right p {
+  font-size: 17px;
+  line-height: 1.8;
+}
+.destinations-section .dest-featured-desc,
+.destinations-section .dest-featured-side .dest-featured-desc {
+  font-size: 17px !important;
+  line-height: 1.8;
+}
+.destinations-section .dest-featured-sub {
+  font-size: 16px;
+}
+.destinations-section .dest-card-desc {
+  font-size: 13.5px;
+  line-height: 1.75;
+}
+.destinations-section .dest-card:hover .dest-card-desc {
+  max-height: 120px;   /* taller copy needs a taller reveal */
+}
+
+@media (max-width: 1100px) {
+  .destinations-section .dest-header-right p,
+  .destinations-section .dest-featured-desc,
+  .destinations-section .dest-featured-side .dest-featured-desc {
+    font-size: 16px !important;
+  }
+}
+@media (max-width: 600px) {
+  .destinations-section .dest-header-right p,
+  .destinations-section .dest-featured-desc,
+  .destinations-section .dest-featured-side .dest-featured-desc {
+    font-size: 15.5px !important;
+    line-height: 1.75;
+  }
+  .destinations-section .dest-card-desc { font-size: 13px; }
+}
+
+/* ── 8 Dimensions of Wellness — animated GIF visual ────────────
+   Replaces the old static two-photo stack with a single GIF.
+   Reuses the existing .wd-img-primary container (so it keeps
+   whatever sizing/position/radius 8-dimensions.css already gives
+   it) but forces the media itself to behave responsively:
+   never cropped, never stretched, aspect ratio always preserved.
+─────────────────────────────────────────────────────────────── */
+.wd-visuals .wd-img-primary.wd-gif-primary {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;   /* matches the GIF's native 800×450 */
+  max-height: none;
+  overflow: hidden;
+  background: var(--sand, #f4efe7);
+  border-radius: 14px;   /* soft, consistent corner on every breakpoint */
+}
+.wd-visuals .wd-img-primary.wd-gif-primary img.wd-gif {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;   /* no cropping, no distortion */
+  object-position: center;
+  max-width: 100%;
+}
+
+@media (max-width: 1024px) {
+  .wd-visuals .wd-img-primary.wd-gif-primary {
+    aspect-ratio: 16 / 9;
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .wd-visuals {
+    max-width: 100%;
+    overflow: hidden;
+  }
+  .wd-visuals .wd-img-primary.wd-gif-primary {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+  }
+}
+
+/* Belt-and-braces: never allow this section to cause horizontal
+   scroll on any breakpoint, regardless of external CSS rules. */
+.wellness-dims-section,
+.wellness-dims-section .wd-body,
+.wellness-dims-section .wd-visuals {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   HOMEPAGE REFINEMENTS — PART 2
+   Button parity · cursor label · retreat-grid symmetry
+   Same "loaded last" override approach as Part 1 above — nothing
+   below touches EXPERIENCES.css, Destinations.css, 8-dimensions.css,
+   editorial.css or the markup. Structure, copy and section order
+   are unchanged; only surface styling and vertical rhythm move.
+══════════════════════════════════════════════════════════════ */
+:root {
+  --radius-btn: 4px; /* one soft corner radius, shared by every CTA */
+}
+
+/* ── 4. BUTTON SYSTEM — hero parity + one shared corner radius ──
+   "Explore the Retreats" now carries the exact same border,
+   fill, hover and transition behaviour as "Discover the Ridhira
+   Way" — both read as a matched outline pair on the hero. Every
+   boxed CTA on the homepage then picks up the same subtle
+   border-radius so the whole page feels like one button system. */
+.hero-btn-primary {
+  background: transparent;
+  color: var(--white);
+  border: 0.5px solid rgba(250, 248, 244, 0.5);
+  box-shadow: none;
+}
+.hero-btn-primary:hover,
+.hero-btn-primary:focus-visible {
+  background: rgba(250, 248, 244, 0.1);
+  border-color: rgba(250, 248, 244, 0.9);
+  color: var(--white);
+  box-shadow: none;
+  outline: none;
+}
+.hero-btn-primary:active { opacity: 0.8; transform: translateY(1px); }
+
+.hero-btn-primary,
+.hero-btn-ghost,
+.btn-ghost,
+.nav-book,
+.dest-cta-btn,
+.dest-notify-btn,
+.exp-explore-btn,
+.exp-arrow,
+.wl-submit,
+.tag,
+.mobile-book-btn {
+  border-radius: var(--radius-btn);
+}
+
+/* ── 5. CURSOR-FOLLOWING LABEL — smaller, more compact pill ────
+   Same trailing/show-hide behaviour (JS untouched) — just a
+   tighter footprint and a soft rounded corner instead of the
+   larger cut-corner shape, to match the button system above. */
+.cursor-cta {
+  font-size: 10.5px;
+  padding: 9px 18px 9px 14px;
+  clip-path: none;
+  border-radius: var(--radius-btn);
+}
+
+/* ── 6. "OUR RETREATS" GRID — symmetrical, compact pair ────────
+   Casa De Mello and Tiger Hills now share one fixed layout
+   (image always leads, copy always follows) instead of
+   alternating sides, so the two cards read as a true matched
+   pair: identical width, height, image crop and text alignment.
+   The 2px seam between them is closed, image height is trimmed,
+   and the section's bottom padding is tightened for a more
+   compact, premium block. Mobile stack (≤900px) is untouched. */
+.retreat-card { margin-bottom: 0; }
+.retreat-card:nth-child(even) .card-img { order: 0; }
+.retreat-card:nth-child(even) .card-body { order: 0; }
+.retreat-grid { padding-bottom: calc(var(--sec-space) * 0.7); }
+
+@media (min-width: 901px) {
+  .card-img { height: 440px; }
+  .card-body { padding: 48px 48px; }
+  .card-body p { margin-bottom: 32px; }
+  .card-tags { margin-bottom: 32px; }
+}
+
+/* ══════════════════════════════════════════════════════════════
+   HOMEPAGE REFINEMENTS — PART 3
+   Destinations — "Open Now" featured pair made symmetrical
+   Same "loaded last" override approach as Parts 1–2 — nothing
+   below touches Destinations.css, editorial.css or the markup.
+   Copy, photos and typography are unchanged; only the two
+   cards' shared sizing/position is unified so Udaipur (Tiger
+   Hills) and Goa (Casa De Mello) read as one balanced pair
+   instead of the old uneven "hero + side" split.
+══════════════════════════════════════════════════════════════ */
+
+/* ── 7. Equal-width columns, flush seam, matched image height ── */
+.dest-featured-pair {
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  margin-bottom: 1%;
+}
+.dest-featured-img {
+  height: 520px;
+  margin-right: 1%;
+}
+
+/* ── Identical content placement, size cap and heading scale ──
+   The side card previously sat lower/tighter with a smaller
+   headline and narrower copy block — both cards now share one
+   set of values so they start and end at the same points. */
+.destinations-section .dest-featured-content,
+.destinations-section .dest-featured-side .dest-featured-content {
+  left: 56px;
+  bottom: 56px;
+  max-width: 440px;
+}
+.destinations-section .dest-featured-name,
+.destinations-section .dest-featured-name--side {
+  font-size: clamp(42px, 4.6vw, 64px) !important;
+}
+.destinations-section .dest-featured-desc,
+.destinations-section .dest-featured-side .dest-featured-desc {
+  margin-bottom: 28px;
+  max-width: 420px;
+}
+
+/* Same overlay direction on both, so neither card reads darker/
+   heavier than the other */
+.dest-featured-overlay,
+.dest-featured-side .dest-featured-overlay {
+  background: linear-gradient(
+    to right,
+    rgba(42, 36, 32, 0.82) 0%,
+    rgba(42, 36, 32, 0.4) 50%,
+    rgba(42, 36, 32, 0.1) 100%
+  );
+}
+
+@media (max-width: 900px) {
+  .dest-featured-img { height: 420px; }
+  .destinations-section .dest-featured-content,
+  .destinations-section .dest-featured-side .dest-featured-content {
+    left: 24px;
+    bottom: 32px;
+    max-width: calc(100% - 48px);
+  }
+}
+
+/* Responsive treatment for the Extraordinary Retreats section. */
+@media (min-width: 901px) and (max-width: 1100px) {
+  .destinations-section {
+    padding: 96px 40px 64px;
+  }
+  .dest-header {
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+    gap: 40px;
+    margin-bottom: 48px;
+  }
+  .dest-header-right p {
+    font-size: 14px;
+  }
+  .dest-featured-pair {
+    gap: 12px;
+  }
+  .dest-featured-img {
+    height: 460px;
+  }
+  .destinations-section .dest-featured-content,
+  .destinations-section .dest-featured-side .dest-featured-content {
+    left: 32px;
+    right: 28px;
+    bottom: 36px;
+    max-width: none;
+  }
+  .destinations-section .dest-featured-name,
+  .destinations-section .dest-featured-name--side {
+    font-size: clamp(42px, 5vw, 58px) !important;
+  }
+  .destinations-section .dest-featured-desc,
+  .destinations-section .dest-featured-side .dest-featured-desc {
+    font-size: 14px !important;
+    line-height: 1.65;
+    max-width: 360px;
+  }
+  .dest-card-minimal .dest-card-body {
+    padding: 16px;
+  }
+}
+
+@media (max-width: 900px) {
+  .destinations-section .dest-header {
+    margin-bottom: 44px;
+  }
+  .destinations-section .dest-featured-pair {
+    grid-template-columns: 1fr;
+  }
+  .destinations-section .dest-title {
+    font-size: clamp(36px, 8vw, 50px);
+  }
+  .dest-featured-pair {
+    gap: 12px;
+    margin-bottom: 36px;
+  }
+  .dest-featured-img {
+    height: clamp(340px, 68vw, 420px);
+  }
+  .destinations-section .dest-featured-content,
+  .destinations-section .dest-featured-side .dest-featured-content {
+    right: 24px;
+  }
+  .destinations-section .dest-featured-name,
+  .destinations-section .dest-featured-name--side {
+    font-size: clamp(42px, 12vw, 60px) !important;
+  }
+  .destinations-section .dest-featured-desc,
+  .destinations-section .dest-featured-side .dest-featured-desc {
+    font-size: 14px !important;
+    line-height: 1.65;
+    max-width: 360px;
+  }
+  .dest-card-minimal {
+    height: 240px;
+  }
+}
+
+@media (max-width: 540px) {
+  .destinations-section {
+    padding: 64px 18px 48px;
+  }
+  .dest-header {
+    gap: 24px;
+    margin-bottom: 36px;
+  }
+  .destinations-section .dest-title {
+    font-size: clamp(34px, 10vw, 44px);
+  }
+  .dest-header-right p {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+  .dest-featured-img {
+    height: 360px;
+  }
+  .destinations-section .dest-featured-content,
+  .destinations-section .dest-featured-side .dest-featured-content {
+    left: 20px;
+    right: 20px;
+    bottom: 24px;
+  }
+  .destinations-section .dest-featured-name,
+  .destinations-section .dest-featured-name--side {
+    font-size: clamp(38px, 14vw, 52px) !important;
+  }
+  .destinations-section .dest-featured-sub {
+    margin-bottom: 14px;
+  }
+  .destinations-section .dest-featured-desc,
+  .destinations-section .dest-featured-side .dest-featured-desc {
+    margin-bottom: 20px;
+  }
+  .dest-card-minimal {
+    height: 210px;
+  }
+}
+
+/* ══════════════════════════════════════════════════════════════
+   HOMEPAGE REFINEMENTS — PART 4
+   "Our Retreats" grid — image height locked to content height
+   .card-img previously used a fixed 440px height while .card-body
+   sized itself to its own copy (heading, description, tags,
+   button). Copy length made the two columns drift out of sync,
+   so the image edge and the content edge rarely lined up.
+   .retreat-card is already display:grid, so instead of another
+   hand-tuned pixel constant, .card-img now stretches to whatever
+   height .card-body naturally needs — the browser keeps both
+   columns pixel-equal at any content length, on Casa De Mello,
+   Tiger Hills, or any card added later. .card-img img already
+   uses object-fit:cover, so the photo crop stays clean at any
+   height with no stretching or distortion.
+   Scoped to the side-by-side layout (≥901px) only — the ≤900px
+   stacked view keeps its own fixed image height and is untouched.
+══════════════════════════════════════════════════════════════ */
+@media (min-width: 901px) {
+  .retreat-card {
+    align-items: stretch;
+  }
+  .card-img {
+    height: auto;
+    align-self: stretch;
+  }
+}
+
+/* ══════════════════════════════════════════════════════════════
+   HOMEPAGE REFINEMENTS — PART 5
+   Destinations — "Coming Soon" row made small, slim and uniform
+   Ayodhya / Jodhpur / Jaipur previously matched the old 320px
+   card height inherited from the main .dest-card system — tall
+   for three lines of copy (a region label, a name, one link),
+   so the row read heavy under the two big "Open Now" cards above
+   it instead of sitting quietly beneath them.
+   Every value below lives on the single .dest-card-minimal
+   class, so all three tiles share one height, one padding scale
+   and one type scale regardless of how long a city or region
+   name is — nothing here can drift out of sync per-card. Corners
+   take the same soft --radius-btn used by every button and CTA
+   on the site, not a heavier, more rounded "app card" treatment.
+   .dest-card-img/.dest-card-body already fill the tile via
+   inset:0 + object-fit:cover, so a shorter card crops the same
+   photo cleanly with no stretching — no markup or image changes.
+══════════════════════════════════════════════════════════════ */
+.dest-card-minimal {
+  border-radius: var(--radius-btn);
+}
+.dest-card-minimal .dest-card-body {
+  padding: 18px;
+}
+.dest-card-minimal .dest-card-region {
+  font-size: 9px;
+  margin-bottom: 5px;
+}
+.dest-card-minimal .dest-card-name {
+  font-size: 19px;
+  margin-bottom: 8px;
+  line-height: 1.05;
+}
+.dest-card-minimal .dest-notify-btn {
+  font-size: 9.5px;
+}
+
+@media (min-width: 901px) {
+  .dest-card-minimal { height: 230px; }
+}
+@media (max-width: 900px) {
+  .dest-card-minimal { height: 220px; }
+  .dest-card-minimal .dest-card-body { padding: 18px 20px; }
+}
+@media (max-width: 540px) {
+  .footer-brand {
+    gap: 14px;
+  }
+
+  .footer-brand .footer-logo {
+    height: 64px;
+    max-width: 54px;
+  }
+
+  .footer-social {
+    padding-left: 12px;
+  }
+
+  .footer-social-link {
+    width: 36px;
+    height: 36px;
+  }
+
+
+  .dest-card-minimal { height: 200px; }
+}
+
+/* ══════════════════════════════════════════════════════════════
+   HOMEPAGE REFINEMENTS — PART 6
+   8 Dimensions of Wellness — GIF + orbiting buttons
+   Replaces the old two-column "dimensions list + image" layout
+   (markup for the list and the stat block has been removed
+   entirely — this isn't a display:none hide) with a single
+   centered composition: the GIF in the middle, the 8 dimensions
+   as small buttons arranged around it in a fixed compass layout
+   (CSS Grid areas, not trigonometry) so nothing can ever overlap
+   the GIF regardless of how long a label is.
+   .wd-body/.wd-visuals are forced to plain flex-centering here
+   since 8-dimensions.css originally gave .wd-body a two-column
+   track for the list+image pairing that no longer applies now
+   that only one child remains.
+   Buttons start hidden and are revealed by a small script once
+   the GIF's load event fires (see the script block near the
+   bottom of the page) — .is-revealed is the hook. Reduced-motion
+   users skip straight to the visible state.
+══════════════════════════════════════════════════════════════ */
+.wellness-dims-section .wd-body {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.wellness-dims-section .wd-visuals {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.wd-orbit {
+  position: relative;
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(120px, 1fr) min(600px, 48vw) minmax(120px, 1fr);
+  grid-template-areas:
+    ".         spiritual      ."
+    "emotional .              intellectual"
+    "physical  gif            social"
+    "financial .              occupational"
+    ".         environmental  .";
+  align-items: center;
+  justify-items: center;
+  column-gap: clamp(18px, 2.6vw, 40px);
+  row-gap: clamp(14px, 2vw, 26px);
+}
+.wd-orbit .wd-img-primary.wd-gif-primary {
+  grid-area: gif;
+  width: 100%;
+}
+
+.wd-orbit {
+  display: block;
+  max-width: 1180px;
+}
+
+/* Compass placement — one area per dimension */
+.wd-orbit-btn[data-dim="spiritual"]     { grid-area: spiritual; }
+.wd-orbit-btn[data-dim="emotional"]     { grid-area: emotional; }
+.wd-orbit-btn[data-dim="intellectual"]  { grid-area: intellectual; }
+.wd-orbit-btn[data-dim="physical"]      { grid-area: physical; }
+.wd-orbit-btn[data-dim="social"]        { grid-area: social; }
+.wd-orbit-btn[data-dim="financial"]     { grid-area: financial; }
+.wd-orbit-btn[data-dim="occupational"]  { grid-area: occupational; }
+.wd-orbit-btn[data-dim="environmental"] { grid-area: environmental; }
+
+/* Button — small, sleek, same corner radius as every other CTA */
+.wd-orbit-btn {
+  font-family: var(--sans);
+  font-size: 11.5px;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--charcoal);
+  background: var(--white);
+  border: 0.5px solid rgba(100, 62, 53, 0.16);
+  border-radius: var(--radius-btn);
+  padding: 12px 20px;
+  min-width: 108px;
+  text-align: center;
+  white-space: nowrap;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(14px) scale(0.9);
+  transition:
+    opacity 0.65s var(--ease-editorial, cubic-bezier(0.22, 1, 0.36, 1)),
+    transform 0.65s var(--ease-editorial, cubic-bezier(0.22, 1, 0.36, 1)),
+    background 0.3s ease,
+    border-color 0.3s ease,
+    color 0.3s ease;
+  transition-delay:
+    calc(var(--d, 0) * 70ms),
+    calc(var(--d, 0) * 70ms),
+    0s, 0s, 0s;
+}
+.wd-orbit.is-revealed .wd-orbit-btn {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+.wd-orbit.is-revealed .wd-orbit-btn:hover,
+.wd-orbit.is-revealed .wd-orbit-btn:focus-visible {
+  background: var(--charcoal);
+  border-color: var(--charcoal);
+  color: var(--white);
+  outline: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wd-orbit-btn {
+    transition: background 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+    transition-delay: 0s;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Tablet — same compass, everything scaled down */
+@media (max-width: 900px) {
+  .wd-orbit {
+    grid-template-columns: minmax(96px, 1fr) min(420px, 56vw) minmax(96px, 1fr);
+    column-gap: clamp(12px, 2.4vw, 24px);
+    row-gap: clamp(10px, 2vw, 18px);
+  }
+  .wd-orbit-btn {
+    font-size: 10.5px;
+    padding: 10px 16px;
+    min-width: 92px;
+  }
+}
+
+/* Mobile — not enough width for three columns either side of the
+   GIF, so the compass collapses to: GIF on top, 8 buttons in a
+   simple 2-column grid underneath. Still centered, still no
+   overlap, still no horizontal scroll. */
+@media (max-width: 680px) {
+  .wd-orbit {
+    max-width: 480px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "gif           gif"
+      "physical      emotional"
+      "spiritual     intellectual"
+      "social        environmental"
+      "occupational  financial";
+    column-gap: 10px;
+    row-gap: 10px;
+  }
+  .wd-orbit .wd-img-primary.wd-gif-primary {
+    width: 100%;
+  }
+  .wd-orbit-btn {
+    width: 100%;
+    min-width: 0;
+    min-height: 44px;
+    font-size: 10px;
+    padding: 12px 10px;
+    transform: translateY(10px) scale(0.94); /* shorter travel — tighter grid */
+  }
+}
+
+/* ══════════════════════════════════════════════════════════════
+   HOMEPAGE REFINEMENTS — PART 7
+   "Our Retreats" cards — smaller, sleeker, editorial
+   Same "loaded last" override approach as Parts 1–6 — markup,
+   copy, image split ratio (1fr/1fr) and the image-first /
+   body-first alternation are all untouched. Only footprint,
+   spacing and type scale are tightened: a narrower, centred
+   container in place of the old edge-to-edge grid; a soft
+   border + radius in place of the flush full-bleed seam; real
+   air between the two cards instead of a 2px gap; and a lighter
+   type scale throughout the content panel so the pair reads as
+   two quiet, compact destination cards rather than two
+   full-height hero panels. .card-img keeps stretching to match
+   .card-body's height (Part 4), so shrinking the body's padding
+   and type automatically shrinks the image by the same amount —
+   both columns stay pixel-equal at any content length.
+══════════════════════════════════════════════════════════════ */
+
+/* ── Container: narrower + centred, more air on the sides ─────── */
+@media (min-width: 901px) {
+  .retreat-grid {
+    max-width: 1080px;
+  }
+}
+
+/* ── Card shell: subtle border + soft radius, real breathing
+   room between cards instead of the old flush 2px seam ───────── */
+.retreat-card {
+  border: 0.5px solid rgba(139, 115, 85, 0.2);
+  border-radius: 10px;
+  margin-bottom: 28px;
+  transition: opacity 0.4s ease, border-color 0.4s ease,
+              transform 0.4s ease, box-shadow 0.4s ease;
+}
+.retreat-card:last-child { margin-bottom: 0; }
+.retreat-card:hover {
+  opacity: 1;
+  border-color: rgba(139, 115, 85, 0.4);
+  transform: translateY(-3px);
+  box-shadow: 0 14px 34px rgba(42, 36, 32, 0.08);
+}
+
+.card-num {
+  top: 20px;
+  left: 20px;
+  font-size: 10.5px;
+}
+
+/* ── Content panel: tighter padding + a quieter type scale ────── */
+@media (min-width: 901px) {
+  .card-body {
+    padding: 40px 44px;
+  }
+  .card-location { margin-bottom: 12px; }
+  .card-body h2 {
+    font-size: clamp(24px, 2.2vw, 32px);
+  }
+  .card-body .subtitle {
+    font-size: 13px;
+    margin-bottom: 18px;
+  }
+  .card-body p {
+    font-size: 13.5px;
+    line-height: 1.75;
+    max-width: 300px;
+    margin-bottom: 24px;
+  }
+  .card-tags {
+    gap: 7px;
+    margin-bottom: 24px;
+  }
+}
+
+.retreat-card .tag {
+  font-size: 9px;
+  padding: 5px 12px;
+}
+.retreat-card .btn-ghost {
+  font-size: 10px;
+}
+
+/* ── Tablet / mobile: same sleek proportions, scaled down ──────── */
+@media (max-width: 900px) {
+  .retreat-grid { max-width: 660px; }
+  .retreat-card { border-radius: 8px; margin-bottom: 20px; }
+  .retreat-card:hover { transform: none; box-shadow: none; }
+  .card-img { height: 240px; }
+  .card-body { padding: 32px 28px; }
+  .card-location { margin-bottom: 10px; }
+  .card-body h2 { font-size: clamp(24px, 6vw, 30px); }
+  .card-body .subtitle { font-size: 12.5px; margin-bottom: 16px; }
+  .card-body p {
+    font-size: 13px;
+    line-height: 1.7;
+    max-width: none;
+    margin-bottom: 20px;
+  }
+  .card-tags { gap: 6px; margin-bottom: 20px; }
+}
+
+@media (max-width: 480px) {
+  .card-img { height: 200px; }
+  .card-body { padding: 28px 22px; }
+}
+
+/* ══════════════════════════════════════════════════════════════
+   HOMEPAGE REFINEMENTS — PART 8
+   Desktop nav — everything on one line, every width down to the
+   768px handoff to the mobile hamburger menu.
+   Two root causes fixed, nothing else touched:
+   1) .nav-links is a <ul>, and its default browser margin/padding
+      (~40px of left padding alone) was never reset — that's
+      invisible space being eaten before the gap system even
+      starts, and it also nudges the row off the logo/button's
+      baseline vertically.
+   2) .nav-links a had no white-space:nowrap, so on a squeezed
+      viewport the flex item would shrink below its text's full
+      width and "The Ridhira Way" / "Coming Soon" would break
+      internally onto a second line instead of the row simply
+      sitting closer together.
+   Font size, letter-spacing, weight, colours, nav height and
+   background are all exactly as before — only spacing, wrap
+   behaviour and vertical alignment are addressed. Gaps are only
+   trimmed at the narrower desktop/tablet widths where the extra
+   room is actually needed; anything above 1240px keeps the
+   original spacing untouched. The existing ≤900px behaviour
+   (nav-links hidden, mobile nav takes over shortly after) is
+   unchanged.
+══════════════════════════════════════════════════════════════ */
+nav,
+.nav-right,
+.nav-links {
+  flex-wrap: nowrap;
+}
+.nav-links {
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+.nav-links li {
+  margin: 0;
+  padding: 0;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+}
+.nav-links a {
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  height: 38px;
+  min-height: 38px;
+  padding: 0;
+  line-height: 1.2;
+  box-sizing: border-box;
+}
+.nav-links .nav-dropdown-menu a {
+  position: relative;
+  display: block;
+  height: auto;
+  min-height: 42px;
+}
+.nav-links .nav-dropdown-menu a::after {
+  content: '';
+  position: absolute;
+  right: 14px;
+  bottom: 5px;
+  left: 14px;
+  height: 1px;
+  background: var(--gold);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.28s ease;
+}
+.nav-links .nav-dropdown-menu a:hover::after,
+.nav-links .nav-dropdown-menu a:focus-visible::after {
+  transform: scaleX(1);
+}
+.nav-book {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  height: 38px;
+  min-height: 38px;
+  padding: 0 16px;
+  line-height: 1.2;
+  box-sizing: border-box;
+}
+
+@media (min-width: 901px) and (max-width: 1240px) {
+  .nav-right { gap: 26px; }
+  .nav-links { gap: 26px; }
+  .nav-book { padding: 0 18px; }
+}
+@media (min-width: 901px) and (max-width: 1024px) {
+  nav { padding: 0 32px; }
+  .nav-right { gap: 20px; }
+  .nav-links { gap: 20px; }
+  .nav-book { padding: 0 16px; }
+}
+
+/* ══════════════════════════════════════════════════════════════
+   HOMEPAGE FIX — remove blank space below footer
+   Root cause: with no explicit "only the active route is in
+   flow" rule, #page-tigerhills / #page-karovi and the waitlist
+   modal can end up sitting in normal document flow AFTER
+   #page-home's closing </div>, adding their (empty/hidden)
+   height below the footer. The cursor-following CTA pill is
+   also pinned here as a safety net so its position can never
+   affect document height, regardless of what earlier stylesheets
+   declare. Nothing here touches footer markup, height, spacing,
+   colors, or typography — same "loaded last" override approach
+   used throughout this file.
+─────────────────────────────────────────────────────────────── */
+
+/* Only the active route is ever part of the page flow. */
+.page { display: none; }
+.page.active { display: block; }
+
+/* Belt-and-braces: the [hidden] attribute already removes this
+   from flow natively, but if any earlier stylesheet sets a
+   `display` value on .wl-modal it would silently win over the
+   browser's default [hidden] rule — this guarantees it stays out
+   regardless of source order. */
+.wl-modal[hidden] { display: none !important; }
+
+/* The trailing cursor-CTA pill must always be viewport-fixed and
+   out of normal flow — it's positioned purely via JS transform,
+   so it should never be able to add height to the document, on
+   any page/breakpoint. (Its follow animation is unchanged — this
+   only guarantees it stays out of the flow.)
+   Background/text color are pinned here too: they were resolving
+   from an external stylesheet not present in this file, so the
+   pill was rendering as bare text with no fill. Restored to the
+   same solid pill treatment used by the site's other CTAs
+   (e.g. .dest-cta-btn) — white fill, charcoal text, soft shadow. */
+.cursor-cta {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  margin: 0;
+  pointer-events: none;
+  background: var(--white);
+  color: var(--charcoal);
+  box-shadow: 0 6px 18px rgba(42,36,32,0.22);
+}
+.cursor-cta:not(.is-visible) {
+  visibility: hidden;
+}
+.cursor-cta span {
+  color: inherit;
+}
+
+/* No forced extra height on the document beyond its content. */
+html, body { min-height: 0; }
+
+/* ══════════════════════════════════════════════════════════════
+   SITE FOOTER — Hermès-style 4-column layout, Ridhira design system
+   Self-contained (does not depend on css/footer.css) so it renders
+   reliably regardless of stylesheet load order. Uses the site's
+   existing tokens: --serif, --gold, --sand, --charcoal, --white,
+   --muted — no new color scheme introduced.
+─────────────────────────────────────────────────────────────── */
+.site-footer {
+  background: var(--charcoal);
+  padding: 88px 80px 0;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Top: 4-column link grid ───────────────────────────────── */
+.sf-columns {
+  max-width: 1320px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+  padding-bottom: 64px;
+}
+.sf-col h4 {
+  font-family: var(--sans, inherit);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--white);
+  margin: 0 0 26px;
+}
+.sf-col {
+  display: flex;
+  flex-direction: column;
+}
+.sf-col a {
+  font-size: 13.5px;
+  line-height: 1;
+  color: rgba(250,248,244,0.62);
+  text-decoration: none;
+  margin-bottom: 20px;
+  width: fit-content;
+  transition: color 0.3s ease;
+}
+.sf-col a:last-child { margin-bottom: 0; }
+.sf-col a:hover { color: var(--gold); }
+
+/* ── Divider between columns and bottom strip ──────────────── */
+.sf-divider {
+  max-width: 1320px;
+  margin: 0 auto;
+  border-top: 0.5px solid rgba(250,248,244,0.14);
+}
+
+/* ── Bottom: Customer Service / Newsletter / Follow Us ─────── */
+.sf-bottom {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 56px 0;
+  display: grid;
+  grid-template-columns: 1fr 1.4fr 1fr;
+  gap: 48px;
+  align-items: start;
+}
+.sf-bottom-block h5 {
+  font-family: var(--sans, inherit);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--white);
+  margin: 0 0 18px;
+}
+
+/* Customer service */
+.sf-cs-hours {
+  font-size: 13px;
+  line-height: 1.6;
+  color: rgba(250,248,244,0.55);
+  margin: 0 0 10px;
+}
+.sf-cs-phone,
+.sf-cs-email {
+  display: block;
+  width: fit-content;
+  font-size: 13.5px;
+  color: rgba(250,248,244,0.8);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: rgba(250,248,244,0.3);
+  margin-bottom: 8px;
+  transition: color 0.3s ease;
+}
+.sf-cs-phone:hover,
+.sf-cs-email:hover { color: var(--gold); }
+
+/* Newsletter — centered block */
+.sf-newsletter { text-align: center; }
+.sf-newsletter h5 { text-align: center; }
+.sf-newsletter p {
+  font-size: 13.5px;
+  line-height: 1.7;
+  color: rgba(250,248,244,0.55);
+  max-width: 340px;
+  margin: 0 auto 24px;
+}
+.sf-subscribe-form { display: flex; justify-content: center; }
+.sf-subscribe-btn {
+  font-family: var(--sans, inherit);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  background: transparent;
+  color: var(--white);
+  border: 1px solid rgba(250,248,244,0.45);
+  padding: 15px 44px;
+  cursor: pointer;
+  transition: background 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+.sf-subscribe-btn:hover {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--charcoal);
+}
+
+/* Follow us — icons */
+.sf-follow { display: flex; flex-direction: column; align-items: flex-end; }
+.sf-follow h5 { text-align: right; }
+.sf-social-icons {
+  display: flex;
+  gap: 18px;
+}
+.sf-social-icons a {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
+}
+.sf-social-icons a img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+.sf-social-icons a svg {
+  width: 24px;
+  height: 24px;
+  display: block;
+  color: #FFFFFF;
+  fill: currentColor;
+}
+.sf-social-icons a:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 22px rgba(0,0,0,0.28);
+  opacity: 0.92;
+}
+
+/* ── Legal / copyright strip ────────────────────────────────── */
+.sf-legal-strip {
+  max-width: 1320px;
+  margin: 0 auto;
+  border-top: 0.5px solid rgba(250,248,244,0.14);
+  padding: 26px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+}
+.sf-legal-strip p {
+  font-size: 11.5px;
+  letter-spacing: 0.02em;
+  color: rgba(250,248,244,0.38);
+  margin: 0;
+}
+
+/* ── Responsive ──────────────────────────────────────────────── */
+@media (max-width: 1100px) {
+  .sf-columns { grid-template-columns: repeat(2, 1fr); row-gap: 44px; }
+  .sf-bottom { grid-template-columns: 1fr; gap: 40px; }
+  .sf-newsletter, .sf-newsletter h5 { text-align: left; }
+  .sf-newsletter p { margin: 0 0 24px; }
+  .sf-subscribe-form { justify-content: flex-start; }
+  .sf-follow { align-items: flex-start; }
+  .sf-follow h5 { text-align: left; }
+}
+@media (max-width: 640px) {
+  .site-footer { padding: 64px 24px 0; }
+  .sf-columns { grid-template-columns: 1fr; gap: 36px; padding-bottom: 48px; }
+  .sf-bottom { padding: 40px 0; }
+  .sf-legal-strip { flex-direction: column; align-items: flex-start; gap: 8px; padding: 22px 0 28px; }
+}
+
+</style>
+<link rel="stylesheet" href="css/scroll-controls.css">
+</head>
+<body class="is-loading">
+
+<!-- ══════════════════════════════════════════════════════════
+     FULL-SCREEN LOADING SCREEN — centered, rotating brand mark
+     Shown until the page has fully loaded, then fades out.
+══════════════════════════════════════════════════════════ -->
+<div class="loader" id="site-loader" role="presentation" aria-hidden="true">
+  <img
+    class="loader-logo"
+    src="img/logo/logo.png"
+    alt="Ridhira Retreats"
+    width="200"
+    height="315"
+    decoding="async"
+    fetchpriority="high"
+  />
+</div>
+
+<!-- ══════════════════════════════════════════════════════════
+     MOBILE NAVIGATION — Dedicated header bar (< 768px)
+     Desktop nav below is completely separate and untouched.
+══════════════════════════════════════════════════════════ -->
+<div class="mobile-nav" id="mobile-nav" role="banner">
+  <div class="mobile-nav-header">
+
+    <!-- Left: brand -->
+    <a
+      class="mobile-nav-logo"
+      href="#"
+      onclick="showPage('home'); return false;"
+      aria-label="Ridhira Retreats — Home"
+    >
+      <img src="img/logo/ridhira-retreats-logo.png" alt="Ridhira Retreats" width="42" height="66" />
+    </a>
+
+    <!-- Right: menu toggle -->
+    <button
+      class="hamburger"
+      id="hamburger-btn"
+      aria-label="Open navigation menu"
+      aria-expanded="false"
+      aria-controls="mobile-overlay"
+      type="button"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════
+     MOBILE MENU OVERLAY v2 — Luxury Glassmorphism
+     Opens on hamburger, closes via ✕ / Escape / outside tap.
+══════════════════════════════════════════════════════════ -->
+<div
+  class="mobile-overlay"
+  id="mobile-overlay"
+  role="dialog"
+  aria-modal="true"
+  aria-label="Site navigation"
+  aria-hidden="true"
+>
+  <div class="mobile-overlay-inner">
+
+    <!-- ── TOP ROW: "☰ Menu" label | "✕ Close" button ─────── -->
+    <div class="mobile-overlay-header">
+
+      <!-- Left: decorative "☰ Menu" label -->
+      <span class="mobile-overlay-menu-label" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+             stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
+          <line x1="3" y1="7"  x2="21" y2="7"/>
+          <line x1="3" y1="12" x2="21" y2="12"/>
+          <line x1="3" y1="17" x2="21" y2="17"/>
+        </svg>
+        Menu
+      </span>
+
+      <!-- Right: ✕ Close — always visible, always clickable -->
+      <button
+        class="mobile-close-btn"
+        id="mobile-close-btn"
+        aria-label="Close navigation menu"
+        type="button"
+      >
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+             stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+             aria-hidden="true">
+          <path d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+        Close
+      </button>
+    </div>
+
+    <!-- ── SCROLLABLE NAV LINKS ─────────────────────────────── -->
+    <div class="mobile-overlay-scroll">
+      <nav class="mobile-overlay-nav" aria-label="Mobile site navigation">
+        <ul>
+          <li class="mobile-nav-dropdown">
+            <button class="mobile-nav-link mobile-nav-dropdown-toggle" type="button" aria-expanded="false" aria-controls="mobile-retreats-menu">
+              <span>Retreats</span><span class="link-arrow" aria-hidden="true">⌄</span>
+            </button>
+            <div class="mobile-nav-dropdown-menu" id="mobile-retreats-menu">
+              <a class="mobile-nav-link" href="casa-de-mello.html">Casa De Mello, Goa</a>
+              <a class="mobile-nav-link" href="tiger-hills-purple.html">Tiger Hills, Udaipur</a>
+            </div>
+          </li>
+          <li><a href="#experiences" class="mobile-nav-link">Experiences<span class="link-arrow" aria-hidden="true">→</span></a></li>
+          <li><a href="#wellness" class="mobile-nav-link">The Ridhira Way<span class="link-arrow" aria-hidden="true">→</span></a></li>
+          <li class="mobile-nav-dropdown">
+            <button class="mobile-nav-link mobile-nav-dropdown-toggle" type="button" aria-expanded="false" aria-controls="mobile-coming-soon-menu">
+              <span>Coming Soon</span><span class="link-arrow" aria-hidden="true">⌄</span>
+            </button>
+            <div class="mobile-nav-dropdown-menu" id="mobile-coming-soon-menu">
+              <a class="mobile-nav-link" href="#destinations">Jodhpur</a>
+              <a class="mobile-nav-link" href="#destinations">Ayodhya</a>
+              <a class="mobile-nav-link" href="#destinations">Jaipur</a>
+              <a class="mobile-nav-link" href="#destinations">Chanod</a>
+            </div>
+          </li>
+          <li><a href="#retreat-grid-anchor" class="mobile-nav-link mobile-nav-enquire wl-trigger" data-destination="">Enquire Now<span class="link-arrow" aria-hidden="true">→</span></a></li>
+        </ul>
+      </nav>
+    </div>
+
+  </div><!-- /.mobile-overlay-inner -->
+</div><!-- /.mobile-overlay -->
+
+<!-- ── NAVIGATION ──────────────────────────────── -->
+<nav class="desktop-nav">
+  <a class="nav-brand-logo" href="#" onclick="showPage('home'); return false;" aria-label="Ridhira Retreats — Home">
+    <img src="img/logo/ridhira-retreats-logo.png" alt="Ridhira Retreats" width="72" height="113" />
+  </a>
+
+  <!-- Right: nav links + CTA -->
+  <div class="nav-right">
+    <ul class="nav-links">
+      <li class="nav-dropdown">
+        <button class="nav-dropdown-toggle" type="button" aria-expanded="false" aria-controls="retreats-menu">Retreats<span aria-hidden="true">⌄</span></button>
+        <div class="nav-dropdown-menu" id="retreats-menu">
+          <a href="casa-de-mello.html">Casa De Mello, Goa</a>
+          <a href="tiger-hills-purple.html">Tiger Hills, Udaipur</a>
+        </div>
+      </li>
+      <li><a href="#experiences">Experiences</a></li>
+      <li><a href="#wellness">The Ridhira Way</a></li>
+      <li class="nav-dropdown">
+        <button class="nav-dropdown-toggle" type="button" aria-expanded="false" aria-controls="coming-soon-menu">Coming Soon<span aria-hidden="true">⌄</span></button>
+        <div class="nav-dropdown-menu" id="coming-soon-menu">
+          <a href="#destinations">Jodhpur</a>
+          <a href="#destinations">Ayodhya</a>
+          <a href="#destinations">Jaipur</a>
+          <a href="#destinations">Chanod</a>
+        </div>
+      </li>
+    </ul>
+    <a class="nav-book wl-trigger" href="#retreat-grid-anchor" data-destination="">Enquire Now</a>
+  </div>
+</nav>
+
+<!-- ── SECONDARY NAV STRIP ──────────────────────────────────── -->
+<div class="sec-nav" id="sec-nav" role="navigation" aria-label="Section navigation">
+  <div class="sec-nav-inner">
+    <a href="#retreat-grid-anchor" class="sec-nav-item">Retreats</a>
+    <span class="sec-nav-sep" aria-hidden="true">◆</span>
+    <a href="#experiences" class="sec-nav-item">Experiences</a>
+    <span class="sec-nav-sep" aria-hidden="true">◆</span>
+    <a href="#wellness" class="sec-nav-item">The Ridhira Way</a>
+    <span class="sec-nav-sep" aria-hidden="true">◆</span>
+    <a href="#destinations" class="sec-nav-item">Coming Soon</a>
+  </div>
+</div>
+<!-- PAGE: LISTING                                  -->
+<!-- ══════════════════════════════════════════════ -->
+<div class="page active" id="page-home">
+
+ <section id="hero-video-section" aria-label="Hero — Where Your Time Becomes Valuable">
+  
+  <!-- Background Video -->
+  <video
+    id="hero-bg-video"
+    autoplay
+    muted
+    loop
+    playsinline
+    preload="none"
+  >
+    <source src="img/Video/ridhira-video.mp4" type="video/mp4" />
+  </video>
+
+  <!-- Fallback Image -->
+  <img
+    id="hero-fallback-img"
+    src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&q=85"
+    alt="Ridhira Retreats — Where Your Time Becomes Valuable"
+    loading="eager"
+  />
+
+  <!-- Overlay -->
+  <div class="hero-overlay" aria-hidden="true"></div>
+
+  <!-- CENTERED HERO CONTENT -->
+  <div class="hero-content">
+    <p class="hero-eyebrow text-shimmer-soft">Experience culturally rooted wellness escapes</p>
+    <h1 class="hero-headline">Where Your Time Becomes <em class="text-shimmer">Valuable.</em></h1>
+    <div class="hero-rule" aria-hidden="true"></div>
+    <p class="hero-sub">Time to think, relax, breathe, reconnect, and return renewed.</p>
+    <div class="hero-cta-row">
+      <!-- <a class="hero-btn-primary"
+         href="#retreat-grid-anchor"
+         onclick="document.getElementById('retreat-grid-anchor').scrollIntoView({behavior:'smooth'}); return false;">
+        Explore the Retreats
+      </a>
+      <a class="hero-btn-ghost"
+         href="#wellness"
+         onclick="var el=document.getElementById('wellness'); if(el){el.scrollIntoView({behavior:'smooth'});} return false;">
+        Discover the Ridhira Way
+      </a> -->
+    </div>
+  </div>
+
+  <form class="hero-booking-bar" id="hero-booking-form">
+    <div class="hero-booking-field" data-booking-field="destination">
+      <svg class="hero-booking-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true">
+        <path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/>
+      </svg>
+      <button class="hero-booking-trigger" type="button" aria-expanded="false" aria-controls="hero-destination-panel">
+        <span class="hero-booking-copy"><span class="hero-booking-label">Where do you want to travel?</span><span class="hero-booking-value" id="hero-destination-value">Destination, hotel name</span></span>
+      </button>
+      <div class="hero-booking-panel" id="hero-destination-panel">
+        <button class="hero-booking-option" type="button" data-destination="casa" data-label="Casa De Mello, Goa">Casa De Mello, Goa</button>
+        <button class="hero-booking-option" type="button" data-destination="tiger" data-label="Tiger Hills, Udaipur">Tiger Hills, Udaipur</button>
+      </div>
+    </div>
+
+    <div class="hero-booking-field" data-booking-field="dates">
+      <svg class="hero-booking-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true">
+        <rect x="3" y="5" width="18" height="16" rx="1"/><path d="M16 3v4M8 3v4M3 10h18"/>
+      </svg>
+      <span class="hero-booking-copy"><span class="hero-booking-label">What are your dates?</span><span class="hero-booking-dates"><input class="hero-booking-date" id="hero-check-in" type="date" aria-label="Check-in date" required /><span class="hero-booking-arrow" aria-hidden="true">→</span><input class="hero-booking-date" id="hero-check-out" type="date" aria-label="Check-out date" required /></span></span>
+    </div>
+
+    <div class="hero-booking-field" data-booking-field="guests">
+      <svg class="hero-booking-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true">
+        <circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M16 11a3 3 0 1 0 0-6M17 14c2.2.7 4 2.8 4 6"/>
+      </svg>
+      <button class="hero-booking-trigger" type="button" aria-expanded="false" aria-controls="hero-guests-panel">
+        <span class="hero-booking-copy"><span class="hero-booking-label">Rooms &amp; Guests</span><span class="hero-booking-value" id="hero-guests-value">1 Room(s) - 1 Guest(s)</span></span>
+      </button>
+      <div class="hero-booking-panel" id="hero-guests-panel">
+        <div class="hero-booking-guest-row"><span>Rooms</span><span class="hero-booking-stepper"><button type="button" data-count="rooms" data-step="-1" aria-label="Decrease rooms">−</button><span class="hero-booking-count" id="hero-rooms-count">1</span><button type="button" data-count="rooms" data-step="1" aria-label="Increase rooms">+</button></span></div>
+        <div class="hero-booking-guest-row"><span>Guests</span><span class="hero-booking-stepper"><button type="button" data-count="guests" data-step="-1" aria-label="Decrease guests">−</button><span class="hero-booking-count" id="hero-guests-count">1</span><button type="button" data-count="guests" data-step="1" aria-label="Increase guests">+</button></span></div>
+      </div>
+    </div>
+
+    <button class="hero-booking-submit" type="submit">Search</button>
+  </form>
+
+  <!-- SCROLL CUE -->
+  <!-- <div class="hero-scroll-indicator"
+       role="button"
+       tabindex="0"
+       aria-label="Scroll to explore retreats"
+       onclick="document.getElementById('retreat-grid-anchor').scrollIntoView({behavior:'smooth'})"
+       onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();document.getElementById('retreat-grid-anchor').scrollIntoView({behavior:'smooth'});}">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div> -->
+
+
+
+
+
+  <!-- ══════════════════════════════════════
+       HERO VIDEO — MUTE / UNMUTE TOGGLE
+       Bottom-left, z-index 10, accessible
+  ══════════════════════════════════════ -->
+  <button
+    id="hero-mute-btn"
+    type="button"
+    aria-label="Unmute video"
+    title="Unmute / Mute video"
+  >
+    <!-- MUTED STATE ICON: speaker with slash -->
+    <svg class="mute-icon-muted" viewBox="0 0 24 24" fill="none"
+         xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <!-- Speaker body -->
+      <path d="M11 5 L6 9 H2 V15 H6 L11 19 V5Z"
+            stroke="currentColor" stroke-width="1.5"
+            stroke-linejoin="round" fill="none"/>
+      <!-- Diagonal slash through speaker -->
+      <line x1="23" y1="9" x2="17" y2="15"
+            stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="17" y1="9" x2="23" y2="15"
+            stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+    </svg>
+
+    <!-- UNMUTED STATE ICON: speaker with sound waves -->
+    <svg class="mute-icon-unmuted" viewBox="0 0 24 24" fill="none"
+         xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <!-- Speaker body -->
+      <path d="M11 5 L6 9 H2 V15 H6 L11 19 V5Z"
+            stroke="currentColor" stroke-width="1.5"
+            stroke-linejoin="round" fill="none"/>
+      <!-- Sound waves -->
+      <g class="wave-paths">
+        <path d="M15.54 8.46 a5 5 0 0 1 0 7.07"
+              stroke="currentColor" stroke-width="1.5"
+              stroke-linecap="round" fill="none"/>
+        <path d="M19.07 4.93 a9 9 0 0 1 0 14.14"
+              stroke="currentColor" stroke-width="1.5"
+              stroke-linecap="round" fill="none"/>
+      </g>
+    </svg>
+  </button>
+
+</section>
+
+  <div id="retreat-grid-anchor"></div>
+  <div class="listing-hero">
+    <p class="eyebrow">Our Retreats</p>
+    <h1>Retreats with a <em class="text-shimmer">Sense of Place.</em></h1>
+    <p>From historic homes to private contemporary enclaves, each Ridhira Retreat has its own character, rhythm, and reason to be remembered.</p>
+    <p class="listing-hero-coming-soon">
+      Coming Soon —
+      <a href="#destinations">Jodhpur</a><span class="coming-soon-separator" aria-hidden="true">·</span>
+      <a href="#destinations">Ayodhya</a><span class="coming-soon-separator" aria-hidden="true">·</span>
+      <a href="#destinations">Jaipur</a><span class="coming-soon-separator" aria-hidden="true">·</span>
+      <a href="#destinations">Chanod</a>
+    </p>
+  </div>
+
+  <div class="retreat-grid">
+
+    <div class="retreat-card" href="casa-de-mello.html" onclick="window.location.href='casa-de-mello.html';return false">
+      <div class="card-img" data-cursor-cta="Discover Casa De Mello">
+        <img class="card-img-primary" src="img/Home/Home-Page.png" alt="Casa De Mello, Goa" />
+        <img class="card-img-secondary" src="img/Home/cdm-2.png" alt="Casa De Mello, Goa — courtyard view" />
+        <div class="card-img-overlay"></div>
+        <span class="card-num">01 / 03</span>
+      </div>
+      <div class="card-body">
+        <p class="card-location">Ridhira Retreat Saligao</p>
+        <h2>Casa De Mello</h2>
+        <p class="subtitle">A Portuguese home in Goa</p>
+        <p>Dating back to the 1860s, Casa De Mello is a restored heritage home where colonial history, local character, and quiet wellness come together.</p>
+        <div class="card-tags">
+          <span class="tag">Heritage</span>
+          <span class="tag">Wellness</span>
+          <span class="tag">Spa</span>
+          <span class="tag">Goan Flavours</span>
+        </div>
+        <button class="btn-ghost">Discover Casa De Mello<span class="arrow">→</span></button>
+      </div>
+    </div>
+
+    <div class="retreat-card" onclick="window.location.href='tiger-hills-purple.html'">
+      
+      <div class="card-body">
+        <p class="card-location">Ridhira Retreat Udaipur</p>
+        <h2>Tiger Hills</h2>
+        <p class="subtitle">A private world in Udaipur.</p>
+        <p>Set in one of Udaipur’s most exclusive enclaves, Tiger Hills is a contemporary retreat shaped by privacy, curation, and distinction.</p>
+        <div class="card-tags">
+          <span class="tag">Exclusive Access</span>
+          <span class="tag">Curated Living</span>
+          <span class="tag">Members-Only</span>
+          <span class="tag">Private Gatherings</span>
+        </div>
+        <button class="btn-ghost">Discover Tiger Hills<span class="arrow">→</span></button>
+      </div>
+
+      <div class="card-img" data-cursor-cta="Discover Tiger Hills">
+        <img class="card-img-primary" src="img/Home/Tiger-hills.png" alt="Tiger Hills, Udaipur" />
+        <img class="card-img-secondary" src="img/Home/m-tiger-hills.png" alt="Tiger Hills, Udaipur — hillside view" />
+        <div class="card-img-overlay"></div>
+        <span class="card-num">02 / 03</span>
+      </div>
+      
+    </div>
+
+    <!--<div class="retreat-card" >
+      <div class="card-img">
+        <img src="https://i.pinimg.com/736x/e5/09/29/e5092994986648d9914ca1f33db87732.jpg" alt="Karovi, Udaipur" />
+        <div class="card-img-overlay"></div>
+        <span class="card-num">03 / 03</span>
+      </div>
+      <div class="card-body">
+        <p class="card-location">Ridhira Retreat Lake Pichola</p>
+        <h2>Karohi Haveli</h2>
+        <p class="subtitle">Coming Soon
+</p>
+        <p>A lakeside heritage haveli with panoramic views of Udaipur's old city and the City Palace.
+</p>
+         <div class="card-tags">
+          <span class="tag">Heritage Haveli</span>
+          <span class="tag">Forest</span>
+          <span class="tag">Detox</span>
+          <span class="tag">Longevity</span>
+        </div>
+        <button class="btn-ghost">Explore Retreat <span class="arrow">→</span></button> 
+      </div>
+    </div>-->
+
+  </div>
+
+  <!-- ══════════════════════════════════════════════ -->
+<!-- EXPERIENCES — INFINITE AUTO-SCROLL SLIDER      -->
+<!-- ══════════════════════════════════════════════ -->
+<section class="exp-infinite-section" id="experiences">
+
+  <div class="exp-infinite-header">
+    <div class="exp-infinite-header-left">
+      <p class="eyebrow" style="color:var(--bark); font-size:10px; letter-spacing:0.22em; text-transform:uppercase; margin-bottom:16px;">What Awaits You</p>
+      <h2 class="exp-infinite-title">The Place Becomes Part of the <em>Experience.</em></h2>
+      <p class="exp-infinite-intro">At Ridhira, wellness is found in more than treatments. It lives in the food, the architecture, the stories, the rituals, and the time between them.</p>
+    </div>
+    <div class="exp-infinite-header-right">
+      <!-- <p class="exp-drag-hint">Drag to explore</p> -->
+      <div class="exp-controls">
+        <button type="button" class="exp-arrow" id="exp-prev" aria-label="Previous experience">←</button>
+        <button type="button" class="exp-arrow" id="exp-next" aria-label="Next experience">→</button>
+        <a class="exp-explore-btn" href="#wellness" onclick="var el=document.getElementById('wellness'); if(el){el.scrollIntoView({behavior:'smooth'});} return false;">View the Experience <span class="exp-explore-arrow">→</span></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="exp-infinite-viewport" id="exp-viewport">
+    <div class="exp-infinite-track" id="exp-track">
+
+      <div class="exp-card-item">
+        <div class="exp-card-img">
+          <img src="img/what-awaits/Heritage.jfif" alt="Heritage and Architecture" />
+          <div class="exp-card-overlay"></div>
+        </div>
+        <div class="exp-card-body">
+          <span class="exp-card-num">01</span>
+          <h3>Heritage and Architecture</h3>
+          <p>Step through old doors and carved walls, where history reveals itself in quiet layers.</p>
+        </div>
+      </div>
+
+      <div class="exp-card-item">
+        <div class="exp-card-img">
+          <img src="img/what-awaits/Local-Flavours.jfif" alt="Local Flavours" />
+          <div class="exp-card-overlay"></div>
+        </div>
+        <div class="exp-card-body">
+          <span class="exp-card-num">02</span>
+          <h3>Local Flavours</h3>
+          <p>Discover regional cuisine and the stories carried in every recipe.</p>
+        </div>
+      </div>
+
+      <div class="exp-card-item">
+        <div class="exp-card-img">
+          <img src="img/what-awaits/Spa-Therapies.jfif" alt="Spa Therapies" />
+          <div class="exp-card-overlay"></div>
+        </div>
+        <div class="exp-card-body">
+          <span class="exp-card-num">03</span>
+          <h3>Spa Therapies</h3>
+          <p>Restore the body with therapies inspired by time-honoured healing traditions.</p>
+        </div>
+      </div>
+
+      <div class="exp-card-item">
+        <div class="exp-card-img">
+          <img src="https://i.pinimg.com/1200x/a1/5f/7a/a15f7ade1aa3da91a5701e5936e4d449.jpg" alt="Wellness Rituals" />
+          <div class="exp-card-overlay"></div>
+        </div>
+        <div class="exp-card-body">
+          <span class="exp-card-num">04</span>
+          <h3>Wellness Rituals</h3>
+          <p>Make space for yoga, meditation, and practices that bring the day into balance.</p>
+        </div>
+      </div>
+
+    
+
+    </div>
+  </div>
+
+</section>
+
+<!-- ══════════════════════════════════════════════ -->
+<!-- DESTINATIONS SECTION                           -->
+<!-- ══════════════════════════════════════════════ -->
+<section class="destinations-section" id="destinations">
+
+  <!-- Header -->
+  <div class="dest-header">
+    <div class="dest-header-left">
+      <p class="eyebrow" style="color:var(--bark); font-size:10px; letter-spacing:0.22em; text-transform:uppercase; margin-bottom:16px;">Where We Are, and Where We Are Going</p>
+      <h2 class="dest-title">Extraordinary <em>Retreats.</em></h2>
+    </div>
+    <div class="dest-header-right">
+      <p>Coming Soon — The Ridhira Journey Continues. We're expanding the collection with destinations shaped by wellness, luxury, and meaningful travel.</p>
+    </div>
+  </div>
+
+  <!-- Open now — featured pair -->
+  <div class="dest-featured-pair">
+    <article class="dest-featured dest-featured-main" onclick="window.location.href='tiger-hills-purple.html'" role="link" tabindex="0" aria-label="Udaipur — Tiger Hills" onkeydown="if(event.key==='Enter'){window.location.href='tiger-hills-purple.html'}">
+      <div class="dest-featured-img" data-cursor-cta="Tiger Hills →">
+        <img src="img/Home/m-tiger-hills.png" alt="Udaipur — City of Lakes" />
+        <div class="dest-featured-overlay"></div>
+        <div class="dest-featured-content">
+          <span class="dest-badge dest-badge-active">Now Open</span>
+          <p class="dest-featured-region">Rajasthan, India</p>
+          <h3 class="dest-featured-name">Udaipur</h3>
+          <p class="dest-featured-sub">City of Lakes</p>
+          <p class="dest-featured-desc">Home to Tiger Hills — a contemporary enclave shaped by privacy, curation, and belonging.</p>
+          <button class="dest-cta-btn" type="button">Tiger Hills →</button>
+        </div>
+      </div>
+    </article>
+
+    <article class="dest-featured dest-featured-side" onclick="window.location.href='casa-de-mello.html'" role="link" tabindex="0" aria-label="Goa — Casa De Mello" onkeydown="if(event.key==='Enter'){window.location.href='casa-de-mello.html'}">
+      <div class="dest-featured-img" data-cursor-cta="Casa De Mello →">
+        <img src="img/Home/Home-Page.png" alt="Goa — Casa De Mello" />
+        <div class="dest-featured-overlay"></div>
+        <div class="dest-featured-content">
+          <span class="dest-badge dest-badge-active">Now Open</span>
+          <p class="dest-featured-region">Goa, India</p>
+          <h3 class="dest-featured-name dest-featured-name--side">Goa</h3>
+          <p class="dest-featured-sub">Saligao</p>
+          <p class="dest-featured-desc">Casa De Mello — a restored Portuguese home where heritage and quiet wellness meet.</p>
+          <button class="dest-cta-btn" type="button">Casa De Mello →</button>
+        </div>
+      </div>
+    </article>
+  </div>
+
+  <!-- Coming soon — quiet row -->
+  <div class="dest-soon-header">
+    <h2 class="dest-title dest-coming-title">Coming Soon.</h2>
+  </div>
+  <div class="dest-grid dest-grid--soon">
+
+    <article class="dest-card dest-card-soon dest-card-minimal">
+      <div class="dest-card-img">
+        <img src="https://i.pinimg.com/736x/8b/03/2f/8b032f931b613e38dedbdcc7e224347d.jpg" alt="Ayodhya" />
+        <div class="dest-card-overlay"></div>
+      </div>
+      <div class="dest-card-body">
+        <p class="dest-card-region">Uttar Pradesh</p>
+        <h3 class="dest-card-name">Ayodhya</h3>
+        <button type="button" class="dest-notify-btn" data-destination="Ayodhya">Notify Me When Open</button>
+      </div>
+    </article>
+
+    <article class="dest-card dest-card-soon dest-card-minimal">
+      <div class="dest-card-img">
+        <img src="https://www.thepinnaclelist.com/wp-content/uploads/2021/12/Jaswant-Thada-and-Mehrangarh-Fort-Jodhpur-Rajasthan-India.jpg" alt="Jodhpur" />
+        <div class="dest-card-overlay"></div>
+      </div>
+      <div class="dest-card-body">
+        <p class="dest-card-region">Rajasthan</p>
+        <h3 class="dest-card-name">Jodhpur</h3>
+        <button type="button" class="dest-notify-btn" data-destination="Jodhpur">Notify Me When Open</button>
+      </div>
+    </article>
+
+    <article class="dest-card dest-card-soon dest-card-minimal">
+      <div class="dest-card-img">
+        <img src="https://images.unsplash.com/photo-1477587458883-47145ed94245?w=900&q=85" alt="Jaipur" />
+        <div class="dest-card-overlay"></div>
+      </div>
+      <div class="dest-card-body">
+        <p class="dest-card-region">Rajasthan</p>
+        <h3 class="dest-card-name">Jaipur</h3>
+        <button type="button" class="dest-notify-btn" data-destination="Jaipur">Notify Me When Open</button>
+      </div>
+    </article>
+
+  </div>
+
+</section>
+
+<!-- ══════════════════════════════════════════════ -->
+<!-- 8 DIMENSIONS OF WELLNESS                       -->
+<!-- ══════════════════════════════════════════════ -->
+<section class="wellness-dims-section" id="wellness">
+
+  <!-- Top editorial header — full width -->
+  <div class="wd-intro">
+    <div class="wd-intro-left">
+      <p class="eyebrow" style="color:var(--bark); font-size:10px; letter-spacing:0.22em; text-transform:uppercase; margin-bottom:16px;">A Comprehensive Approach</p>
+      <h2 class="wd-title">The 8 
+<br><em>Dimensions of Wellness</em></h2>
+    </div>
+    <div class="wd-intro-right">
+      <p>Wellness is not limited to the body or the mind. It is shaped by many interconnected dimensions that come together to support a more balanced and fulfilling life.
+At Ridhira Retreats, these 8 Dimensions of Wellness guide how we shape each experience, from wellness rituals and nourishing meals to restored spaces and moments of pause.
+</p>
+      <!-- <p>Every programme, every treatment, every meal, every silence at Ridhira is designed with these eight dimensions as its compass.</p> -->
+      <!-- <button class="btn-ghost" style="margin-top:28px; display:inline-flex;">Our Wellness Philosophy <span class="arrow" style="margin-left:12px;">→</span></button> -->
+    </div>
+  </div>
+
+  <!-- Main layout: central GIF with the 8 dimensions orbiting it -->
+  <div class="wd-body">
+
+    <div class="wd-visuals">
+      <a class="wd-orbit wd-gif-link" id="wd-orbit" href="8-dimensions-of-wellness.html" aria-label="Explore 8 Dimensions of Wellness">
+
+        <div class="wd-img-primary wd-gif-primary">
+          <img
+            class="wd-gif"
+            src="img/Video/wellness-color.gif"
+            alt="The 8 Dimensions of Wellness — animated"
+            loading="eager"
+            decoding="async"
+          />
+        </div>
+
+      </a>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ══════════════════════════════════════════════ -->
+<!-- THE RIDHIRA GROUP                              -->
+<!-- ══════════════════════════════════════════════ -->
+<section class="ridhira-group-section" id="ridhira-group" aria-label="The Ridhira Group">
+  <div class="wd-intro rg-intro">
+    <div class="wd-intro-left">
+      <p class="eyebrow" style="color:var(--bark); font-size:10px; letter-spacing:0.22em; text-transform:uppercase; margin-bottom:16px;">The Ridhira Group</p>
+      <h2 class="wd-title">One Belief. Many Ways<br>to Experience <em>Time.</em></h2>
+    </div>
+    <div class="wd-intro-right">
+      <p>Ridhira Group brings together a growing portfolio of experiences shaped by Indian hospitality, thoughtful design, and a deeper understanding of time.</p>
+      <p>Ridhira Retreats is the Group’s heritage and wellness hospitality collection—created for those who seek distinctive places, meaningful experiences, and a more considered way to travel.</p>
+      <a class="btn-ghost" href="https://www.ridhira.com/" target="_blank" rel="noopener noreferrer" style="margin-top:28px; display:inline-flex;">Discover Ridhira Group <span class="arrow">→</span></a>
+    </div>
+  </div>
+</section>
+
+  <footer class="site-footer">
+    <div class="sf-columns">
+      <div class="sf-col">
+        <h4>Retreats</h4>
+        <a href="casa-de-mello.html">Casa De Mello, Goa</a>
+        <a href="tiger-hills-purple.html">Tiger Hills, Udaipur</a>
+        
+      </div>
+      <div class="sf-col">
+        <h4>Connect</h4>
+        <a href="https://ridhira.com/" target="_blank" rel="noopener noreferrer">Ridhira Group</a>
+        <a href="https://odespa.com/" target="_blank" rel="noopener noreferrer">Odespa</a>
+        
+      </div>
+      <div class="sf-col">
+        <h4>Contact</h4>
+        <a href="tel:+91 741 628 2288" >Contact Us</a>
+        <a >Press</a>
+       
+      </div>
+      <div class="sf-col">
+        <h4>Legal</h4>
+        <a >Terms and Conditions</a>
+        <a >Privacy &amp; Cookies</a>
+        
+      </div>
+    </div>
+
+    <div class="sf-divider"></div>
+
+    <div class="sf-bottom">
+      <div class="sf-bottom-block sf-cs">
+        <h5>Customer Service</h5>
+        <p class="sf-cs-hours">Monday to Saturday 10am – 9pm IST</p>
+        <a class="sf-cs-phone" href="tel:+91 741 628 2288">741 628 2288</a>
+        <a class="sf-cs-email" href="mailto:gocdm@ridhiraretreats.com">Email us</a>
+      </div>
+
+      <div class="sf-bottom-block sf-newsletter">
+        <h5>Newsletter</h5>
+        <p>Receive our newsletter and discover our stories, retreats, and surprises.</p>
+        <form class="sf-subscribe-form" onsubmit="return false;">
+          <button type="submit" class="sf-subscribe-btn">Subscribe</button>
+        </form>
+      </div>
+
+      <div class="sf-bottom-block sf-follow">
+        <h5>Follow Us</h5>
+        <div class="sf-social-icons">
+          <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Follow Ridhira Retreats on Instagram">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3.5" y="3.5" width="17" height="17" rx="5" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="17.4" cy="6.7" r="1" fill="currentColor"/></svg>
+          </a>
+          <a href="https://wa.me/18004414488" target="_blank" rel="noopener noreferrer" aria-label="Chat with Ridhira Retreats on WhatsApp">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 11.5a8 8 0 0 1-11.8 7.1L4 20l1.4-4A8 8 0 1 1 20 11.5Z" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M9 8.5c.3-.3.6-.3.8 0l1 1.4c.2.3.2.6 0 .9l-.5.6c.7 1.2 1.5 2 2.7 2.7l.6-.5c.3-.2.6-.2.9 0l1.4 1c.3.2.3.5 0 .8-.5.6-1.2.9-1.9.7-2.2-.6-4.8-3.2-5.4-5.4-.2-.8.1-1.5.7-2.2Z" fill="currentColor"/></svg>
+          </a>
+          <a href="https://x.com/" target="_blank" rel="noopener noreferrer" aria-label="Follow Ridhira Retreats on X (formerly Twitter)">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 4h3.8l4.1 5.4L17.6 4H20l-5.9 6.8L20.5 20h-3.8l-4.5-5.9L7.1 20H4.7l6.2-7.3L5 4Zm3.1 1.7H6.9l9.8 12.6h1.2L8.1 5.7Z" fill="currentColor"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="sf-legal-strip">
+      <p>© Ridhira Group of Companies. All rights reserved.</p>
+      <p>Privacy Policy &nbsp;·&nbsp; Terms of Use</p>
+    </div>
+  </footer>
+</div>
+
+<!-- ══════════════════════════════════════════════ -->
+<!-- WAITLIST / ENQUIRY POPUP                       -->
+<!-- ══════════════════════════════════════════════ -->
+<div class="wl-modal" id="waitlist-modal" role="dialog" aria-modal="true" aria-labelledby="wl-title" aria-hidden="true" hidden>
+  <div class="wl-backdrop" data-wl-close tabindex="-1"></div>
+  <div class="wl-panel" role="document">
+    <button type="button" class="wl-close" data-wl-close aria-label="Close waitlist form">×</button>
+
+    <div class="wl-form-view" id="wl-form-view">
+      <p class="wl-eyebrow">Coming Soon</p>
+      <h2 class="wl-title" id="wl-title">Join the Waitlist</h2>
+      <p class="wl-lead">Leave your details and we will let you know when this destination opens.</p>
+
+      <form id="waitlist-form" novalidate>
+        <label class="wl-field">
+          <span>Name</span>
+          <input type="text" name="name" id="wl-name" autocomplete="name" required />
+        </label>
+        <label class="wl-field">
+          <span>Email</span>
+          <input type="email" name="email" id="wl-email" autocomplete="email" required />
+        </label>
+        <label class="wl-field">
+          <span>Destination interest</span>
+          <select name="destination" id="wl-destination" required>
+            <option value="">Select a destination</option>
+            <option value="Ayodhya">Ayodhya</option>
+            <option value="Jodhpur">Jodhpur</option>
+            <option value="Jaipur">Jaipur</option>
+            <option value="All destinations">All destinations</option>
+          </select>
+        </label>
+        <label class="wl-field">
+          <span>Message <em>(optional)</em></span>
+          <textarea name="message" id="wl-message" rows="3" placeholder="Anything you’d like us to know…"></textarea>
+        </label>
+        <p class="wl-error" id="wl-error" role="alert" hidden></p>
+        <button type="submit" class="wl-submit" id="wl-submit">Join the Waitlist</button>
+      </form>
+    </div>
+
+    <div class="wl-success-view" id="wl-success-view" hidden>
+      <p class="wl-eyebrow">Thank you</p>
+      <h2 class="wl-title">You’re on the list.</h2>
+      <p class="wl-lead">We’ll be in touch when this retreat is ready to welcome you.</p>
+      <button type="button" class="wl-submit" data-wl-close>Close</button>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════ -->
+<!-- PAGE: CASA DE MELLO                            -->
+<!-- ══════════════════════════════════════════════ -->
+
+<!-- ══════════════════════════════════════════════ -->
+<!-- PAGE: TIGER HILLS                              -->
+<!-- ══════════════════════════════════════════════ -->
+<div class="page" id="page-tigerhills">
+  <button class="back-btn" onclick="showPage('home')">← All Retreats</button>
+
+  <div class="detail-hero">
+    <img src="https://i.pinimg.com/736x/5e/2a/e5/5e2ae526d1bae0c7dd9ddef0228653a7.jpg" alt="Tiger Hills Udaipur" />
+    <div class="detail-hero-overlay"></div>
+    <div class="detail-hero-content">
+      <p class="eyebrow">Udaipur, Rajasthan &nbsp;·&nbsp; Aravalli Foothills</p>
+      <h1>Tiger<br><em>Hills</em></h1>
+      <p class="tagline">Stillness above the City of Lakes.</p>
+      <div class="hero-btns">
+        <button class="btn-solid" onclick="window.location.href=''">Reserve Your Stay</button>
+        <button class="btn-light">View Experiences</button>
+      </div>
+    </div>
+  </div>
+
+  <section class="story-section">
+    <div class="story-text">
+      <p class="label">The Retreat</p>
+      <h2>The hills above<br>Udaipur hold a<br><em>different silence.</em></h2>
+      <p>Tiger Hills sits on a ridge in the Aravalli foothills, looking out over Udaipur's famous lakes — Pichola, Fateh Sagar, the City Palace reflected in early morning light. The retreat is twelve intimate rooms built into the landscape, not imposed upon it.</p>
+      <p>At Tiger Hills, time feels different. The altitude softens the heat. The view slows your thinking. And the absence of traffic, notifications, and noise makes space for something most guests have forgotten: genuine rest.</p>
+      <div class="stat-row">
+        <div class="stat">
+          <div class="num">620<span class="unit">m</span></div>
+          <div class="desc">Altitude</div>
+        </div>
+        <div class="stat">
+          <div class="num">12<span class="unit"> Rooms</span></div>
+          <div class="desc">Intimate Rooms</div>
+        </div>
+        <div class="stat">
+          <div class="num">270°<span class="unit"></span></div>
+          <div class="desc">Lake Panorama</div>
+        </div>
+      </div>
+    </div>
+    <div class="story-visual">
+      <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=700&q=80" alt="Tiger Hills view" />
+      <div class="story-visual-accent"></div>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <section class="experiences-section">
+    <div class="exp-header">
+      <div>
+        <p class="label">What Awaits</p>
+        <h2>Grounded in<br><em>the Aravallis</em></h2>
+      </div>
+    </div>
+    <div class="exp-grid">
+      <div class="exp-card">
+        <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=600&q=80" alt="Sunrise Yoga" />
+        <div class="exp-card-body">
+          <p class="exp-num">01</p>
+          <h3>Sunrise Yoga & Meditation</h3>
+          <p>Practice at the edge of the ridge as the sun rises over Lake Pichola. The elevation and the silence make this unlike any yoga class you have attended indoors.</p>
+        </div>
+      </div>
+      <div class="exp-card">
+        <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=600&q=80" alt="Aravalli walks" />
+        <div class="exp-card-body">
+          <p class="exp-num">02</p>
+          <h3>Aravalli Nature Walks</h3>
+          <p>Guided walks through ancient rocky terrain with a naturalist who has spent decades studying the Aravallis. Medicinal plants, migratory birds, and geological history.</p>
+        </div>
+      </div>
+      <div class="exp-card">
+        <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&q=80" alt="Rajasthani cuisine" />
+        <div class="exp-card-body">
+          <p class="exp-num">03</p>
+          <h3>Rajasthani Thali Ritual</h3>
+          <p>Each evening meal is a ceremonial thali — seasonal, vegetarian, and prepared according to local marwari traditions. Eaten slowly. Together. As the city glows below.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="rooms-section">
+    <div class="rooms-header">
+      <p class="label">Accommodation</p>
+      <h2>Twelve Rooms,<br>One Unbroken View</h2>
+    </div>
+    <div class="rooms-scroll">
+
+      <div class="room-card">
+        <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?w=700&q=80" alt="Lake View Suite" />
+        <div class="room-info">
+          <p class="room-type">Panorama Suite</p>
+          <h3>The Pichola Suite</h3>
+          <p>Floor-to-ceiling glass facing the lake. Stone walls, a king-bed positioned toward the view, and a private meditation alcove carved from the hillside itself.</p>
+          <div class="room-amenities">
+            <span class="amenity">Lake View</span>
+            <span class="amenity">Private Alcove</span>
+            <span class="amenity">Stone Bath</span>
+          </div>
+          <p class="price">₹32,000 <span>per night, incl. breakfast</span></p>
+          <button class="btn-book-room" onclick="window.location.href=''">
+        </div>
+      </div>
+
+      <div class="room-card">
+        <img src="https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?w=700&q=80" alt="Hillside Room" />
+        <div class="room-info">
+          <p class="room-type">Hillside Room</p>
+          <h3>The Aravalli Room</h3>
+          <p>Built into the slope with a rock garden that flows into the bedroom. Local sandstone, handmade terracotta lamps, and a private sit-out shaded by native babul trees.</p>
+          <div class="room-amenities">
+            <span class="amenity">Rock Garden</span>
+            <span class="amenity">Sandstone Interiors</span>
+            <span class="amenity">Private Sit-out</span>
+          </div>
+          <p class="price">₹22,000 <span>per night, incl. breakfast</span></p>
+          <button class="btn-book-room" onclick="window.location.href='contact-us.html'">
+        </div>
+      </div>
+
+      <div class="room-card">
+        <img src="https://images.unsplash.com/photo-1618773928121-c32242e63f39?w=700&q=80" alt="Forest Cottage" />
+        <div class="room-info">
+          <p class="room-type">Private Cottage</p>
+          <h3>The Jungle Cottage</h3>
+          <p>Freestanding on the far edge of the property, surrounded by teak and dhak trees. Complete privacy. A bathtub that faces the forest. No television. That is the point.</p>
+          <div class="room-amenities">
+            <span class="amenity">Freestanding</span>
+            <span class="amenity">Forest View</span>
+            <span class="amenity">Open-air Bath</span>
+          </div>
+          <p class="price">₹26,000 <span>per night, incl. breakfast</span></p>
+          <button class="btn-book-room" onclick="window.location.href=''">
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="wellness-section">
+    <div class="wellness-inner">
+      <div class="wellness-images">
+        <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=700&q=80" alt="Ode Spa Tiger Hills" />
+        <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=400&q=80" alt="Treatment room" />
+        <img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?w=400&q=80" alt="Spa herbs" />
+      </div>
+      <div class="story-text">
+        <p class="label">Wellness Partner</p>
+        <h2><em>Ode Spa</em><br>at Tiger Hills</h2>
+        <p>Our Ode Spa at Tiger Hills is designed around Rajasthani healing traditions — rose, saffron, and desert botanicals form the base of treatments that have been adapted by our therapists over years of practice in this specific terrain.</p>
+        <p>The treatment rooms face the Aravallis. Many guests choose to finish a session and simply sit — watching the hills, feeling the stillness, letting the treatment settle.</p>
+        <br />
+        <button class="btn-ghost">Explore Ode Spa Treatments <span class="arrow">→</span></button>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonial-section">
+    <span class="quote-mark">"</span>
+    <blockquote>I have stayed at palaces in Udaipur. Tiger Hills is different. It doesn't perform luxury. It simply is what it is — and that is the most luxurious thing I've experienced in India.</blockquote>
+    <cite>Arjun M. &nbsp;·&nbsp; Bengaluru &nbsp;·&nbsp; Stayed 3 nights</cite>
+  </section>
+
+  <section class="detail-cta">
+    <p class="label">Begin Your Restoration</p>
+    <h2>Tiger Hills is<br><em>calling</em> you home.</h2>
+    <div class="cta-btns">
+      <button class="btn-solid" onclick="window.location.href=''">Reserve Your Stay</button>
+      <button class="btn-light">Speak to a Retreat Advisor</button>
+    </div>
+  </section>
+
+  <footer>
+
+  <style>
+  /* Match the homepage experience CTA to the shared site button family. */
+  .exp-explore-btn {
+    min-height: 48px;
+    padding: 14px 28px;
+    border: 1px solid var(--gold, #D5B881);
+    border-radius: var(--radius-btn, 4px);
+    background: var(--gold, #D5B881);
+    color: var(--charcoal, #61574C);
+    font-weight: 400;
+    transition: background-color 0.28s ease, color 0.28s ease, border-color 0.28s ease, box-shadow 0.28s ease, transform 0.2s ease, gap 0.28s ease;
+  }
+
+  .exp-explore-btn:hover,
+  .exp-explore-btn:focus-visible {
+    background: var(--sand, #D3CABE);
+    border-color: var(--sand, #D3CABE);
+    color: var(--charcoal, #61574C);
+    box-shadow: 0 10px 24px rgba(201, 168, 76, 0.12);
+    transform: translateY(-1px);
+    outline: none;
+  }
+
+  .exp-explore-btn .exp-explore-arrow {
+    color: currentColor;
+  }
+  </style>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img class="footer-logo" src="img/logo/ridhira-retreats-logo.png" alt="Ridhira Retreats" width="78" height="123" />
+      </div>
+      <div class="footer-col">
+        <h4>Retreats</h4>
+        <a href="#" href="casa-de-mello.html" onclick="window.location.href='casa-de-mello.html';return false">Casa De Mello, Goa</a>
+        <a href="#" onclick="window.location.href='tiger-hills-purple.html'">Tiger Hills, Udaipur</a>
+        <a href="#" >Karohi Haveli
+, Udaipur</a>
+      </div>
+      <div class="footer-col">
+        <h4>Experiences</h4>
+        <a href="#">Wellness Programs</a>
+        <a href="#">Ode Spa</a>
+        <a href="#">Ayurveda</a>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <a href="#" onclick="window.location.href='contact-us.html'">Contact Us</a>
+        <a href="#">Instagram</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© Ridhira Group of Companies. All rights reserved.</p>
+      <p>Privacy Policy &nbsp;·&nbsp; Terms of Use</p>
+    </div>
+  </footer>
+</div>
+
+
+<!-- ══════════════════════════════════════════════ -->
+<!-- PAGE: KAROVI                                   -->
+<!-- ══════════════════════════════════════════════ -->
+<div class="page" id="page-karovi">
+  <button class="back-btn" onclick="showPage('home')">← All Retreats</button>
+
+  <div class="detail-hero">
+    <img src="https://images.unsplash.com/photo-1584132967334-10e028bd69f7?w=1600&q=85" alt="Karovi Udaipur" />
+    <div class="detail-hero-overlay"></div>
+    <div class="detail-hero-content">
+      <p class="eyebrow">Udaipur, Rajasthan &nbsp;·&nbsp; Ancient Haveli Estate</p>
+      <h1>Karohi Haveli
+</h1>
+      <p class="tagline">The furthest you can get. The closest you will feel.</p>
+      <div class="hero-btns">
+        <button class="btn-solid" onclick="window.location.href=''">Reserve Your Stay</button>
+        <button class="btn-light">View Experiences</button>
+      </div>
+    </div>
+  </div>
+
+  <section class="story-section">
+    <div class="story-text">
+      <p class="label">The Retreat</p>
+      <h2>A Rajput estate<br>that time chose<br>to <em>leave alone.</em></h2>
+      <p>Karohi Haveli
+ is Ridhira's most secluded retreat — a centuries-old Rajput haveli set within a private forest outside Udaipur. Ancient banyan trees whose roots predate the haveli. Dry-stone walls. A well that still draws water from the same aquifer it always has.</p>
+      <p>There are eight rooms here. No pool. No gym. No concierge activities board. What Karohi Haveli
+ offers instead is rarer: genuine undisturbed silence, clean forest air, and the slow, deliberate pace that deep restoration actually requires.</p>
+      <div class="stat-row">
+        <div class="stat">
+          <div class="num">8<span class="unit"> Rooms</span></div>
+          <div class="desc">Only 8 Guests at a time</div>
+        </div>
+        <div class="stat">
+          <div class="num">12<span class="unit"> Acres</span></div>
+          <div class="desc">Private Forest Estate</div>
+        </div>
+        <div class="stat">
+          <div class="num">400+<span class="unit"> Yrs</span></div>
+          <div class="desc">Haveli Heritage</div>
+        </div>
+      </div>
+    </div>
+    <div class="story-visual">
+      <img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=700&q=80" alt="Karovi haveli" />
+      <div class="story-visual-accent"></div>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <section class="experiences-section">
+    <div class="exp-header">
+      <div>
+        <p class="label">What Awaits</p>
+        <h2>Slower.<br><em>Deeper. Truer.</em></h2>
+      </div>
+    </div>
+    <div class="exp-grid">
+      <div class="exp-card">
+        <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=600&q=80" alt="Panchakarma" />
+        <div class="exp-card-body">
+          <p class="exp-num">01</p>
+          <h3>Panchakarma Detox</h3>
+          <p>A structured 5–21 day Ayurvedic detox programme designed for genuine cellular restoration. Karohi Haveli
+ is one of the few retreat environments in India suitable for a full Panchakarma protocol.</p>
+        </div>
+      </div>
+      <div class="exp-card">
+        <img src="https://images.unsplash.com/photo-1559599101-f09722fb4948?w=600&q=80" alt="Forest silence" />
+        <div class="exp-card-body">
+          <p class="exp-num">02</p>
+          <h3>Maun — The Practice of Silence</h3>
+          <p>Guided programmes in conscious silence. Not monastic austerity — but a structured, supported practice of turning inward, available for half-days, full-days, or entire stays.</p>
+        </div>
+      </div>
+      <div class="exp-card">
+        <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=600&q=80" alt="Longevity protocols" />
+        <div class="exp-card-body">
+          <p class="exp-num">03</p>
+          <h3>Longevity Protocols</h3>
+          <p>Integrated with Ode Life — Ridhira's longevity membership programme — Karohi Haveli
+ offers biomarker assessments, Ayurgenomics consultations, and personalised longevity planning for Ode Life members.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="rooms-section">
+    <div class="rooms-header">
+      <p class="label">Accommodation</p>
+      <h2>Eight Rooms.<br>One Private World.</h2>
+    </div>
+    <div class="rooms-scroll">
+
+      <div class="room-card">
+        <img src="https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=700&q=80" alt="Haveli Suite" />
+        <div class="room-info">
+          <p class="room-type">Heritage Suite</p>
+          <h3>The Zenana Suite</h3>
+          <p>Once the women's quarters of the haveli, the Zenana Suite has original jali windows, a private courtyard with a tulsi garden, and a therapeutic copper bathtub.</p>
+          <div class="room-amenities">
+            <span class="amenity">Private Courtyard</span>
+            <span class="amenity">Jali Windows</span>
+            <span class="amenity">Copper Bathtub</span>
+          </div>
+          <p class="price">₹38,000 <span>per night, all meals incl.</span></p>
+          <button class="btn-book-room" onclick="window.location.href=''">
+        </div>
+      </div>
+
+      <div class="room-card">
+        <img src="https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?w=700&q=80" alt="Banyan Room" />
+        <div class="room-info">
+          <p class="room-type">Forest Room</p>
+          <h3>The Banyan Room</h3>
+          <p>Built around — and partially supported by — the roots of a 200-year-old banyan tree. Earthen walls, mud plaster, and a sleeping porch that faces the oldest part of the forest.</p>
+          <div class="room-amenities">
+            <span class="amenity">Living Banyan</span>
+            <span class="amenity">Earthen Walls</span>
+            <span class="amenity">Forest Porch</span>
+          </div>
+          <p class="price">₹26,000 <span>per night, all meals incl.</span></p>
+          <button class="btn-book-room" onclick="window.location.href=''">
+        </div>
+      </div>
+
+      <div class="room-card">
+        <img src="https://images.unsplash.com/photo-1613977257363-707ba9348227?w=700&q=80" alt="Stone Cottage" />
+        <div class="room-info">
+          <p class="room-type">Restoration Room</p>
+          <h3>The Stone Cell</h3>
+          <p>The most austere room at Karohi Haveli
+, and — its guests tell us — the most transformative. One window. One bed. One view of the forest. Designed for those doing Panchakarma or Maun practice.</p>
+          <div class="room-amenities">
+            <span class="amenity">Meditation Mat</span>
+            <span class="amenity">Forest View</span>
+            <span class="amenity">No Screens</span>
+          </div>
+          <p class="price">₹18,000 <span>per night, all meals incl.</span></p>
+          <button class="btn-book-room" onclick="window.location.href=''">
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="wellness-section">
+    <div class="wellness-inner">
+      <div class="wellness-images">
+        <img src="https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?w=700&q=80" alt="Ode Spa Karovi" />
+        <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=400&q=80" alt="Treatment" />
+        <img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?w=400&q=80" alt="Forest wellness" />
+      </div>
+      <div class="story-text">
+        <p class="label">Wellness & Longevity</p>
+        <h2><em>Ode Spa</em> meets<br>Ode Life at Karohi Haveli
+</h2>
+        <p>Karohi Haveli
+is the only Ridhira property where Ode Spa and Ode Life — Ridhira's longevity membership programme — are fully integrated. Ode Life members can access biomarker panels, Ayurgenomics consultations, and AI-assisted health passport updates during their stay.</p>
+        <p>For non-members, Karohi Haveli
+ offers Ode Spa's full Panchakarma-adjacent wellness programmes — designed for those who want more than relaxation. More than a spa holiday. Something that actually changes how they feel six months later.</p>
+        <br />
+        <button class="btn-ghost">Discover Ode Life Membership <span class="arrow">→</span></button>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonial-section">
+    <span class="quote-mark">"</span>
+    <blockquote>Karohi Haveli
+ is not for everyone. It is for the version of you that is ready to stop performing wellness and start experiencing it. I arrived with a packed schedule of goals. I left having forgotten why I needed them.</blockquote>
+    <cite>Rohan K. &nbsp;·&nbsp; Delhi &nbsp;·&nbsp; 7-night Panchakarma Stay</cite>
+  </section>
+
+  <section class="detail-cta">
+    <p class="label">Begin Your Restoration</p>
+    <h2>Some places change you.<br><em>Karohi Haveli
+ is one of them.</em></h2>
+    <div class="cta-btns">
+      <button class="btn-solid" onclick="window.location.href=''">Reserve Your Stay</button>
+      <button class="btn-light">Speak to a Retreat Advisor</button>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img class="footer-logo" src="img/logo/ridhira-retreats-logo.png" alt="Ridhira Retreats" width="78" height="123" />
+      </div>
+      <div class="footer-col">
+        <h4>Retreats</h4>
+        <a href="#" href="casa-de-mello.html" onclick="window.location.href='casa-de-mello.html';return false">Casa De Mello, Goa</a>
+        <a href="#" onclick="window.location.href='tiger-hills-purple.html'">Tiger Hills, Udaipur</a>
+        <a href="#" >Karohi Haveli
+, Udaipur</a>
+      </div>
+      <div class="footer-col">
+        <h4>Experiences</h4>
+        <a href="#wellness">Wellness Programs</a>
+        <a href="#">Ode Spa</a>
+        <a href="#">Ode Life</a>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <a href="" >Contact Us</a>
+        <a href="#">Instagram</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>©Ridhira Group of Companies. All rights reserved.</p>
+      <p>Privacy Policy &nbsp;·&nbsp; Terms of Use</p>
+    </div>
+  </footer>
+</div>
+
+<script>
+/* ── HERO BOOKING BAR ───────────────────────────── */
+(function () {
+  'use strict';
+
+  var form = document.getElementById('hero-booking-form');
+  if (!form) return;
+  var fields = form.querySelectorAll('[data-booking-field]');
+  var selectedDestination = '';
+  var counts = { rooms: 1, guests: 1 };
+
+  function closeFields(except) {
+    fields.forEach(function (field) {
+      if (field !== except) {
+        field.classList.remove('is-open');
+        var trigger = field.querySelector('.hero-booking-trigger');
+        if (trigger) trigger.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
+
+  fields.forEach(function (field) {
+    var trigger = field.querySelector('.hero-booking-trigger');
+    if (!trigger) return;
+    trigger.addEventListener('click', function (event) {
+      event.stopPropagation();
+      var open = !field.classList.contains('is-open');
+      closeFields(field);
+      field.classList.toggle('is-open', open);
+      trigger.setAttribute('aria-expanded', String(open));
+    });
+  });
+
+  form.querySelectorAll('.hero-booking-option').forEach(function (option) {
+    option.addEventListener('click', function () {
+      selectedDestination = option.getAttribute('data-destination');
+      document.getElementById('hero-destination-value').textContent = option.getAttribute('data-label');
+      closeFields();
+    });
+  });
+
+  form.querySelectorAll('[data-count]').forEach(function (button) {
+    button.addEventListener('click', function (event) {
+      event.stopPropagation();
+      var type = button.getAttribute('data-count');
+      counts[type] = Math.max(1, counts[type] + Number(button.getAttribute('data-step')));
+      document.getElementById('hero-' + type + '-count').textContent = counts[type];
+      document.getElementById('hero-guests-value').textContent = counts.rooms + ' Room(s) - ' + counts.guests + ' Guest(s)';
+    });
+  });
+
+  var checkIn = document.getElementById('hero-check-in');
+  var checkOut = document.getElementById('hero-check-out');
+  var today = new Date().toISOString().split('T')[0];
+  checkIn.min = today;
+  checkOut.min = today;
+  checkIn.addEventListener('change', function () { checkOut.min = checkIn.value || today; });
+
+  form.addEventListener('submit', function (event) {
+    event.preventDefault();
+    if (!selectedDestination) {
+      var destinationField = form.querySelector('[data-booking-field="destination"]');
+      closeFields(destinationField);
+      destinationField.classList.add('is-open');
+      destinationField.querySelector('.hero-booking-trigger').setAttribute('aria-expanded', 'true');
+      return;
+    }
+    if (!form.reportValidity()) return;
+    var destinationPage = selectedDestination === 'casa' ? 'book/casa-de-mello/' : 'book/tiger-hills/';
+    var query = new URLSearchParams({ checkin: checkIn.value, checkout: checkOut.value, rooms: counts.rooms, guests: counts.guests });
+    window.location.href = destinationPage + '?' + query.toString();
+  });
+
+  document.addEventListener('click', function () { closeFields(); });
+})();
+</script>
+<script>
+/* ── PAGE ROUTING ────────────────────────────────── */
+function showPage(id) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  /* Navigation: casa → casa-de-mello.html (separate page) */
+  if (id === 'casa') { window.location.href = 'casa-de-mello.html'; return; }
+  const pageId = id === 'home' ? 'page-home' :
+                 id === 'tigerhills' ? 'page-tigerhills' :
+                 id === 'karovi' ? 'page-karovi' : 'page-home';
+  const el = document.getElementById(pageId);
+  if (el) {
+    el.classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+  requestAnimationFrame(updateNavState);
+}
+
+/* ── NAV TRANSPARENCY ON HERO ──────────────────── */
+const heroSection = document.getElementById('hero-video-section');
+
+function updateNavState() {
+  if (!heroSection) return;
+  const activePage = document.querySelector('.page.active');
+  const isHome = activePage && activePage.id === 'page-home';
+  if (!isHome) {
+    document.body.classList.remove('hero-visible');
+    return;
+  }
+  document.body.classList.remove('hero-visible');
+}
+
+window.addEventListener('scroll', updateNavState, { passive: true });
+updateNavState();
+
+/* ── PARALLAX ── */
+const heroVideo = document.getElementById('hero-bg-video');
+const heroImg   = document.getElementById('hero-fallback-img');
+
+function applyParallax() {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const activePage = document.querySelector('.page.active');
+  if (!activePage || activePage.id !== 'page-home') return;
+  const scrollY = window.scrollY;
+  const maxScroll = heroSection ? heroSection.offsetHeight : 0;
+  if (scrollY > maxScroll) return;
+  const offset = scrollY * 0.22; /* restrained — hero only */
+  if (heroVideo && heroVideo.style.display !== 'none') {
+    heroVideo.style.transform = `scale(1) translateY(${offset}px)`;
+  }
+  if (heroImg) {
+    heroImg.style.transform = `translateY(${offset}px)`;
+  }
+}
+
+window.addEventListener('scroll', applyParallax, { passive: true });
+
+/* ── LAZY VIDEO LOAD ── */
+function initHeroVideo() {
+  const video = document.getElementById('hero-bg-video');
+  if (!video) return;
+  if (window.matchMedia('(max-width: 768px)').matches) return;
+  if ('requestIdleCallback' in window) {
+    requestIdleCallback(() => {
+      video.load();
+      video.play().catch(() => {});
+    }, { timeout: 1500 });
+  } else {
+    setTimeout(() => {
+      video.load();
+      video.play().catch(() => {});
+    }, 400);
+  }
+}
+
+window.addEventListener('load', initHeroVideo);
+
+
+/* ── CDM Location section — scroll reveal ── */
+(function() {
+  const locSection = document.querySelector('.cdm-location-section');
+  if (!locSection) return;
+  const revealObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('in-view');
+        revealObs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  revealObs.observe(locSection);
+})();
+
+/* ── INTERSECTION OBSERVER ── */
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.style.opacity = '1';
+      e.target.style.transform = 'translateY(0)';
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.story-section, .rooms-section, .testimonial-section').forEach(el => {
+  el.style.opacity = '0';
+  el.style.transform = 'translateY(20px)';
+  el.style.transition = 'opacity 0.9s ease, transform 0.9s ease';
+  obs.observe(el);
+});
+</script>
+<script src="EXPERIENCES.JS"></script>
+<script src="editorial.js"></script>
+<script src="form.js"></script>
+<script>
+/* ══════════════════════════════════════════════════════════════
+   HERO VIDEO MUTE / UNMUTE TOGGLE — v3 fixed
+   Root bug fixed: inline code was inside a <script src="..."> tag.
+   Browsers discard inline content when src attribute is present.
+   Now correctly placed in its own <script> block.
+
+   Core contract:
+     · vid.muted is the SINGLE source of truth for audio state
+     · UI (class, aria-label) always mirrors vid.muted — never leads it
+     · Runs after DOMContentLoaded to guarantee elements exist
+     · Guards against rapid-click race conditions with a debounce flag
+══════════════════════════════════════════════════════════════ */
+(function () {
+  'use strict';
+
+  /* ── Guard: wait for DOM to be fully parsed ── */
+  function init() {
+    var btn = document.getElementById('hero-mute-btn');
+    var vid = document.getElementById('hero-bg-video');
+
+    if (!btn || !vid) {
+      /* Elements missing — retry once after a short delay (SPA routing) */
+      setTimeout(init, 200);
+      return;
+    }
+
+    /* ── Step 1: Force muted on video element immediately ── */
+    vid.muted = true;           /* actual audio off            */
+    vid.defaultMuted = true;    /* survive load/reload cycles  */
+
+    /* ── Step 2: Sync UI to match video's real state ──────── */
+    function syncUI() {
+      var muted = vid.muted;
+      btn.classList.toggle('is-unmuted', !muted);
+      btn.setAttribute('aria-label', muted ? 'Unmute video' : 'Mute video');
+      btn.setAttribute('title',      muted ? 'Unmute video' : 'Mute video');
+    }
+
+    /* ── Step 3: Ripple on button click ───────────────────── */
+    function applyRipple() {
+      var old = btn.querySelector('.mute-ripple');
+      if (old) btn.removeChild(old);
+      var r = document.createElement('span');
+      r.className = 'mute-ripple';
+      btn.appendChild(r);
+      r.addEventListener('animationend', function () {
+        if (r.parentNode) r.parentNode.removeChild(r);
+      });
+    }
+
+    /* ── Step 4: Toggle handler ───────────────────────────── */
+    var busy = false;           /* debounce — prevents rapid-click desync */
+    btn.addEventListener('click', function () {
+      if (busy) return;
+      busy = true;
+
+      /* ══ This is the actual audio control ══
+         Write directly to the DOM property — no intermediary.
+         vid.muted is changed FIRST, then the UI mirrors it.    */
+      vid.muted = !vid.muted;
+
+      /* Safari: some versions need volume touched to unmute    */
+      if (!vid.muted && vid.volume === 0) {
+        vid.volume = 1;
+      }
+
+      syncUI();        /* UI mirrors real state — never leads it */
+      applyRipple();
+
+      /* Re-enable clicks after current event loop clears      */
+      setTimeout(function () { busy = false; }, 80);
+    });
+
+    /* ── Step 5: Keyboard — Space / Enter ─────────────────── */
+    btn.addEventListener('keydown', function (e) {
+      if (e.key === ' ' || e.key === 'Enter') {
+        e.preventDefault();
+        btn.click();
+      }
+    });
+
+    /* ── Step 6: Re-sync if video resets (src change, replay) */
+    vid.addEventListener('loadstart',  function () { vid.muted = true; syncUI(); });
+    vid.addEventListener('volumechange', syncUI);   /* external change guard */
+
+    /* ── Step 7: Set correct initial UI state ─────────────── */
+    syncUI();
+  }
+
+  /* Run after DOM is ready */
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();          /* already parsed — run immediately */
+  }
+
+})();
+</script>
+<script>
+/* ════════════════════════════════════════════════════════════════
+   MOBILE NAVIGATION v2 — Hamburger / Overlay Toggle
+   ────────────────────────────────────────────────────────────
+   Contract:
+     · .is-open  on #mobile-overlay   → drives ALL visual state
+     · .is-active on #hamburger-btn   → animates lines → ×
+     · body.menu-open                 → locks page scroll
+     · isOpen flag prevents race conditions on rapid taps
+     · Closes on: ✕ button, nav link, Escape, outside tap, resize
+     · Full scroll position restore on iOS (position:fixed trick)
+════════════════════════════════════════════════════════════════ */
+(function () {
+  'use strict';
+
+  var hamburger = document.getElementById('hamburger-btn');
+  var overlay   = document.getElementById('mobile-overlay');
+  var closeBtn  = document.getElementById('mobile-close-btn');
+  var navLinks  = document.querySelectorAll('.mobile-nav-link:not(.mobile-nav-dropdown-toggle)');
+
+  /* Guard — bail if elements are missing */
+  if (!hamburger || !overlay) return;
+
+  var savedScrollY = 0;
+  var isOpen = false;
+
+  /* ── Scroll lock (iOS-safe: position:fixed preserves scroll) */
+  function lockScroll() {
+    savedScrollY = window.scrollY || window.pageYOffset;
+    document.body.style.top = '-' + savedScrollY + 'px';
+    document.body.classList.add('menu-open');
+  }
+
+  function unlockScroll() {
+    document.body.classList.remove('menu-open');
+    document.body.style.top = '';
+    window.scrollTo(0, savedScrollY);
+  }
+
+  /* ── Open ────────────────────────────────────────────────── */
+  function openMenu() {
+    if (isOpen) return;
+    isOpen = true;
+    lockScroll();
+    overlay.classList.add('is-open');
+    var overlayScroll = overlay.querySelector('.mobile-overlay-scroll');
+    if (overlayScroll) overlayScroll.scrollTop = 0;
+    overlay.setAttribute('aria-hidden', 'false');
+    hamburger.classList.add('is-active');
+    hamburger.setAttribute('aria-expanded', 'true');
+    /* Move focus into overlay after slide-in starts */
+    if (closeBtn) setTimeout(function () { closeBtn.focus(); }, 60);
+  }
+
+  /* ── Close ───────────────────────────────────────────────── */
+  function closeMenu() {
+    if (!isOpen) return;
+    isOpen = false;
+    overlay.classList.remove('is-open');
+    overlay.setAttribute('aria-hidden', 'true');
+    hamburger.classList.remove('is-active');
+    hamburger.setAttribute('aria-expanded', 'false');
+    unlockScroll();
+    /* Return focus to hamburger after animation completes */
+    setTimeout(function () { hamburger.focus(); }, 320);
+  }
+
+  /* ── Hamburger toggle ─────────────────────────────────────── */
+  hamburger.addEventListener('click', function (e) {
+    e.stopPropagation();
+    isOpen ? closeMenu() : openMenu();
+  });
+
+  /* ── ✕ Close button (always in-flow, always clickable) ────── */
+  if (closeBtn) {
+    closeBtn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      closeMenu();
+    });
+  }
+
+  /* ── Nav link tap → close + scroll to section ────────────── */
+  navLinks.forEach(function (link) {
+    link.addEventListener('click', function () {
+      closeMenu();
+    });
+  });
+
+  /* ── Escape key ──────────────────────────────────────────── */
+  document.addEventListener('keydown', function (e) {
+    if ((e.key === 'Escape' || e.key === 'Esc') && isOpen) {
+      closeMenu();
+    }
+  });
+
+  /* ── Backdrop tap: clicking the overlay itself (not content) */
+  overlay.addEventListener('click', function (e) {
+    if (e.target === overlay) closeMenu();
+  });
+
+  /* ── Resize guard: auto-close if viewport exceeds mobile ──── */
+  var resizeTimer;
+  window.addEventListener('resize', function () {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(function () {
+      if (window.innerWidth > 767 && isOpen) closeMenu();
+    }, 100);
+  });
+
+})();
+</script>
+<script>
+/* ── Click-controlled desktop and mobile dropdowns ───────────── */
+(function () {
+  'use strict';
+
+  var dropdowns = document.querySelectorAll('.nav-dropdown, .mobile-nav-dropdown');
+  if (!dropdowns.length) return;
+
+  function closeDropdown(dropdown) {
+    var toggle = dropdown.querySelector('.nav-dropdown-toggle, .mobile-nav-dropdown-toggle');
+    dropdown.classList.remove('is-open');
+    if (toggle) toggle.setAttribute('aria-expanded', 'false');
+  }
+
+  function closeAll(except) {
+    dropdowns.forEach(function (dropdown) {
+      if (dropdown !== except) closeDropdown(dropdown);
+    });
+  }
+
+  dropdowns.forEach(function (dropdown) {
+    var toggle = dropdown.querySelector('.nav-dropdown-toggle, .mobile-nav-dropdown-toggle');
+    if (!toggle) return;
+
+    toggle.addEventListener('click', function (event) {
+      event.stopPropagation();
+      var shouldOpen = !dropdown.classList.contains('is-open');
+      closeAll(dropdown);
+      dropdown.classList.toggle('is-open', shouldOpen);
+      toggle.setAttribute('aria-expanded', String(shouldOpen));
+    });
+
+    dropdown.querySelectorAll('.nav-dropdown-menu a, .mobile-nav-dropdown-menu a').forEach(function (link) {
+      link.addEventListener('click', function () { closeAll(); });
+    });
+  });
+
+  document.addEventListener('click', function () { closeAll(); });
+  document.addEventListener('keydown', function (event) {
+    if (event.key === 'Escape') closeAll();
+  });
+})();
+</script>
+<script>
+/* ════════════════════════════════════════════════════════════════
+   FULL-SCREEN LOADING SCREEN — rotating brand mark
+   Stays up (spinning) while the page loads, then stops rotating
+   and fades out to reveal the site. A safety timeout guarantees
+   it never blocks the page indefinitely if "load" is slow to fire.
+════════════════════════════════════════════════════════════════ */
+(function () {
+  'use strict';
+
+  var loader = document.getElementById('site-loader');
+  if (!loader) {
+    document.body.classList.remove('is-loading');
+    return;
+  }
+
+  var MIN_VISIBLE_MS = 400;   // avoids a jarring flash on very fast loads
+  var SAFETY_MS      = 6000;  // never hold the site hostage if load stalls
+  var startTime       = Date.now();
+  var closed           = false;
+
+  function finish() {
+    if (closed) return;
+    closed = true;
+    var elapsed = Date.now() - startTime;
+    var wait = Math.max(0, MIN_VISIBLE_MS - elapsed);
+
+    setTimeout(function () {
+      loader.classList.add('is-done');       // stops rotation + fades out
+      document.body.classList.remove('is-loading');
+      setTimeout(function () {
+        if (loader.parentNode) loader.parentNode.removeChild(loader);
+      }, 650); // matches the .loader opacity/visibility transition
+    }, wait);
+  }
+
+  if (document.readyState === 'complete') {
+    finish();
+  } else {
+    window.addEventListener('load', finish);
+  }
+  setTimeout(finish, SAFETY_MS); // fallback safety net
+})();
+</script>
+<script>
+  // Touch/press support for the Casa De Mello & Tiger Hills image crossfade.
+  // Hover already handles desktop via CSS (:hover). This mirrors that on
+  // touch devices without blocking the card's existing click-through link.
+  (function () {
+    var cards = document.querySelectorAll('.retreat-card');
+    cards.forEach(function (card) {
+      var imgWrap = card.querySelector('.card-img');
+      if (!imgWrap) return;
+      var hideTimer = null;
+
+      imgWrap.addEventListener('touchstart', function () {
+        clearTimeout(hideTimer);
+        card.classList.add('touch-active');
+      }, { passive: true });
+
+      var release = function () {
+        hideTimer = setTimeout(function () {
+          card.classList.remove('touch-active');
+        }, 600);
+      };
+
+      imgWrap.addEventListener('touchend', release, { passive: true });
+      imgWrap.addEventListener('touchcancel', release, { passive: true });
+    });
+  })();
+</script>
+
+<!-- Floating cursor CTA — trails the pointer and shows each
+     hovered zone's own CTA copy (see [data-cursor-cta]).
+
+     Scoped intentionally: this pill must only ever appear/move while
+     the pointer is directly over a [data-cursor-cta] zone inside the
+     "Our Retreats" grid (Casa De Mello / Tiger Hills) or the
+     "Extraordinary Retreats" section (Udaipur / Goa). Every other
+     section — including the "coming soon" cards inside Extraordinary
+     Retreats and every other part of the page — uses the plain
+     browser cursor.
+
+     Implementation note: state is derived synchronously from the
+     real event target on every mousemove (via closest()), rather
+     than from separate mouseenter/mouseleave pairs on each zone.
+     Paired enter/leave listeners can desync — a leave that doesn't
+     fire (or fires late) leaves the pill stuck showing a stale
+     label over an unrelated section. Deriving fresh from e.target
+     every time means there's no stale state to get stuck in: the
+     pill is always exactly "on" or "off" based on where the cursor
+     is right now. -->
+<div class="cursor-cta" id="cursorCta" aria-hidden="true"><span id="cursorCtaLabel"></span></div>
+<script>
+  (function () {
+    var canHover = window.matchMedia &&
+      window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+    if (!canHover) return; // touch devices keep their normal buttons/taps
+
+    var pill = document.getElementById('cursorCta');
+    var label = document.getElementById('cursorCtaLabel');
+    if (!pill || !label) return;
+
+    /* The ONLY two sections allowed to drive the custom cursor. */
+    var allowedSections = [
+      document.querySelector('.retreat-grid'),
+      document.querySelector('.destinations-section')
+    ].filter(Boolean);
+    if (!allowedSections.length) return;
+
+    var targetX = 0, targetY = 0, curX = 0, curY = 0;
+    var hasPosition = false;
+    var active = false; // true only when directly over an allowed zone right now
+    var activeZone = null; // the zone element currently driving the pill, if any
+
+    function zoneUnderElement(el) {
+      if (!el || !el.closest) return null;
+      var zone = el.closest('[data-cursor-cta]');
+      if (!zone) return null;
+      // Confirm the zone itself is inside one of the two allowed
+      // sections (belt-and-braces — today every [data-cursor-cta]
+      // zone already lives inside one of them).
+      var inAllowedSection = allowedSections.some(function (section) {
+        return section.contains(zone);
+      });
+      return inAllowedSection ? zone : null;
+    }
+
+    // Single source of truth for on/off state: re-evaluated fresh
+    // against the real element at the pointer on every call, so
+    // there is never a "stuck" state to recover from.
+    //
+    // allowActivate gates whether this call is allowed to turn the
+    // pill ON for a NEW zone. Real mouse movement is a genuine hover,
+    // so it may activate. The scroll/frame safety recheck below is
+    // NOT a real hover — it fires because content moved under a
+    // stationary cursor — so it may only ever correct the pill to
+    // OFF, or confirm it's still legitimately over the SAME zone it
+    // was already showing (so a motionless hover never flickers).
+    // It can never switch the pill on for a zone that only just
+    // scrolled into place under an unmoved cursor.
+    function syncToElement(el, clientX, clientY, allowActivate) {
+      targetX = clientX;
+      targetY = clientY;
+      if (!hasPosition) { curX = targetX; curY = targetY; hasPosition = true; }
+
+      var zone = zoneUnderElement(el);
+
+      if (zone && allowActivate) {
+        activeZone = zone;
+        label.textContent = zone.getAttribute('data-cursor-cta') || '';
+        pill.classList.add('is-visible');
+        active = true;
+      } else if (zone && zone === activeZone) {
+        // Passive recheck confirming the pointer is still over the
+        // exact zone that's already showing — leave state untouched.
+      } else {
+        activeZone = null;
+        pill.classList.remove('is-visible');
+        active = false;
+      }
+    }
+
+    // The one and only mousemove listener — intentionally document-
+    // level so it never misses a boundary crossing. A real pointer
+    // move is a genuine hover, so this is the only path allowed to
+    // turn the pill on. It never shows or moves the pill outside the
+    // two sections' zones.
+    document.addEventListener('mousemove', function (e) {
+      syncToElement(e.target, e.clientX, e.clientY, true);
+    }, { passive: true });
+
+    // A pointer leaving the viewport produces no new element target, so
+    // clear the last legitimate hover instead of keeping its label visible.
+    document.documentElement.addEventListener('mouseleave', function () {
+      activeZone = null;
+      active = false;
+      pill.classList.remove('is-visible');
+    });
+
+    // Scrolling (smooth-scroll anchor jumps, momentum scroll, or any
+    // layout shift) can move the page under a stationary mouse with
+    // no mousemove firing at all. Rather than depend on the browser
+    // reliably dispatching a plain 'scroll' event for every kind of
+    // scroll (which isn't guaranteed — smooth/inertial scrolling and
+    // some embedded/preview contexts can move the page without one),
+    // this re-derives from the last known pointer position on every
+    // animation frame. It only ever turns the pill OFF (see
+    // allowActivate above) — scrolling a zone image under a
+    // stationary cursor is not a hover and must never show the pill.
+    function recheckAtLastPosition() {
+      if (!hasPosition || !document.elementFromPoint) return;
+      syncToElement(document.elementFromPoint(targetX, targetY), targetX, targetY, false);
+    }
+
+    function tick() {
+      recheckAtLastPosition();
+      if (active) {
+        // Smooth trailing follow — slow, elegant lag rather than a snap.
+        curX += (targetX - curX) * 0.14;
+        curY += (targetY - curY) * 0.14;
+        pill.style.transform =
+          'translate(' + curX + 'px, ' + curY + 'px) translate(-50%, -50%) scale(1)';
+      }
+      requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  })();
+</script>
+
+<script>
+  // Keep "The Place Becomes Part of the Experience." on ONE line.
+  //
+  // The previous version measured scrollWidth on a heading that was
+  // still allowed to wrap — so scrollWidth never exceeded clientWidth
+  // and the rule never fired. The CSS now sets white-space:nowrap
+  // above 700px, so the measurement below is meaningful: we shrink the
+  // type just enough to fit the space the flex header leaves for it.
+  (function () {
+    var title = document.querySelector('.exp-infinite-title');
+    var wrap  = document.querySelector('.exp-infinite-header-left');
+    if (!title || !wrap) return;
+
+    var BREAKPOINT = 700;  // below this the heading is allowed to wrap
+    var MIN_SIZE   = 26;   // never shrink past a readable size
+
+    function fit() {
+      title.style.fontSize = '';       // back to the CSS value
+      title.style.whiteSpace = '';
+
+      if (window.innerWidth <= BREAKPOINT) return;  // mobile: let it wrap
+
+      var available = wrap.clientWidth;
+      if (!available) return;
+
+      title.style.whiteSpace = 'nowrap';
+      var needed = title.scrollWidth;
+      if (needed <= available) return;
+
+      var base   = parseFloat(getComputedStyle(title).fontSize);
+      var scaled = Math.floor(base * (available / needed) * 0.995);
+
+      if (scaled < MIN_SIZE) {
+        // Too tight to stay on one line and stay legible — wrap instead.
+        title.style.whiteSpace = 'normal';
+        title.style.fontSize = MIN_SIZE + 'px';
+        return;
+      }
+      title.style.fontSize = scaled + 'px';
+    }
+
+    var raf = null;
+    function scheduleFit() {
+      if (raf) cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(fit);
+    }
+
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(scheduleFit);
+    }
+    window.addEventListener('load', scheduleFit);
+    window.addEventListener('resize', scheduleFit);
+    if (window.ResizeObserver) {
+      new ResizeObserver(scheduleFit).observe(wrap);
+    }
+    scheduleFit();
+  })();
+</script>
+<script src="scroll-controls.js"></script>
+</body>
+</html>

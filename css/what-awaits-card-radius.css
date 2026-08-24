@@ -1,0 +1,43 @@
+/* ══════════════════════════════════════════════
+   WHAT AWAITS YOU — CARD CORNER RADIUS ALIGNMENT
+   ------------------------------------------------
+   Purpose: bring the .exp-card-item cards in the
+   "What Awaits You" (Experiences infinite slider)
+   section in line with the subtle 4px corner radius
+   already used elsewhere on the homepage — e.g. the
+   Destinations "Now Open" cards (.dest-featured-img).
+
+   This is an isolated override file. It does not
+   touch EXPERIENCES.css, index.html, or any other
+   homepage stylesheet — just link it AFTER
+   EXPERIENCES.css so it can win the cascade.
+
+   No size, spacing, typography, image, or layout
+   rules are touched — corner radius only.
+══════════════════════════════════════════════ */
+
+/* Card container — radius + keep the existing overflow:hidden
+   so the image, overlay and gold hover-sweep all clip cleanly
+   to the rounded corners instead of poking past them. */
+.exp-infinite-section .exp-card-item {
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+/* Explicit radius on the inner image/overlay layers too.
+   overflow:hidden on the parent is usually enough, but some
+   browsers (notably Safari) can let absolutely-positioned
+   children bleed past a rounded corner during the hover-scale
+   transform — matching the radius here keeps corners sleek at
+   every state (rest, hover, drag) and at every breakpoint. */
+.exp-infinite-section .exp-card-item .exp-card-img,
+.exp-infinite-section .exp-card-item .exp-card-img img,
+.exp-infinite-section .exp-card-item .exp-card-overlay {
+  border-radius: 4px;
+}
+
+/* Radius is intentionally identical across all breakpoints
+   (desktop / tablet / mobile) so the "sleek, subtle, premium"
+   corner reads consistently everywhere the card resizes —
+   no separate mobile override needed since card width, not
+   radius, is what changes at smaller viewports. */

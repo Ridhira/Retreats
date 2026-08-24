@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Ridhira Retreats — Style & Colour Guidelines</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --cream:#f0ebe0; --creamD:#e6e0d4; --sand:#d4c9b0; --bark:#8b7355; --earth:#5c4a35;
+    --charcoal:#643e35; --espresso:#2a2420; --white:#faf8f4; --gold:#b89a6a; --muted:#7a6e62;
+    --sage:#5c7355; --amber:#b8863a; --terra:#9a5a4a;
+    --serif:'Cormorant Garamond',Georgia,serif; --sans:'Jost',system-ui,sans-serif;
+    --line:rgba(139,115,85,0.2); --lineS:rgba(139,115,85,0.4);
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:var(--cream);color:var(--charcoal);font-family:var(--sans);font-weight:300;-webkit-font-smoothing:antialiased;}
+  .page{max-width:940px;margin:0 auto;padding:72px 64px 96px;}
+  .eyebrow{font-size:10px;letter-spacing:0.24em;text-transform:uppercase;color:var(--bark);display:flex;align-items:center;gap:12px;}
+  .eyebrow::before{content:'';width:30px;height:0.5px;background:var(--bark);}
+  h1{font-family:var(--serif);font-weight:300;font-size:64px;line-height:1.03;letter-spacing:-0.01em;margin:22px 0 0;}
+  h1 em{font-style:italic;color:var(--bark);}
+  .lede{font-family:var(--serif);font-style:italic;font-size:20px;color:var(--muted);margin-top:18px;max-width:560px;line-height:1.5;}
+  .meta{font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);margin-top:26px;display:flex;gap:22px;flex-wrap:wrap;}
+  .rule{height:0.5px;background:var(--gold);width:48px;margin:56px 0;}
+  section{margin-top:76px;}
+  h2{font-family:var(--serif);font-weight:300;font-size:34px;line-height:1.1;margin:14px 0 6px;}
+  .sec-sub{font-size:14px;color:var(--muted);line-height:1.7;max-width:600px;margin-bottom:34px;}
+  h3{font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--bark);margin:36px 0 18px;font-weight:400;}
+
+  /* colour swatches */
+  .swatches{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+  .sw{border:0.5px solid var(--line);border-radius:4px;overflow:hidden;background:var(--white);}
+  .sw .chip{height:88px;}
+  .sw .info{padding:12px 14px 14px;}
+  .sw .nm{font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--charcoal);}
+  .sw .role{font-size:10.5px;color:var(--muted);margin:3px 0 8px;line-height:1.4;}
+  .sw .hex{font-family:var(--serif);font-size:15px;color:var(--charcoal);letter-spacing:0.02em;}
+  .grad-box{height:120px;border-radius:6px;display:flex;align-items:flex-end;padding:16px;color:var(--white);}
+  .grad-lbl{font-size:11px;letter-spacing:0.14em;text-transform:uppercase;}
+
+  /* type specimens */
+  .spec{border-top:0.5px solid var(--line);padding:24px 0;display:grid;grid-template-columns:1fr 200px;gap:24px;align-items:baseline;}
+  .spec:last-child{border-bottom:0.5px solid var(--line);}
+  .spec .demo{color:var(--charcoal);}
+  .spec .demo.d1{font-family:var(--serif);font-weight:300;font-size:56px;line-height:1.05;letter-spacing:-0.01em;}
+  .spec .demo.d1 em{font-style:italic;color:var(--bark);}
+  .spec .demo.d2{font-family:var(--serif);font-weight:300;font-size:40px;line-height:1.1;}
+  .spec .demo.d3{font-family:var(--serif);font-weight:300;font-size:28px;}
+  .spec .demo.d4{font-family:var(--serif);font-weight:400;font-size:20px;}
+  .spec .demo.body{font-family:var(--sans);font-weight:300;font-size:15px;line-height:1.85;color:var(--muted);}
+  .spec .demo.eyebrowdemo{font-family:var(--sans);font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--bark);}
+  .spec .demo.btn{font-family:var(--sans);font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--charcoal);}
+  .spec .note{font-size:11px;line-height:1.7;color:var(--muted);text-align:right;}
+  .spec .note b{color:var(--charcoal);font-weight:400;letter-spacing:0.04em;}
+
+  /* spacing / radius / shadow */
+  .row{display:flex;align-items:flex-end;gap:20px;flex-wrap:wrap;}
+  .bar-item{text-align:center;}
+  .bar{background:var(--bark);width:26px;border-radius:1px;}
+  .bar-lbl{font-size:10px;color:var(--muted);margin-top:8px;letter-spacing:0.06em;}
+  .bar-px{font-family:var(--serif);font-size:14px;color:var(--charcoal);}
+  .tokens{display:grid;grid-template-columns:repeat(2,1fr);gap:10px 40px;margin-top:8px;}
+  .tok{display:flex;justify-content:space-between;border-bottom:0.5px solid var(--line);padding:9px 0;font-size:12.5px;}
+  .tok .k{color:var(--muted);}
+  .tok .v{font-family:var(--serif);font-size:15px;color:var(--charcoal);}
+  .boxes{display:flex;gap:22px;align-items:flex-end;flex-wrap:wrap;}
+  .rbox{width:66px;height:66px;background:var(--white);border:0.5px solid var(--line);}
+  .rlbl{font-size:10px;text-transform:uppercase;letter-spacing:0.08em;color:var(--muted);margin-top:10px;text-align:center;}
+  .sbox{width:84px;height:66px;background:var(--white);border-radius:4px;}
+
+  /* principles */
+  .principles{display:grid;grid-template-columns:1fr 1fr;gap:26px 40px;}
+  .pr{border-left:0.5px solid var(--gold);padding-left:18px;}
+  .pr .pt{font-family:var(--serif);font-size:20px;color:var(--charcoal);margin-bottom:6px;}
+  .pr .pd{font-size:13px;line-height:1.7;color:var(--muted);}
+
+  .do-dont{display:grid;grid-template-columns:1fr 1fr;gap:32px;}
+  .dd h4{font-size:11px;letter-spacing:0.16em;text-transform:uppercase;margin-bottom:14px;}
+  .dd.do h4{color:var(--sage);}
+  .dd.dont h4{color:var(--terra);}
+  .dd ul{list-style:none;}
+  .dd li{font-size:13px;line-height:1.7;color:var(--muted);padding-left:20px;position:relative;margin-bottom:8px;}
+  .dd.do li::before{content:'—';position:absolute;left:0;color:var(--sage);}
+  .dd.dont li::before{content:'\00d7';position:absolute;left:0;color:var(--terra);}
+
+  footer{margin-top:88px;padding-top:26px;border-top:0.5px solid var(--line);display:flex;justify-content:space-between;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);}
+
+  @media print{
+    body{background:#fff;}
+    .page{padding:36px 40px;max-width:none;}
+    section{page-break-inside:avoid;}
+    h1{font-size:52px;}
+  }
+</style>
+<link rel="stylesheet" href="../../css/scroll-controls.css">
+</head>
+<body>
+<div class="page">
+
+  <!-- Cover -->
+  <div class="eyebrow">Brand Guidelines · ridhiraretreats.com</div>
+  <h1>Style &amp; <em>colour</em><br />guidelines</h1>
+  <p class="lede">The visual language of ridhira retreats — a warm, editorial, earth-toned system for luxury wellness escapes.</p>
+  <div class="meta">
+    <span>Version 1.0</span><span>July 2026</span><span>Cormorant Garamond · Jost</span><span>Cream · Charcoal · Gold</span>
+  </div>
+  <div class="rule"></div>
+
+  <!-- Colour -->
+  <section>
+    <div class="eyebrow">01 — Colour</div>
+    <h2>A warm, grounded palette</h2>
+    <p class="sec-sub">Cream grounds, warm espresso-brown ink, and a single signature gold accent. Dark sections use the charcoal brown — never pure black. Colour is restrained: one accent, sparing warm status hues, generous neutral space.</p>
+
+    <h3>Ink &amp; earth — text and deep accents</h3>
+    <div class="swatches">
+      <div class="sw"><div class="chip" style="background:#643e35"></div><div class="info"><div class="nm">Charcoal</div><div class="role">Primary ink · headings</div><div class="hex">#643E35</div></div></div>
+      <div class="sw"><div class="chip" style="background:#5c4a35"></div><div class="info"><div class="nm">Earth</div><div class="role">Deep accent · hover ink</div><div class="hex">#5C4A35</div></div></div>
+      <div class="sw"><div class="chip" style="background:#8b7355"></div><div class="info"><div class="nm">Bark</div><div class="role">Eyebrows · hairlines</div><div class="hex">#8B7355</div></div></div>
+      <div class="sw"><div class="chip" style="background:#7a6e62"></div><div class="info"><div class="nm">Muted</div><div class="role">Body copy on cream</div><div class="hex">#7A6E62</div></div></div>
+    </div>
+
+    <h3>Surfaces — cream grounds &amp; neutrals</h3>
+    <div class="swatches">
+      <div class="sw"><div class="chip" style="background:#f0ebe0"></div><div class="info"><div class="nm">Cream</div><div class="role">Page background</div><div class="hex">#F0EBE0</div></div></div>
+      <div class="sw"><div class="chip" style="background:#e6e0d4"></div><div class="info"><div class="nm">Cream-dark</div><div class="role">Card surface</div><div class="hex">#E6E0D4</div></div></div>
+      <div class="sw"><div class="chip" style="background:#d4c9b0"></div><div class="info"><div class="nm">Sand</div><div class="role">Tertiary surface</div><div class="hex">#D4C9B0</div></div></div>
+      <div class="sw"><div class="chip" style="background:#faf8f4"></div><div class="info"><div class="nm">Warm white</div><div class="role">Raised · text on dark</div><div class="hex">#FAF8F4</div></div></div>
+    </div>
+
+    <h3>Accent &amp; status — gold signature, sparing warm hues</h3>
+    <div class="swatches">
+      <div class="sw"><div class="chip" style="background:#b89a6a"></div><div class="info"><div class="nm">Gold</div><div class="role">Signature accent · rules, dots</div><div class="hex">#B89A6A</div></div></div>
+      <div class="sw"><div class="chip" style="background:#5c7355"></div><div class="info"><div class="nm">Sage</div><div class="role">Success · confirmed</div><div class="hex">#5C7355</div></div></div>
+      <div class="sw"><div class="chip" style="background:#b8863a"></div><div class="info"><div class="nm">Amber</div><div class="role">Scarcity · "only 2 left"</div><div class="hex">#B8863A</div></div></div>
+      <div class="sw"><div class="chip" style="background:#9a5a4a"></div><div class="info"><div class="nm">Terracotta</div><div class="role">Error · unavailable</div><div class="hex">#9A5A4A</div></div></div>
+    </div>
+
+    <h3>Espresso &amp; gradient — image overlays, premium panels</h3>
+    <div style="display:grid;grid-template-columns:1fr 2fr;gap:16px;">
+      <div class="sw"><div class="chip" style="background:#2a2420;height:120px"></div><div class="info"><div class="nm">Espresso</div><div class="role">Image scrims · darkest</div><div class="hex">#2A2420</div></div></div>
+      <div class="grad-box" style="background:linear-gradient(135deg,#5c4a35,#2a2420);"><span class="grad-lbl">Deep gradient · #5C4A35 → #2A2420</span></div>
+    </div>
+  </section>
+
+  <!-- Typography -->
+  <section>
+    <div class="eyebrow">02 — Typography</div>
+    <h2>Cormorant Garamond &amp; Jost</h2>
+    <p class="sec-sub">An editorial serif for all display and headings — light weight, italic for emphasis — paired with a clean geometric sans for body, labels, and buttons. Airy line-heights; tiny, wide-tracked uppercase eyebrows.</p>
+
+    <div class="spec">
+      <div class="demo d1">where <em>stillness</em> finds you</div>
+      <div class="note"><b>Display</b><br>Cormorant 300<br>76 / 1.06 / −0.01em</div>
+    </div>
+    <div class="spec">
+      <div class="demo d2">Shaped by place &amp; story</div>
+      <div class="note"><b>H1</b><br>Cormorant 300<br>52 / 1.12</div>
+    </div>
+    <div class="spec">
+      <div class="demo d3">Immersive experiences</div>
+      <div class="note"><b>H2</b><br>Cormorant 300<br>38 / 1.12</div>
+    </div>
+    <div class="spec">
+      <div class="demo d4">Forest Suite · 45 sqm</div>
+      <div class="note"><b>H3</b><br>Cormorant 400<br>26 / 1.4</div>
+    </div>
+    <div class="spec">
+      <div class="demo body">Each retreat is a thoughtfully chosen heritage escape, where architecture, culture, and flavour become part of the experience.</div>
+      <div class="note"><b>Body</b><br>Jost 300<br>15 / 1.85</div>
+    </div>
+    <div class="spec">
+      <div class="demo eyebrowdemo">— Our Retreats</div>
+      <div class="note"><b>Eyebrow</b><br>Jost 400<br>10 / +0.22em / caps</div>
+    </div>
+    <div class="spec">
+      <div class="demo btn">Book Now · Explore</div>
+      <div class="note"><b>Button / label</b><br>Jost 400<br>12 / +0.18em / caps</div>
+    </div>
+  </section>
+
+  <!-- Foundations -->
+  <section>
+    <div class="eyebrow">03 — Foundations</div>
+    <h2>Spacing, corners &amp; elevation</h2>
+    <p class="sec-sub">Editorial whitespace on a 4→128px scale. Corners are near-square (small radii only). Shadows are whisper-soft and warm, layered with hairline borders rather than heavy elevation.</p>
+
+    <h3>Spacing scale</h3>
+    <div class="row">
+      <div class="bar-item"><div class="bar" style="height:4px"></div><div class="bar-lbl">xs</div><div class="bar-px">4</div></div>
+      <div class="bar-item"><div class="bar" style="height:8px"></div><div class="bar-lbl">sm</div><div class="bar-px">8</div></div>
+      <div class="bar-item"><div class="bar" style="height:16px"></div><div class="bar-lbl">md</div><div class="bar-px">16</div></div>
+      <div class="bar-item"><div class="bar" style="height:24px"></div><div class="bar-lbl">lg</div><div class="bar-px">24</div></div>
+      <div class="bar-item"><div class="bar" style="height:40px"></div><div class="bar-lbl">xl</div><div class="bar-px">40</div></div>
+      <div class="bar-item"><div class="bar" style="height:64px"></div><div class="bar-lbl">2xl</div><div class="bar-px">64</div></div>
+      <div class="bar-item"><div class="bar" style="height:96px"></div><div class="bar-lbl">3xl</div><div class="bar-px">96</div></div>
+      <div class="bar-item"><div class="bar" style="height:128px"></div><div class="bar-lbl">4xl</div><div class="bar-px">128</div></div>
+    </div>
+
+    <h3>Corner radius</h3>
+    <div class="boxes">
+      <div><div class="rbox" style="border-radius:2px"></div><div class="rlbl">sm · 2</div></div>
+      <div><div class="rbox" style="border-radius:4px"></div><div class="rlbl">md · 4</div></div>
+      <div><div class="rbox" style="border-radius:8px"></div><div class="rlbl">lg · 8</div></div>
+      <div><div class="rbox" style="border-radius:16px"></div><div class="rlbl">xl · 16</div></div>
+      <div><div class="rbox" style="border-radius:999px"></div><div class="rlbl">pill</div></div>
+    </div>
+
+    <h3>Elevation</h3>
+    <div class="boxes">
+      <div><div class="sbox" style="box-shadow:0 2px 12px rgba(42,36,32,0.06)"></div><div class="rlbl">card</div></div>
+      <div><div class="sbox" style="box-shadow:0 8px 32px rgba(42,36,32,0.12)"></div><div class="rlbl">elevated</div></div>
+      <div><div class="sbox" style="box-shadow:0 24px 60px rgba(42,36,32,0.20)"></div><div class="rlbl">modal</div></div>
+    </div>
+
+    <h3>Design tokens</h3>
+    <div class="tokens">
+      <div class="tok"><span class="k">--shadow-card</span><span class="v">0 2px 12px / 6%</span></div>
+      <div class="tok"><span class="k">--shadow-elevated</span><span class="v">0 8px 32px / 12%</span></div>
+      <div class="tok"><span class="k">--section-y</span><span class="v">120px</span></div>
+      <div class="tok"><span class="k">--gutter (desktop)</span><span class="v">80px</span></div>
+      <div class="tok"><span class="k">--hairline</span><span class="v">0.5px</span></div>
+      <div class="tok"><span class="k">--ease-out</span><span class="v">0.25,0.46,0.45,0.94</span></div>
+      <div class="tok"><span class="k">image colour-grade</span><span class="v">bright 0.88 · sat 1.08</span></div>
+      <div class="tok"><span class="k">image hover zoom</span><span class="v">scale 1.04 · 0.8s</span></div>
+    </div>
+  </section>
+
+  <!-- Principles -->
+  <section>
+    <div class="eyebrow">04 — Visual principles</div>
+    <h2>How it should feel</h2>
+    <p class="sec-sub">Calm, sensory, unhurried. Quiet luxury — restorative, never salesy or flashy.</p>
+    <div class="principles">
+      <div class="pr"><div class="pt">Editorial &amp; airy</div><div class="pd">Generous whitespace, hairline borders, full-bleed photography. Let content breathe; near-square corners keep it refined.</div></div>
+      <div class="pr"><div class="pt">Warm imagery</div><div class="pd">Golden-hour colour-grade, bottom/left scrims for legibility, slow zooms on hover. Water, greenery, stillness.</div></div>
+      <div class="pr"><div class="pt">One accent</div><div class="pd">Gold alone carries emphasis — rules, dots, hover. Status hues (sage/amber/terracotta) appear only when meaningful.</div></div>
+      <div class="pr"><div class="pt">Signature motifs</div><div class="pd">The hairline-dash eyebrow, the centred eyebrow with flanking rules, the 48px gold rule, italic-word headlines, numbered cards.</div></div>
+    </div>
+
+    <div class="rule" style="margin:48px 0;"></div>
+
+    <div class="do-dont">
+      <div class="dd do">
+        <h4>Do</h4>
+        <ul>
+          <li>Write in sentence case; italic serif for one emphasis word</li>
+          <li>Use cream or charcoal-brown section bands</li>
+          <li>Lift cards with soft shadow + hairline, not heavy borders</li>
+          <li>Keep eyebrows tiny, uppercase, wide-tracked</li>
+        </ul>
+      </div>
+      <div class="dd dont">
+        <h4>Don't</h4>
+        <ul>
+          <li>Use pure black, bright or flashy colours, or emoji</li>
+          <li>Introduce a second accent alongside gold</li>
+          <li>Use large radii or heavy drop-shadows</li>
+          <li>Set body in a competing sans (Inter, Roboto, Arial)</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <span>ridhira retreats</span>
+    <span>Style &amp; Colour Guidelines · v1.0</span>
+  </footer>
+</div>
+<script src="../../scroll-controls.js"></script>
+</body>
+</html>

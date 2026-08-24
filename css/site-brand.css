@@ -1,0 +1,198 @@
+/* Shared Ridhira Retreats brand chrome used by standalone pages. */
+:root {
+  --charcoal: #61574C;
+  --white: #EAE4DB;
+  --gold: #D5B881;
+  --sans: 'Jost', sans-serif;
+}
+.site-shared-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  min-height: 92px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 48px;
+  background: rgba(234, 228, 219, 0.94);
+  backdrop-filter: blur(12px);
+  border-bottom: 0.5px solid rgba(139, 115, 85, 0.18);
+}
+.site-shared-brand {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+.site-shared-brand img {
+  display: block;
+  width: auto;
+  height: 86px;
+  max-width: 72px;
+  object-fit: contain;
+  object-position: left center;
+}
+.site-shared-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+.site-shared-nav-links a,
+.site-shared-nav-cta {
+  color: var(--charcoal);
+  font-family: var(--sans);
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.site-shared-nav-cta {
+  border: 0.5px solid var(--charcoal);
+  padding: 13px 24px;
+  white-space: nowrap;
+}
+.site-shared-footer {
+  background: var(--charcoal);
+  padding: 88px 80px 0;
+  color: var(--white);
+}
+footer.legacy-detail-footer { display: none; }
+footer.legacy-tiger-footer { display: none; }
+footer.legacy-booking-footer { display: none; }
+.site-shared-nav .nav-logo-img {
+  content: url("../img/logo/ridhira-retreats-logo.png");
+  height: 86px;
+  width: auto;
+  max-width: 72px;
+  object-fit: contain;
+}
+.site-shared-footer-columns,
+.site-shared-footer-bottom,
+.site-shared-footer-legal {
+  max-width: 1320px;
+  margin: 0 auto;
+}
+.site-shared-footer-columns {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+  padding-bottom: 64px;
+}
+.site-shared-footer h4,
+.site-shared-footer h5 {
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  margin: 0 0 26px;
+  text-transform: uppercase;
+}
+.site-shared-footer-column {
+  display: flex;
+  flex-direction: column;
+}
+.site-shared-footer a {
+  color: rgba(250, 248, 244, 0.62);
+  text-decoration: none;
+}
+.site-shared-footer-column a {
+  font-size: 13.5px;
+  line-height: 1;
+  margin-bottom: 20px;
+}
+.site-shared-footer a:hover { color: var(--gold); }
+.site-shared-footer-divider,
+.site-shared-footer-legal {
+  border-top: 0.5px solid rgba(250, 248, 244, 0.14);
+}
+.site-shared-footer-bottom {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr 1fr;
+  gap: 48px;
+  padding: 56px 0;
+}
+.site-shared-footer h5 { margin-bottom: 18px; }
+.site-shared-footer-bottom p {
+  color: rgba(250, 248, 244, 0.55);
+  font-size: 13.5px;
+  line-height: 1.7;
+  margin: 0 0 12px;
+}
+.site-shared-footer-bottom a {
+  display: block;
+  font-size: 13.5px;
+  margin-bottom: 8px;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.site-shared-footer-newsletter { text-align: center; }
+.site-shared-footer-newsletter p { max-width: 340px; margin: 0 auto 24px; }
+.site-shared-footer-button {
+  background: transparent;
+  border: 1px solid rgba(250, 248, 244, 0.45);
+  color: var(--white);
+  cursor: pointer;
+  font-family: var(--sans);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  padding: 15px 44px;
+  text-transform: uppercase;
+}
+.site-shared-footer-follow { text-align: right; }
+.site-shared-footer-icons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 18px;
+}
+.site-shared-footer-icons a {
+  display: block;
+  width: 40px;
+  height: 40px;
+}
+.site-shared-footer-icons img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.site-shared-footer-icons svg {
+  width: 24px;
+  height: 24px;
+  display: block;
+  color: #FFFFFF;
+  fill: currentColor;
+}
+.site-shared-footer-icons a {
+  color: #FFFFFF;
+}
+.site-shared-footer-legal {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 26px 0;
+}
+.site-shared-footer-legal p {
+  color: rgba(250, 248, 244, 0.38);
+  font-size: 11.5px;
+  margin: 0;
+}
+@media (max-width: 1100px) {
+  .site-shared-footer-columns { grid-template-columns: repeat(2, 1fr); row-gap: 44px; }
+  .site-shared-footer-bottom { grid-template-columns: 1fr; gap: 40px; }
+  .site-shared-footer-newsletter,
+  .site-shared-footer-follow { text-align: left; }
+  .site-shared-footer-newsletter p { margin-left: 0; }
+  .site-shared-footer-icons { justify-content: flex-start; }
+}
+@media (max-width: 700px) {
+  .site-shared-nav { min-height: 72px; padding: 0 24px; }
+  .site-shared-brand img { height: 64px; max-width: 54px; }
+  .site-shared-nav-links a { display: none; }
+  .site-shared-nav-links { gap: 0; }
+  .site-shared-nav-cta { padding: 10px 14px; font-size: 9px; }
+  .site-shared-footer { padding: 64px 24px 0; }
+  .site-shared-footer-columns { grid-template-columns: 1fr; gap: 36px; padding-bottom: 48px; }
+  .site-shared-footer-bottom { padding: 40px 0; }
+  .site-shared-footer-legal { flex-direction: column; gap: 8px; padding: 22px 0 28px; }
+}

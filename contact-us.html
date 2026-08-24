@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FS2S197XR8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FS2S197XR8');
+</script>
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Contact Us — Ridhira Retreats</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* :root {
+  --cream:      #EAE4DB;
+  --cream-dark: #E1DAD0;
+  --sand:       #D3CABE;
+  --bark:       #61574C;
+  --earth:      #61574C;
+  --charcoal:   #61574C;
+  --white:      #EAE4DB;
+  --gold:       #D5B881;
+  --muted:      #61574C;
+  --serif:      'Cormorant Garamond', Georgia, serif;
+  --sans:       'Jost', sans-serif;
+} */
+
+:root {
+    --cream: #EAE4DB;
+    --cream-dark: #E1DAD0;
+    --sand: #D3CABE;
+    --bark: #61574C;
+    --earth: #61574C;
+    --charcoal: #61574C;
+    --white: #EAE4DB;
+    --gold: #D5B881;
+    --muted: #61574C;
+    --serif: 'Cormorant Garamond', Georgia, serif;
+    --sans: 'Jost', sans-serif;
+  }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--sans);
+  background: var(--cream);
+  color: var(--charcoal);
+  font-weight: 300;
+  overflow-x: hidden;
+}
+
+/* ── NAV ───────────────────────────────────────── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 48px; height: 72px;
+  background: rgba(240,235,224,0.94);
+  backdrop-filter: blur(12px);
+  border-bottom: 0.5px solid rgba(139,115,85,0.18);
+}
+.nav-logo {
+  font-family: var(--serif);
+  font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--charcoal); text-decoration: none;
+}
+.nav-logo span { color: var(--gold); }
+.nav-back {
+  font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--muted); text-decoration: none;
+  display: flex; align-items: center; gap: 8px;
+  transition: color 0.3s;
+}
+.nav-back:hover { color: var(--charcoal); }
+
+/* ── LAYOUT ─────────────────────────────────────── */
+.page-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 100vh;
+  padding-top: 72px;
+}
+
+/* ── LEFT PANEL — image + editorial ─────────────── */
+.left-panel {
+  position: sticky;
+  top: 72px;
+  height: calc(100vh - 72px);
+  overflow: hidden;
+}
+
+.left-panel img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: brightness(0.68);
+  transform: scale(1.04);
+  animation: panelZoom 14s ease forwards;
+}
+@keyframes panelZoom {
+  to { transform: scale(1.0); }
+}
+
+.left-overlay {
+  position: absolute; inset: 0;
+  background:
+    linear-gradient(to bottom, rgba(42,36,32,0.28) 0%, rgba(42,36,32,0.08) 40%, rgba(42,36,32,0.72) 100%),
+    linear-gradient(to right, rgba(42,36,32,0.32) 0%, transparent 60%);
+}
+
+.left-content {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  padding: 56px 52px;
+  opacity: 0;
+  animation: fadeUp 1s ease 0.4s forwards;
+}
+
+.left-eyebrow {
+  font-size: 9px; letter-spacing: 0.28em; text-transform: uppercase;
+  color: rgba(250,248,244,0.45);
+  display: flex; align-items: center; gap: 12px;
+  margin-bottom: 18px;
+}
+.left-eyebrow::before {
+  content: ''; display: block;
+  width: 28px; height: 0.5px;
+  background: rgba(184,154,106,0.5);
+}
+
+.left-content h2 {
+  font-family: var(--serif); font-weight: 300;
+  font-size: clamp(30px, 3vw, 44px); line-height: 1.1;
+  color: var(--white); margin-bottom: 16px;
+}
+.left-content h2 em { font-style: italic; color: rgba(250,248,244,0.68); }
+
+.left-content p {
+  font-size: 13px; line-height: 1.85;
+  color: rgba(250,248,244,0.48);
+  max-width: 320px; margin-bottom: 40px;
+}
+
+/* Contact info items */
+.info-items { display: flex; flex-direction: column; gap: 18px; }
+.info-item {
+  display: flex; align-items: flex-start; gap: 14px;
+}
+.info-icon {
+  width: 34px; height: 34px; flex-shrink: 0;
+  border: 0.5px solid rgba(184,154,106,0.35);
+  display: flex; align-items: center; justify-content: center;
+}
+.info-icon svg {
+  width: 13px; height: 13px;
+  stroke: var(--gold); fill: none; stroke-width: 1.5; stroke-linecap: round;
+}
+.info-text { display: flex; flex-direction: column; gap: 2px; padding-top: 2px; }
+.info-label {
+  font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase;
+  color: rgba(250,248,244,0.35);
+}
+.info-value {
+  font-size: 13px; color: rgba(250,248,244,0.7); letter-spacing: 0.02em;
+}
+
+/* ── RIGHT PANEL — form ──────────────────────────── */
+.right-panel {
+  background: var(--cream);
+  padding: 72px 68px 80px 64px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-intro {
+  margin-bottom: 48px;
+  opacity: 0;
+  animation: fadeUp 1s ease 0.2s forwards;
+}
+
+.form-eyebrow {
+  font-size: 9px; letter-spacing: 0.26em; text-transform: uppercase;
+  color: var(--bark); margin-bottom: 20px;
+  display: flex; align-items: center; gap: 12px;
+}
+.form-eyebrow::before {
+  content: ''; display: block;
+  width: 28px; height: 0.5px; background: var(--bark);
+}
+
+.form-intro h1 {
+  font-family: var(--serif); font-weight: 300;
+  font-size: clamp(36px, 3.5vw, 54px); line-height: 1.06;
+  color: var(--charcoal); margin-bottom: 16px;
+}
+.form-intro h1 em { font-style: italic; color: var(--bark); }
+
+.form-intro p {
+  font-size: 14px; line-height: 1.85;
+  color: var(--muted); max-width: 400px;
+}
+
+.gold-rule {
+  width: 40px; height: 0.5px;
+  background: var(--gold);
+  margin-bottom: 44px;
+  opacity: 0;
+  animation: fadeIn 0.8s ease 0.55s forwards;
+}
+
+/* ── FORM ────────────────────────────────────────── */
+form {
+  display: flex; flex-direction: column; gap: 0;
+  opacity: 0;
+  animation: fadeUp 1s ease 0.45s forwards;
+}
+
+.section-label {
+  font-size: 9px; letter-spacing: 0.24em; text-transform: uppercase;
+  color: rgba(139,115,85,0.4);
+  padding-top: 8px; padding-bottom: 22px;
+  border-top: 0.5px solid rgba(139,115,85,0.12);
+  margin-top: 4px;
+}
+
+.field-row {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 0 28px;
+}
+
+.field {
+  display: flex; flex-direction: column;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.field label {
+  font-size: 9px; letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--bark); margin-bottom: 10px;
+}
+.field label .req { color: var(--gold); margin-left: 2px; }
+
+.field input,
+.field select,
+.field textarea {
+  font-family: var(--sans); font-size: 14px; font-weight: 300;
+  color: var(--charcoal); background: transparent;
+  border: none; border-bottom: 0.5px solid rgba(139,115,85,0.3);
+  padding: 8px 0 11px; outline: none;
+  -webkit-appearance: none; appearance: none; border-radius: 0;
+  transition: border-color 0.3s;
+  width: 100%;
+}
+.field input::placeholder,
+.field textarea::placeholder { color: rgba(122,110,98,0.35); }
+.field input:focus,
+.field select:focus,
+.field textarea:focus { border-bottom-color: var(--bark); }
+
+/* Animated gold underline on focus */
+.field::after {
+  content: '';
+  position: absolute;
+  bottom: 0; /* FIXED */
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--gold);
+  transition: width 0.4s ease;
+}
+
+.field:focus-within::after {
+  width: 100%;
+}
+.field:focus-within::after { width: 100%; }
+
+/* Select arrow */
+.field select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='6' viewBox='0 0 11 6'%3E%3Cpath d='M1 1l4.5 4 4.5-4' stroke='%238b7355' stroke-width='0.8' fill='none'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 2px center;
+  padding-right: 18px; cursor: pointer;
+}
+.field select option { color: var(--charcoal); background: var(--cream); }
+
+.field textarea {
+  resize: none; min-height: 76px; line-height: 1.7;
+}
+
+/* Guest stepper */
+.stepper {
+  display: flex; align-items: center; gap: 0;
+  border-bottom: 0.5px solid rgba(139,115,85,0.3);
+  padding: 4px 0 9px;
+}
+.step-btn {
+  width: 30px; height: 30px;
+  border: 0.5px solid rgba(139,115,85,0.28);
+  background: none; color: var(--bark);
+  font-size: 17px; line-height: 1;
+  cursor: pointer; display: flex; align-items: center; justify-content: center;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+  flex-shrink: 0;
+}
+.step-btn:hover { background: var(--charcoal); color: var(--white); border-color: var(--charcoal); }
+.step-val {
+  font-family: var(--serif); font-size: 22px; font-weight: 300;
+  color: var(--charcoal); min-width: 52px; text-align: center;
+  line-height: 1;
+}
+
+/* Interest chips */
+.chips { display: flex; flex-wrap: wrap; gap: 8px; padding-top: 6px; }
+.chip { position: relative; }
+.chip input { position: absolute; opacity: 0; width: 0; height: 0; }
+.chip label {
+  display: inline-block;
+  font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--bark); border: 0.5px solid rgba(139,115,85,0.32);
+  padding: 7px 14px; cursor: pointer;
+  transition: background 0.22s, color 0.22s, border-color 0.22s;
+  user-select: none;
+}
+.chip input:checked + label {
+  background: var(--charcoal); color: var(--white); border-color: var(--charcoal);
+}
+
+/* Submit */
+.submit-row {
+  display: flex; align-items: center; gap: 28px;
+  margin-top: 14px; flex-wrap: wrap;
+}
+.btn-submit {
+  font-family: var(--sans); font-size: 11px;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  background: var(--charcoal); color: var(--white);
+  border: none; padding: 16px 44px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.25s;
+}
+.btn-submit:hover { background: var(--earth); transform: translateY(-1px); }
+.privacy-note {
+  font-size: 11px; line-height: 1.7; color: var(--muted); max-width: 248px;
+}
+
+/* ── SUCCESS STATE ───────────────────────────────── */
+.success-state {
+  display: none; flex-direction: column; gap: 20px;
+  padding: 40px 0;
+}
+.success-state.active { display: flex; }
+.success-icon {
+  width: 56px; height: 56px;
+  border: 0.5px solid var(--gold);
+  display: flex; align-items: center; justify-content: center;
+}
+.success-icon svg {
+  width: 22px; height: 22px;
+  stroke: var(--gold); fill: none; stroke-width: 1.2; stroke-linecap: round;
+}
+.success-state h2 {
+  font-family: var(--serif); font-weight: 300;
+  font-size: clamp(28px, 3vw, 42px);
+  color: var(--charcoal); line-height: 1.1;
+}
+.success-state h2 em { font-style: italic; color: var(--bark); }
+.success-state p { font-size: 14px; line-height: 1.85; color: var(--muted); max-width: 380px; }
+.success-state .quote-note {
+  font-family: var(--serif); font-style: italic;
+  font-size: 15px; color: var(--bark);
+}
+.btn-return {
+  font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--charcoal); background: none; border: none;
+  border-bottom: 0.5px solid var(--charcoal); padding-bottom: 4px;
+  cursor: pointer; display: inline-flex; align-items: center; gap: 10px;
+  margin-top: 8px; transition: color 0.3s, border-color 0.3s;
+}
+.btn-return:hover { color: var(--bark); border-color: var(--bark); }
+
+/* ── ANIMATIONS ─────────────────────────────────── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* ── RESPONSIVE ─────────────────────────────────── */
+@media (max-width: 1024px) {
+  .page-wrap { grid-template-columns: 1fr; }
+  .left-panel { position: relative; top: auto; height: 380px; }
+  .right-panel { padding: 52px 40px 72px; }
+}
+@media (max-width: 680px) {
+  nav { padding: 0 24px; }
+  .right-panel { padding: 40px 24px 64px; }
+  .field-row { grid-template-columns: 1fr; gap: 0; }
+  .submit-row { flex-direction: column; align-items: stretch; }
+  .btn-submit { text-align: center; }
+  .privacy-note { max-width: 100%; }
+  .left-content { padding: 36px 28px; }
+}
+
+/* ── EDITORIAL-STYLE REVEAL — matches home page fade-up ── */
+.cu-reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.cu-reveal.is-visible { opacity: 1; transform: translateY(0); }
+.cu-reveal-d1 { transition-delay: 0.12s; }
+.cu-reveal-d2 { transition-delay: 0.22s; }
+@media (prefers-reduced-motion: reduce) {
+  .cu-reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+}
+</style>
+<link rel="stylesheet" href="css/site-brand.css">
+<link rel="stylesheet" href="css/scroll-controls.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="site-shared-nav">
+  <a class="site-shared-brand" href="index.html" aria-label="Ridhira Retreats home">
+    <img src="img/logo/ridhira-retreats-logo.png" alt="Ridhira Retreats" width="72" height="113" />
+  </a>
+  <div class="site-shared-nav-links">
+    <a href="index.html">Back to Retreats</a>
+    <a class="site-shared-nav-cta" href="tel:+917416282288">Enquire Now</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <!-- ── LEFT — sticky image panel ── -->
+  <div class="left-panel">
+   <img
+  src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?w=1600&q=85"
+  alt="Luxury Wellness Retreat"
+/>
+    <div class="left-overlay"></div>
+    <div class="left-content cu-reveal">
+      <p class="left-eyebrow">A Ridhira Experience Awaits</p>
+      <h2>Begin your<br><em>restoration.</em></h2>
+      <p>Our retreat advisors personally review every enquiry and respond within 24 hours, often sooner. </p>
+
+      <div class="info-items">
+        <div class="info-item">
+          <div class="info-icon">
+            <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8a19.79 19.79 0 01-3.07-8.63A2 2 0 012 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14z"/></svg>
+          </div>
+          <div class="info-text">
+            <span class="info-label">Speak to an advisor</span>
+            <span class="info-value">+91 40 XXXX XXXX</span>
+          </div>
+        </div>
+        <div class="info-item">
+          <div class="info-icon">
+            <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <div class="info-text">
+            <span class="info-label">Email us</span>
+            <span class="info-value">retreats@ridhiragroup.com</span>
+          </div>
+        </div>
+        <div class="info-item">
+          <div class="info-icon">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div class="info-text">
+            <span class="info-label">Response time</span>
+            <span class="info-value">Within 24 hours</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── RIGHT — form ── -->
+  <div class="right-panel">
+
+  <div class="form-intro cu-reveal cu-reveal-d1">
+    <p class="form-eyebrow">Booking Enquiry</p>
+    <h1>Plan your<br><em>retreat.</em></h1>
+    <p>Tell us a little about what you're looking for. One of our retreat advisors will craft a personalised itinerary for you.</p>
+  </div>
+
+  <div class="gold-rule"></div>
+
+  <!-- FORM -->
+  <form id="enquiry-form" novalidate>
+
+    <p class="section-label">Your Details</p>
+
+    <div class="field-row">
+      <div class="field">
+        <label for="f-name">Full Name <span class="req">*</span></label>
+        <input id="f-name" name="Full Name" type="text" placeholder="Meera Iyer" required autocomplete="name" />
+      </div>
+      <div class="field">
+        <label for="f-email">Email Address <span class="req">*</span></label>
+        <input id="f-email" name="Email" type="email" placeholder="meera@example.com" required autocomplete="email" />
+      </div>
+    </div>
+
+    <div class="field-row">
+      <div class="field">
+        <label for="f-phone">Phone / WhatsApp</label>
+        <input id="f-phone" name="Phone Number" type="tel" placeholder="+91 98XXXXXXXX" autocomplete="tel" />
+      </div>
+      <div class="field">
+        <label for="f-country">Country of Residence</label>
+        <select id="f-country" name="Country">
+          <option value="" disabled selected>Select country</option>
+          <option>India</option>
+          <option>United Kingdom</option>
+          <option>United States</option>
+          <option>United Arab Emirates</option>
+          <option>Singapore</option>
+          <option>Australia</option>
+          <option>Other</option>
+        </select>
+      </div>
+    </div>
+
+    <p class="section-label">Stay Details</p>
+
+    <div class="field-row">
+      <div class="field">
+        <label for="f-retreat">Retreat of Interest <span class="req">*</span></label>
+        <select id="f-retreat" name="Retreat" required>
+          <option value="" disabled selected>Choose a retreat</option>
+          <option>Casa De Mello — Saligao, Goa</option>
+          <option>Tiger Hills — Udaipur, Rajasthan</option>
+          <!-- <option>Karovi — Udaipur, Rajasthan</option> -->
+          <option>Not sure — help me choose</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="f-duration">Stay Duration</label>
+        <select id="f-duration" name="Duration">
+          <option value="" disabled selected>Number of nights</option>
+          <option>2–3 nights</option>
+          <option>4–6 nights</option>
+          <option>7–10 nights</option>
+          <option>11–14 nights</option>
+          <option>15+ nights (extended programme)</option>
+          <option>Flexible / Not decided</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="field-row">
+      <div class="field">
+        <label for="f-checkin">Preferred Check-in</label>
+        <input id="f-checkin" name="Checkin" type="date" />
+      </div>
+      <div class="field">
+        <label for="f-checkout">Preferred Check-out</label>
+        <input id="f-checkout" name="Checkout" type="date" />
+      </div>
+    </div>
+
+    <div class="field">
+      <label>Number of Guests</label>
+      <div class="stepper">
+        <button type="button" class="step-btn" id="btn-minus">−</button>
+        <span class="step-val" id="guest-count">2</span>
+        <button type="button" class="step-btn" id="btn-plus">+</button>
+      </div>
+      <!-- Hidden field for guests -->
+      <input type="hidden" name="Guests" id="f-guests" value="2" />
+    
+    </div>
+
+    <p class="section-label">Wellness Interests</p>
+
+    <div class="field" style="margin-bottom: 32px;">
+      <label>
+        What are you hoping to explore?
+        <span style="opacity:0.5; text-transform:none; letter-spacing:0; font-size:10px;">
+          (optional)
+        </span>
+      </label>
+
+      <div class="chips" style="margin-top: 12px;">
+        <div class="chip"><input type="checkbox" id="c1" name="Wellness Interests" value="Ayurveda"><label for="c1">Ayurveda</label></div>
+        <div class="chip"><input type="checkbox" id="c2" name="Wellness Interests" value="Yoga & Pranayama"><label for="c2">Yoga & Pranayama</label></div>
+        <div class="chip"><input type="checkbox" id="c3" name="Wellness Interests" value="Panchakarma Detox"><label for="c3">Panchakarma Detox</label></div>
+        <div class="chip"><input type="checkbox" id="c4" name="Wellness Interests" value="Meditation & Silence"><label for="c4">Meditation & Silence</label></div>
+        <div class="chip"><input type="checkbox" id="c5" name="Wellness Interests" value="Longevity & Ode Life"><label for="c5">Longevity & Ode Life</label></div>
+        <div class="chip"><input type="checkbox" id="c6" name="Wellness Interests" value="Ode Spa Rituals"><label for="c6">Ode Spa Rituals</label></div>
+        <div class="chip"><input type="checkbox" id="c7" name="Wellness Interests" value="Mindful Nutrition"><label for="c7">Mindful Nutrition</label></div>
+        <div class="chip"><input type="checkbox" id="c8" name="Wellness Interests" value="Heritage & Culture"><label for="c8">Heritage & Culture</label></div>
+      </div>
+    </div>
+
+    <div class="field">
+      <label for="f-message">Anything else you'd like us to know?</label>
+      <textarea id="f-message" name="Message" rows="4"
+        placeholder="Any health considerations, special occasions, or simply what you're hoping to leave behind…"></textarea>
+    </div>
+
+    <div class="submit-row">
+      <button type="submit" class="btn-submit">Send Enquiry →</button>
+      <p class="privacy-note">
+        Your details are shared only with your retreat advisor and kept strictly private.
+      </p>
+    </div>
+
+  </form>
+
+  <!-- SUCCESS -->
+  <div class="success-state" id="success-state">
+    <div class="success-icon">
+      <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+    </div>
+    <h2>Your enquiry<br>has been <em>received.</em></h2>
+    <p>A Ridhira retreat advisor will review your request personally and be in touch within 24 hours — usually much sooner.</p>
+    <p class="quote-note">"The most important journey begins with a single enquiry."</p>
+    <button class="btn-return" id="btn-return">Return to Retreats →</button>
+  </div>
+
+</div>
+</div>
+
+<script>
+/* ── Guest stepper ─────────────────────────────────────────────────────
+   Keeps display count and hidden f-guests in sync.
+   form.js reads from f-guests on submit.
+─────────────────────────────────────────────────────────────────────── */
+(function () {
+  let guests = 2;
+  const display     = document.getElementById('guest-count');
+  const hiddenInput = document.getElementById('f-guests');
+
+  document.getElementById('btn-minus').addEventListener('click', function () {
+    if (guests > 1) {
+      guests--;
+      display.textContent   = guests;
+      hiddenInput.value     = guests;
+    }
+  });
+
+  document.getElementById('btn-plus').addEventListener('click', function () {
+    if (guests < 20) {
+      guests++;
+      display.textContent   = guests;
+      hiddenInput.value     = guests;
+    }
+  });
+})();
+
+/* ── Date picker — enforce today as minimum ────────────────────────── */
+(function () {
+  const today    = new Date().toISOString().split('T')[0];
+  const checkin  = document.getElementById('f-checkin');
+  const checkout = document.getElementById('f-checkout');
+
+  if (checkin)  checkin.min  = today;
+  if (checkout) checkout.min = today;
+
+  if (checkin) {
+    checkin.addEventListener('change', function () {
+      if (checkout) checkout.min = this.value;
+    });
+  }
+})();
+
+/* ── Return button ─────────────────────────────────────────────────── */
+(function () {
+  const btn = document.getElementById('btn-return');
+  if (btn) btn.addEventListener('click', function () {
+    window.location.href = 'index.html';
+  });
+})();
+</script>
+
+<!-- ── Scroll reveal — same fade-up treatment as the home page ── -->
+<script>
+(function () {
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* Above-the-fold blocks fade in on load */
+  var immediate = document.querySelectorAll('.cu-reveal');
+  requestAnimationFrame(function () {
+    immediate.forEach(function (el) { el.classList.add('is-visible'); });
+  });
+
+  if (reduceMotion) return;
+
+  /* Form rows fade up as the visitor scrolls down the form */
+  var lazyTargets = document.querySelectorAll('.field-row, .submit-row, .chips, .stepper');
+  lazyTargets.forEach(function (el) { el.classList.add('cu-reveal'); });
+
+  if (!('IntersectionObserver' in window)) {
+    lazyTargets.forEach(function (el) { el.classList.add('is-visible'); });
+    return;
+  }
+
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -4% 0px' });
+
+  lazyTargets.forEach(function (el) { io.observe(el); });
+
+  /* Fail-safe — never leave the form dimmed */
+  setTimeout(function () {
+    lazyTargets.forEach(function (el) { el.classList.add('is-visible'); });
+  }, 1800);
+})();
+</script>
+<script src="form.js"></script>
+
+<footer class="site-shared-footer">
+  <div class="site-shared-footer-columns">
+    <div class="site-shared-footer-column"><h4>Retreats</h4><a href="casa-de-mello.html">Casa De Mello, Goa</a><a href="tiger-hills-purple.html">Tiger Hills, Udaipur</a></div>
+    <div class="site-shared-footer-column"><h4>Connect</h4><a href="https://ridhira.com/" target="_blank" rel="noopener noreferrer">Ridhira Group</a><a href="https://odespa.com/" target="_blank" rel="noopener noreferrer">Odespa</a></div>
+    <div class="site-shared-footer-column"><h4>Contact</h4><a href="contact-us.html">Contact Us</a><a href="#">Press</a></div>
+    <div class="site-shared-footer-column"><h4>Legal</h4><a href="#">Terms and Conditions</a><a href="#">Privacy &amp; Cookies</a></div>
+  </div>
+  <div class="site-shared-footer-divider"></div>
+  <div class="site-shared-footer-bottom">
+    <div><h5>Customer Service</h5><p>Monday to Saturday 10am - 9pm IST</p><a href="tel:+917416282288">741 628 2288</a><a href="mailto:gocdm@ridhiraretreats.com">Email us</a></div>
+    <div class="site-shared-footer-newsletter"><h5>Newsletter</h5><p>Receive our newsletter and discover our stories, retreats, and surprises.</p><button class="site-shared-footer-button" type="button">Subscribe</button></div>
+    <div class="site-shared-footer-follow"><h5>Follow Us</h5><div class="site-shared-footer-icons"><a href="https://www.instagram.com/" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="17.4" cy="6.7" r="1" fill="currentColor"/></svg></a><a href="https://wa.me/18004414488" aria-label="WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11.5a8 8 0 0 1-11.8 7.1L4 20l1.4-4A8 8 0 1 1 20 11.5Z" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M9 8.5c.3-.3.6-.3.8 0l1 1.4c.2.3.2.6 0 .9l-.5.6c.7 1.2 1.5 2 2.7 2.7l.6-.5c.3-.2.6-.2.9 0l1.4 1c.3.2.3.5 0 .8-.5.6-1.2.9-1.9.7-2.2-.6-4.8-3.2-5.4-5.4-.2-.8.1-1.5.7-2.2Z" fill="currentColor"/></svg></a><a href="https://x.com/" aria-label="X"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h3.8l4.1 5.4L17.6 4H20l-5.9 6.8L20.5 20h-3.8l-4.5-5.9L7.1 20H4.7l6.2-7.3L5 4Zm3.1 1.7H6.9l9.8 12.6h1.2L8.1 5.7Z" fill="currentColor"/></svg></a></div></div>
+  </div>
+  <div class="site-shared-footer-legal"><p>&copy; 2025 Ridhira Group of Companies. All rights reserved.</p><p>Privacy Policy &nbsp;&middot;&nbsp; Terms of Use</p></div>
+</footer>
+<script src="scroll-controls.js"></script>
+</body>
+</html>

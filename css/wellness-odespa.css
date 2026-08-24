@@ -1,0 +1,36 @@
+
+  /* Wellness / Ode Spa */
+  .wellness-section {
+    background: var(--cream-dark);
+    padding: 120px 80px;
+  }
+  .wellness-inner {
+    max-width: 1200px; margin: 0 auto;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
+  }
+  .wellness-images { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
+  .wellness-images img {
+    width: 100%; aspect-ratio: 1; object-fit: cover;
+  }
+  .wellness-images img:first-child {
+    grid-column: span 2; aspect-ratio: 2/1;
+  }
+
+  /* Testimonial */
+  .testimonial-section {
+    max-width: 900px; margin: 0 auto;
+    padding: 120px 80px; text-align: center;
+  }
+  .testimonial-section .quote-mark {
+    font-family: var(--serif); font-size: 80px; line-height: 1;
+    color: rgba(139,115,85,0.2); display: block; margin-bottom: -20px;
+  }
+  .testimonial-section blockquote {
+    font-family: var(--serif); font-weight: 300; font-style: italic;
+    font-size: clamp(22px, 3vw, 34px); line-height: 1.5;
+    color: var(--charcoal); margin-bottom: 40px;
+  }
+  .testimonial-section cite {
+    font-style: normal; font-size: 12px; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--bark);
+  }

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>8 Dimensions of Wellness | Ridhira Retreats</title>
+  <meta name="description" content="Explore the 8 Dimensions of Wellness at Ridhira Retreats." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="8-dimensions.css" />
+  <link rel="stylesheet" href="css/site-brand.css" />
+  <link rel="stylesheet" href="css/scroll-controls.css" />
+  <style>
+    :root {
+      --cream: #EAE4DB;
+      --sand: #D3CABE;
+      --bark: #61574C;
+      --charcoal: #61574C;
+      --white: #EAE4DB;
+      --gold: #D5B881;
+      --muted: #61574C;
+      --serif: 'Cormorant Garamond', Georgia, serif;
+      --sans: 'Jost', sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--cream);
+      color: var(--charcoal);
+      font-family: var(--sans);
+      font-weight: 300;
+    }
+
+    .wellness-page {
+      min-height: 100vh;
+      padding: 152px clamp(24px, 7vw, 112px) 112px;
+    }
+    .wellness-page-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+    .wellness-page-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 48px;
+      color: var(--bark);
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+    .wellness-page-back:hover,
+    .wellness-page-back:focus-visible { color: var(--charcoal); }
+    .wellness-page-intro {
+      max-width: 760px;
+      margin-bottom: 56px;
+    }
+    .wellness-page-eyebrow {
+      margin: 0 0 18px;
+      color: var(--bark);
+      font-size: 10px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+    }
+    .wellness-page-title {
+      margin: 0;
+      color: var(--charcoal);
+      font-family: var(--serif);
+      font-size: clamp(44px, 6vw, 78px);
+      font-weight: 300;
+      line-height: 0.98;
+    }
+    .wellness-page-title em { color: var(--bark); }
+    .wellness-page-copy {
+      max-width: 620px;
+      margin: 26px 0 0;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.85;
+    }
+    .wellness-page-visual {
+      width: 100%;
+      overflow: hidden;
+      background: var(--sand);
+      border-radius: 14px;
+    }
+    .wellness-page-visual img {
+      display: block;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 16 / 9;
+      object-fit: contain;
+    }
+
+    @media (max-width: 700px) {
+      .wellness-page { padding: 116px 20px 80px; }
+      .wellness-page-back { margin-bottom: 36px; }
+      .wellness-page-intro { margin-bottom: 36px; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="site-shared-nav" aria-label="Primary navigation">
+    <a class="site-shared-brand" href="index.html" aria-label="Ridhira Retreats home">
+      <img src="img/logo/ridhira-retreats-logo.png" alt="Ridhira Retreats" width="72" height="113" />
+    </a>
+    <div class="site-shared-nav-links">
+      <a href="index.html#retreat-grid-anchor">Retreats</a>
+      <a href="index.html#experiences">Experiences</a>
+      <a href="index.html#wellness">The Ridhira Way</a>
+      <a class="site-shared-nav-cta" href="contact-us.html">Enquire Now</a>
+    </div>
+  </nav>
+
+  <main class="wellness-page">
+    <div class="wellness-page-inner">
+      <a class="wellness-page-back" href="index.html#wellness" aria-label="Return to the wellness section">&larr; Back to wellness</a>
+      <header class="wellness-page-intro">
+        <p class="wellness-page-eyebrow">A Comprehensive Approach</p>
+        <h1 class="wellness-page-title">The 8<br /><em>Dimensions of Wellness</em></h1>
+        <p class="wellness-page-copy">Wellness is shaped by many interconnected dimensions. Explore the animated visual that guides how Ridhira Retreats creates more balanced and fulfilling experiences.</p>
+      </header>
+      <div class="wellness-page-visual">
+        <img src="img/Video/wellness-color.gif" alt="The 8 Dimensions of Wellness - animated" loading="eager" decoding="async" />
+      </div>
+    </div>
+  </main>
+
+  <script src="scroll-controls.js"></script>
+</body>
+</html>

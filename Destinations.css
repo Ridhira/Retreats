@@ -1,0 +1,458 @@
+/* ══════════════════════════════════════════════
+   DESTINATIONS SECTION
+   Container matches main index.html:
+   full-bleed section + max-width 1200px content
+══════════════════════════════════════════════ */
+.destinations-section {
+  padding: 120px 80px 80px;
+}
+
+/* Header */
+.dest-header {
+  max-width: 1200px;
+  margin: 0 auto 72px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: flex-end;
+}
+.dest-title {
+  font-family: var(--serif);
+  font-weight: 300;
+  font-size: clamp(36px, 4vw, 58px);
+  line-height: 1.1;
+  color: var(--charcoal);
+}
+.dest-title em { font-style: italic; color: var(--bark); }
+.dest-header-right p {
+  font-size: 15px;
+  line-height: 1.85;
+  color: var(--muted);
+  max-width: 420px;
+}
+
+/* Badges */
+.dest-badge {
+  display: inline-block;
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 5px 14px;
+  margin-bottom: 18px;
+}
+.dest-badge-active {
+  background: var(--gold);
+  color: var(--charcoal);
+}
+.dest-badge-soon {
+  border: 0.5px solid rgba(250,248,244,0.4);
+  color: rgba(234,228,219,0.65);
+  background: transparent;
+}
+
+/* ── Featured pair — Goa + Jodhpur side by side ── */
+.dest-featured-pair {
+  max-width: 1200px;
+  margin: 0 auto 48px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.dest-soon-header {
+  max-width: 1200px;
+  margin: 48px auto 28px;
+}
+.dest-coming-title {
+  margin: 0;
+}
+
+.dest-grid--soon {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+}
+
+.dest-card-minimal {
+  height: 320px;
+  cursor: default;
+}
+.dest-card-minimal .dest-card-body {
+  padding: 24px 22px;
+}
+.dest-card-minimal .dest-card-name {
+  margin-bottom: 14px;
+  font-size: 28px;
+}
+.dest-card-minimal .dest-notify-btn {
+  color: rgba(234, 228, 219, 0.85);
+  border-bottom-color: rgba(184, 154, 106, 0.65);
+}
+
+.dest-featured {
+  cursor: pointer;
+}
+.dest-featured .dest-cta-btn {
+  pointer-events: none;
+}
+.dest-featured-main .dest-featured-desc {
+  margin-bottom: 28px;
+}
+.dest-featured-side .dest-featured-desc {
+  margin-bottom: 24px;
+  max-width: 300px;
+}
+.dest-featured-side .dest-cta-btn {
+  display: inline-block;
+}
+
+/* When NOT inside a pair (legacy fallback) */
+.dest-featured:not(.dest-featured-main):not(.dest-featured-side) {
+  margin-bottom: 2px;
+}
+
+.dest-featured-img {
+  position: relative;
+  height: 580px;
+  overflow: hidden;
+  border-radius: 4px;
+}
+.dest-featured-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1s ease;
+}
+.dest-featured:hover .dest-featured-img img {
+  transform: scale(1.04);
+}
+.dest-featured-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(42,36,32,0.82) 0%,
+    rgba(42,36,32,0.4) 50%,
+    rgba(42,36,32,0.1) 100%
+  );
+}
+
+/* Side card (Jodhpur) — overlay comes from bottom for variety */
+.dest-featured-side .dest-featured-overlay {
+  background: linear-gradient(
+    to top,
+    rgba(42,36,32,0.88) 0%,
+    rgba(42,36,32,0.38) 55%,
+    rgba(42,36,32,0.12) 100%
+  );
+}
+
+.dest-featured-content {
+  position: absolute;
+  bottom: 64px;
+  left: 64px;
+  max-width: 500px;
+}
+
+/* Side card content sits lower and tighter */
+.dest-featured-side .dest-featured-content {
+  left: 36px;
+  bottom: 44px;
+  max-width: 320px;
+}
+
+.dest-featured-region {
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(234,228,219,0.5);
+  margin-bottom: 8px;
+}
+.dest-featured-name {
+  font-family: var(--serif);
+  font-weight: 300;
+  font-size: clamp(48px, 6vw, 76px);
+  line-height: 1;
+  color: var(--white);
+  margin-bottom: 6px;
+}
+/* Slightly smaller headline on the narrower Jodhpur card */
+.dest-featured-name--side {
+  font-size: clamp(36px, 4vw, 56px) !important;
+}
+.dest-featured-sub {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 15px;
+  color: var(--gold);
+  margin-bottom: 20px;
+}
+.dest-featured-desc {
+  font-size: 16px !important;
+  line-height: 1.85;
+  color: rgba(234,228,219,0.65);
+  margin-bottom: 36px;
+  max-width: 420px;
+}
+.dest-featured-side .dest-featured-desc {
+  font-size: 16px !important;
+  margin-bottom: 0; /* no CTA button on coming-soon card */
+  max-width: 280px;
+}
+.dest-cta-btn {
+  font-family: var(--sans);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  background: var(--white);
+  color: var(--charcoal);
+  border: none;
+  padding: 14px 32px;
+  cursor: pointer;
+  transition: opacity 0.3s, transform 0.3s;
+}
+.dest-cta-btn:hover {
+  opacity: 0.88;
+  transform: translateY(-1px);
+}
+
+/* Grid */
+.dest-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  margin-bottom: 2px;
+}
+.dest-grid--five {
+  grid-template-columns: repeat(5, 1fr);
+}
+.dest-grid--five .dest-card-name {
+  font-size: clamp(20px, 1.6vw, 26px);
+}
+.dest-card-active .dest-badge-active {
+  align-self: flex-start;
+}
+.dest-card {
+  position: relative;
+  height: 440px;
+  overflow: hidden;
+  cursor: pointer;
+}
+.dest-card-img {
+  position: absolute;
+  inset: 0;
+}
+.dest-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s ease;
+  filter: brightness(0.65);
+}
+.dest-card:hover .dest-card-img img {
+  transform: scale(1.06);
+  filter: brightness(0.45);
+}
+.dest-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(42,36,32,0.92) 0%,
+    rgba(42,36,32,0.2) 55%,
+    transparent 100%
+  );
+}
+
+/* Coming soon cards slightly more muted */
+.dest-card-soon .dest-card-img img {
+  /* filter: brightness(0.5) saturate(0.7); */
+}
+.dest-card-soon:hover .dest-card-img img {
+  /* filter: brightness(0.38) saturate(0.7); */
+}
+
+.dest-card-body {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 28px 24px;
+}
+.dest-card-region {
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(234,228,219,0.4);
+  margin-bottom: 6px;
+}
+.dest-card-name {
+  font-family: var(--serif);
+  font-weight: 300;
+  font-size: 26px;
+  color: var(--white);
+  margin-bottom: 10px;
+  line-height: 1.1;
+  transition: transform 0.4s ease;
+}
+.dest-card:hover .dest-card-name {
+  transform: translateY(-3px);
+}
+.dest-card-desc {
+  font-size: 12px;
+  line-height: 1.7;
+  color: rgba(234,228,219,0);
+  max-height: 0;
+  overflow: hidden;
+  transition: color 0.4s ease 0.1s, max-height 0.5s ease;
+  margin-bottom: 0;
+}
+.dest-card:hover .dest-card-desc {
+  color: rgba(234,228,219,0.6);
+  max-height: 100px;
+  margin-bottom: 14px;
+}
+.dest-card-props {
+  display: flex;
+  gap: 16px;
+}
+.dest-card-props span {
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold);
+  cursor: pointer;
+  border-bottom: 0.5px solid rgba(184,154,106,0.4);
+  padding-bottom: 2px;
+  transition: border-color 0.3s;
+}
+.dest-card-props span:hover { border-color: var(--gold); }
+
+.dest-card-notify {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.4s ease 0.15s, transform 0.4s ease 0.15s;
+}
+.dest-card:hover .dest-card-notify {
+  opacity: 1;
+  transform: translateY(0);
+}
+.dest-card-notify span {
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(234,228,219,0.55);
+}
+.notify-arrow {
+  color: var(--gold) !important;
+  font-size: 14px !important;
+  letter-spacing: 0 !important;
+}
+
+/* Gold left-border accent on hover */
+.dest-card::after {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 2px;
+  background: var(--gold);
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.dest-card:hover::after { transform: scaleY(1); }
+
+/* Bottom strip */
+.dest-footer-strip {
+  background: var(--cream-dark);
+  padding: 40px 64px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+}
+.dest-strip-text {
+  font-family: var(--serif);
+  font-weight: 300;
+  font-size: clamp(18px, 2vw, 26px);
+  color: var(--charcoal);
+  line-height: 1.4;
+}
+.dest-strip-text em { font-style: italic; color: var(--bark); }
+.dest-strip-link {
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--charcoal);
+  border-bottom: 0.5px solid var(--charcoal);
+  padding-bottom: 3px;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: color 0.3s, border-color 0.3s;
+  flex-shrink: 0;
+}
+.dest-strip-link:hover { color: var(--gold); border-color: var(--gold); }
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .dest-grid--five { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 1100px) {
+  .dest-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 900px) {
+  .destinations-section { padding: 80px 24px; }
+  .dest-header { grid-template-columns: 1fr; gap: 32px; }
+  .dest-header-right p { max-width: 100%; }
+  .dest-featured-pair { grid-template-columns: 1fr; gap: 12px; }
+  .dest-featured-img { height: 420px; border-radius: 4px; }
+  .dest-featured-content { left: 24px; bottom: 32px; }
+  .dest-featured-side .dest-featured-content { left: 24px; bottom: 32px; }
+  .dest-grid,
+  .dest-grid--five,
+  .dest-grid--soon { grid-template-columns: 1fr; }
+  .dest-card,
+  .dest-card-minimal { height: 300px; }
+  .dest-footer-strip { flex-direction: column; align-items: flex-start; padding: 32px 24px; }
+}
+@media (max-width: 540px) {
+  .dest-grid,
+  .dest-grid--five,
+  .dest-grid--soon { grid-template-columns: 1fr; }
+  .dest-card { height: 300px; }
+}
+/* ══════════════════════════════════════════════
+   RIDHIRA GROUP — same container as Wellness (main index)
+   section padding 120/80 + inner max-width 1200px
+══════════════════════════════════════════════ */
+.ridhira-group-section {
+  position: relative;
+  z-index: 2;
+  isolation: isolate;
+  background: var(--cream);
+  padding: 120px 80px;
+}
+
+.ridhira-group-section .rg-intro {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+  align-items: flex-start;
+}
+
+.ridhira-group-section .btn-ghost {
+  text-decoration: none;
+  color: var(--charcoal);
+}
+
+@media (max-width: 900px) {
+  .ridhira-group-section { padding: 80px 24px; }
+}
