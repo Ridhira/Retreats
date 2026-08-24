@@ -3932,14 +3932,27 @@ footer { background: var(--charcoal) !important; border-top-color: rgba(139,115,
       />
   </a>
   <ul class="nav-links">
-    <li><a href="">The Vaulte</a></li>
-    <li><a href="">Altaire- The skybar</a></li>
-    <li><a href="">Veya-The CAFE</a></li>
-   <li><a href="#process">Ode spa</a></li>
-     <li><a href="#location">Accommodation</a></li> 
+    <li><a href="#rhythm" class="nav-link">The Tiger Hills Rhythm</a></li>
+    <li><a href="#club-evening" class="nav-link">The Club</a></li>
+    <li><a href="#rooftop" class="nav-link">The Rooftop</a></li>
+    <li><a href="#spaces" class="nav-link">The Café</a></li>
+    <li><a href="#stay-after" class="nav-link">Stay</a></li>
   </ul>
   <a class="site-shared-nav-cta" href="tel:+917416282288">Enquire Now</a>
 </nav>
+
+<style>
+  /* Tiger Hills primary nav: 5-section anchor menu — offset + active-state styling only. */
+  #rhythm, #club-evening, #rooftop, #spaces, #stay-after {
+    scroll-margin-top: 132px;
+  }
+  #main-nav.site-shared-nav .nav-links a {
+    white-space: nowrap;
+  }
+  #main-nav.site-shared-nav .nav-links a.active {
+    color: var(--gold) !important;
+  }
+</style>
 
 <section id="rhythm" aria-labelledby="rhythm-title">
   <div class="rhythm-shell">
@@ -4924,6 +4937,34 @@ const nav = document.getElementById('main-nav');
 window.addEventListener('scroll', () => {
   nav.classList.toggle('scrolled', window.scrollY > 80);
 }, { passive: true });
+
+/* Nav active-section highlighting */
+(function () {
+  const navLinks = Array.from(document.querySelectorAll('#main-nav .nav-links a.nav-link'));
+  if (!navLinks.length) return;
+
+  const sections = navLinks
+    .map(a => document.getElementById(a.getAttribute('href').slice(1)))
+    .filter(Boolean);
+  if (!sections.length) return;
+
+  function setActive(id) {
+    navLinks.forEach(a => {
+      const isActive = a.getAttribute('href') === '#' + id;
+      a.classList.toggle('active', isActive);
+      if (isActive) { a.setAttribute('aria-current', 'true'); }
+      else { a.removeAttribute('aria-current'); }
+    });
+  }
+
+  const sectionObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) setActive(entry.target.id);
+    });
+  }, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
+
+  sections.forEach(sec => sectionObserver.observe(sec));
+})();
 
 
 /* ── Sub-nav: show after scrolling past hero, hide at top ── */
