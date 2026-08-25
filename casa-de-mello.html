@@ -626,69 +626,111 @@
     font-family: var(--serif); font-style: italic; font-size: 17px;
     color: var(--charcoal);
   }
-  .rooms-scroll {
-    display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 2px;
-  }
-  .room-card { position: relative; overflow: hidden; }
-  .room-card img {
-    width: 100%; height: 360px; object-fit: cover;
-    display: block;
-    transition: transform 0.7s ease;
-  }
-  .room-card:hover img { transform: scale(1.05); }
-  .room-info {
-    background: var(--cream-dark); padding: 28px 32px;
-  }
-  .room-info .room-type {
-    font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase;
-    color: var(--bark); margin-bottom: 8px;
-  }
-  .room-info h3 {
-    font-family: var(--serif); font-weight: 300; font-size: 24px;
-    color: var(--charcoal); margin-bottom: 12px;
-  }
-  .room-info p {
-    font-size: 13px; line-height: 1.7; color: var(--muted); margin-bottom: 20px;
-  }
-  .room-amenities {
-    display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px;
-  }
-  .amenity {
-    font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase;
-    color: var(--muted); border: 0.5px solid rgba(139,115,85,0.3);
-    padding: 5px 12px;
-  }
-  .room-info .price {
-    font-family: var(--serif); font-size: 22px; font-weight: 300;
-    color: var(--charcoal); margin-bottom: 20px;
-  }
-  .room-info .price span { font-size: 13px; color: var(--muted); }
+  /* ── Room / Suite tabs ──────────────────────────── */
+  .rs-block { max-width: 1200px; margin: 0 auto; }
 
-  /* ── ROOM BOOK BUTTON ──────────────────── */
-  .btn-book-room {
+  .rs-tabs {
+    display: inline-flex;
+    gap: 10px;
+    margin-bottom: 40px;
+  }
+
+  .rs-tab {
+    font-family: var(--sans);
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    background: transparent;
+    border: 0.5px solid rgba(97, 87, 76, 0.3);
+    border-radius: var(--radius-btn);
+    padding: 11px 22px;
+    cursor: pointer;
+    transition: background-color 0.28s ease, color 0.28s ease, border-color 0.28s ease;
+  }
+
+  .rs-tab:hover {
+    border-color: rgba(97, 87, 76, 0.5);
+    color: var(--charcoal);
+  }
+
+  .rs-tab.is-active {
+    background: var(--gold);
+    border-color: var(--gold);
+    color: var(--charcoal);
+  }
+
+  .rs-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    transition: opacity 0.22s ease;
+  }
+
+  .rs-card.is-hidden { display: none; }
+
+  .rs-card-media {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    border-radius: var(--radius-btn);
+  }
+
+  .rs-card-media img {
     display: block;
     width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+  }
+
+  .rs-card:hover .rs-card-media img { transform: scale(1.04); }
+
+  .rs-card-name {
+    margin: 20px 0 10px;
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 1.2;
+    color: var(--charcoal);
+  }
+
+  .rs-card-meta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 14px;
     font-family: var(--sans);
-    font-size: 11px;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    background: var(--gold);
-    color: var(--charcoal);
-    border: none;
-    padding: 14px 24px;
-    cursor: pointer;
-    text-align: center;
-    transition: background 0.3s, opacity 0.3s;
-    margin-top: 4px;
+    font-size: 12px;
+    color: var(--muted);
   }
-  .btn-book-room:hover {
-    background: var(--gold);
-    color: var(--charcoal);
-    opacity: 0.95;
+
+  .rs-meta-item { display: inline-flex; align-items: center; gap: 6px; }
+  .rs-meta-item svg { width: 14px; height: 14px; flex-shrink: 0; }
+  .rs-meta-sep { width: 0.5px; height: 14px; background: rgba(97, 87, 76, 0.3); }
+
+  .rs-card-desc {
+    margin: 0 0 16px;
+    font-size: 13px;
+    line-height: 1.7;
+    color: var(--muted);
   }
-  a.btn-book-room {
-    text-decoration: none;
-    display: block;
+
+  .rs-discover {
+    display: inline-block;
+    font-family: var(--sans);
+    font-size: 13px;
+    color: var(--charcoal);
+    text-decoration: underline;
+    text-decoration-color: rgba(97, 87, 76, 0.4);
+    text-underline-offset: 3px;
+    transition: color 0.25s ease, text-decoration-color 0.25s ease;
+  }
+
+  .rs-discover:hover,
+  .rs-discover:focus-visible {
+    color: var(--gold);
+    text-decoration-color: var(--gold);
   }
 
   /* Wellness / Ode Spa */
@@ -3020,134 +3062,14 @@ body img {
   .testimonial-track { min-height: 330px; }
 }
 
-/* Four Suites: equal four-column row on desktop, adaptive below tablet. */
-.rooms-carousel {
-  position: relative;
-}
-.rooms-scroll {
-  display: flex;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  scrollbar-width: auto;
-  grid-template-columns: none;
-}
-.rooms-next {
-  position: absolute;
-  top: 50%;
-  right: -44px;
-  z-index: 2;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 8px 0 8px 8px;
-  color: var(--charcoal);
-  background: transparent;
-  border: 0;
-  cursor: pointer;
-  font-family: var(--serif);
-  font-size: 28px;
-  line-height: 1;
-  transform: translateY(-50%);
-  transition: color 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
-}
-.rooms-next:hover,
-.rooms-next:focus-visible {
-  color: var(--gold);
-  transform: translate(4px, -50%);
-  outline: none;
-}
-.rooms-next:disabled {
-  opacity: 0.3;
-  cursor: default;
-  pointer-events: none;
-}
-.rooms-scroll .room-card {
-  flex: 0 0 calc((100% - 36px) / 4);
-  scroll-snap-align: start;
-}
+/* Room / Suite tabbed grid: 3 columns desktop, 2 tablet, 1 mobile. */
 @media (max-width: 1100px) {
-  .rooms-scroll .room-card { flex-basis: calc((100% - 12px) / 2); }
+  .rs-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; }
 }
 @media (max-width: 600px) {
-  .rooms-scroll .room-card { flex-basis: 100%; }
-  .rooms-next { right: 8px; }
-}
-
-/* Preserve the existing four-card sizing while allowing the fifth card to slide into view. */
-.rooms-scroll {
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  grid-auto-rows: 1fr;
-  gap: 12px;
-  align-items: stretch;
-}
-.room-card {
-  display: flex;
-  min-width: 0;
-  flex-direction: column;
-}
-.room-card img {
-  height: 300px;
-  flex: 0 0 auto;
-}
-.room-info {
-  display: flex;
-  flex: 1 1 auto;
-  flex-direction: column;
-}
-.room-info .btn-book-room {
-  margin-top: auto;
-}
-@media (max-width: 1100px) {
-  .rooms-scroll { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .room-card img { height: 280px; }
-}
-@media (max-width: 600px) {
-  .rooms-scroll { grid-template-columns: 1fr; gap: 12px; }
-  .room-card img { height: 240px; }
-}
-
-/* Keep both room controls inside the visible card area at every viewport. */
-.rooms-carousel {
-  position: relative;
-  overflow: visible;
-}
-.rooms-prev,
-.rooms-next {
-  position: absolute;
-  top: 120px;
-  z-index: 10;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 44px;
-  height: 44px;
-  padding: 0;
-  border: 1px solid rgba(250, 248, 244, 0.72);
-  border-radius: 50%;
-  background: rgba(44, 36, 32, 0.72);
-  color: var(--white);
-  cursor: pointer;
-  font-family: var(--serif);
-  font-size: 24px;
-  line-height: 1;
-  transform: translateY(-50%);
-  transition: background 0.3s ease, color 0.3s ease, opacity 0.3s ease;
-}
-.rooms-prev { left: 8px; }
-.rooms-next { right: 8px; }
-.rooms-prev:hover,
-.rooms-prev:focus-visible,
-.rooms-next:hover,
-.rooms-next:focus-visible {
-  background: var(--charcoal);
-  color: var(--gold);
-  outline: none;
-}
-.rooms-prev:disabled,
-.rooms-next:disabled {
-  opacity: 0.35;
-  cursor: default;
-  pointer-events: none;
+  .rs-grid { grid-template-columns: 1fr; gap: 24px; }
+  .rs-tabs { width: 100%; }
+  .rs-tab { flex: 1; text-align: center; }
 }
 
 
@@ -3415,86 +3337,42 @@ body img {
       <p class="rooms-header-copy">Nothing is excessive. Nothing feels impersonal. The house gives you space, while the people around it make the time feel considered.</p>
       <p class="rooms-header-closing">A private home, held with the care of Ridhira.</p>
     </div>
-    <div class="rooms-carousel">
-    <div class="rooms-scroll" data-rooms-scroll>
-
-      <div class="room-card" >
-        <img src="img/CDM/Accomodation-1.png" alt="The Mello Suite" />
-        <div class="room-info">
-          <!-- <p class="room-type">Signature Suite</p> -->
-          <h3>Suite I</h3>
-          <p>A spacious suite with a private lounge, featuring a single bed, a double bed,  and essential amenities.</p>
-          <!-- <div class="room-amenities">
-            <span class="amenity">Private Terrace</span>
-            <span class="amenity">Heritage Bath</span>
-            <span class="amenity">Garden View</span>
-          </div> -->
-          <!--<p class="price">₹28,000 <span>per night, incl. breakfast</span></p>-->
-          <a class="btn-book-room" href="book/casa-de-mello/">Book Now</a>
-        </div>
+    <div class="rs-block" data-rs-block>
+      <div class="rs-tabs" role="tablist" aria-label="Room and suite categories">
+        <button type="button" class="rs-tab is-active" data-rs-tab="room" role="tab" aria-selected="true">Children's Rooms</button>
+        <button type="button" class="rs-tab" data-rs-tab="suite" role="tab" aria-selected="false">Suite Rooms</button>
       </div>
 
-      <div class="room-card">
-        <img src="img/CDM/Accomodation-2.png" alt="Garden Room" />
-        <div class="room-info">
-          <!-- <p class="room-type">Garden Room</p> -->
-          <h3>Suite II</h3>
-          <p>A two-bedroom suite, with one room set in the attic. Both rooms feature double beds and key amenities.</p>
-          <!-- <div class="room-amenities">
-            <span class="amenity">Verandah Access</span>
-            <span class="amenity">Courtyard View</span>
-            <span class="amenity">Clawfoot Tub</span>
-          </div> -->
-          <!--<p class="price">₹18,000 <span>per night, incl. breakfast</span></p>-->
-          
-          <a class="btn-book-room" href="book/casa-de-mello/">BOOK NOW</a>
-        </div>
-      </div>
+      <div class="rs-grid" data-rs-grid>
 
-      <div class="room-card">
-        <img src="img/CDM/Accomodation-3.png" alt="The Loft" />
-        <div class="room-info">
-          <!-- <p class="room-type">Upper-level Room</p> -->
-          <h3>Suite III</h3>
-          <p>A well-planned layout with a lounge, complemented by a single bed, a double bed, and essential amenities.</p>
-          <!-- <div class="room-amenities">
-            <span class="amenity">Exposed Timber</span>
-            <span class="amenity">Tree Canopy View</span>
-            <span class="amenity">Rain Shower</span>
-          </div> -->
-          <!--<p class="price">₹16,000 <span>per night, incl. breakfast</span></p>-->
-          <a class="btn-book-room" href="book/casa-de-mello/">BOOK NOW</a>
-        </div>
-      </div>
+        <!-- TODO: confirm real guest capacity and size specs for each room/suite -->
+        <article class="rs-card" data-rs-cat="room">
+          <div class="rs-card-media"><img src="img/CDM/Accomodation-4.png" alt="Children's Room at Casa De Mello" loading="lazy" /></div>
+          <h3 class="rs-card-name">Children's Room</h3>
+          <div class="rs-card-meta">
+            <!-- <span class="rs-meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.5-7 8-7s8 3 8 7"/></svg>2 Guests</span>
+            <span class="rs-meta-sep"></span>
+            <span class="rs-meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15v5h5M20 9V4h-5M20 4l-7 7M4 20l7-7"/></svg>18 sq m | 194 sq ft</span> -->
+          </div>
+          <p class="rs-card-desc">A welcoming room for younger guests, thoughtfully prepared with the same care and character as the rest of Casa.</p>
+          <a class="rs-discover" href="book/casa-de-mello/">Book Now</a>
+        </article>
 
-      <div class="room-card">
-        <img src="img/CDM/Accomodation-4.png" alt="The Loft" />
-        <div class="room-info">
-          <!-- <p class="room-type">Upper-level Room</p> -->
-          <h3>Suite IV</h3>
-          <p>Comfortable, well-appointed suite with a lounge, a double bed, a single bed, and key amenities.</p>
-          <!-- <div class="room-amenities">
-            <span class="amenity">Exposed Timber</span>
-            <span class="amenity">Tree Canopy View</span>
-            <span class="amenity">Rain Shower</span>
-          </div> -->
-          <!--<p class="price">₹16,000 <span>per night, incl. breakfast</span></p>-->
-          <a class="btn-book-room" href="book/casa-de-mello/">BOOK NOW</a>
-        </div>
-      </div>
+        <article class="rs-card is-hidden" data-rs-cat="suite">
+          <div class="rs-card-media"><img src="img/CDM/Accomodation-1.png" alt="The Mello Suite" loading="lazy" /></div>
+          <h3 class="rs-card-name">Suite Room</h3>
+          <div class="rs-card-meta">
+            <!-- <span class="rs-meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.5-7 8-7s8 3 8 7"/></svg>3 Guests</span>
+            <span class="rs-meta-sep"></span>
+            <span class="rs-meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15v5h5M20 9V4h-5M20 4l-7 7M4 20l7-7"/></svg>40 sq m | 430 sq ft</span> -->
+          </div>
+          <p class="rs-card-desc">A spacious suite with a private lounge, featuring a single bed, a double bed, and essential amenities.</p>
+          <a class="rs-discover" href="book/casa-de-mello/">Book Now</a>
+        </article>
 
-      <div class="room-card">
-        <img src="img/CDM/Our Story.png" alt="Children's Room at Casa De Mello" />
-        <div class="room-info">
-          <h3>Children's Room</h3>
-          <p>A welcoming room for younger guests, thoughtfully prepared with the same care and character as the rest of Casa.</p>
-          <a class="btn-book-room" href="book/casa-de-mello/">BOOK NOW</a>
-        </div>
-      </div>
+        
 
-    </div>
-    <button class="rooms-prev" type="button" data-rooms-prev aria-label="Show previous room">&larr;</button>
-    <button class="rooms-next" type="button" data-rooms-next aria-label="Show next room">&rarr;</button>
+      </div>
     </div>
   </section>
 
@@ -3521,15 +3399,15 @@ body img {
       loop
       playsinline
       preload="none"
-      poster="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=1600&q=80"
+      
     >
-      <source src="https://videos.pexels.com/video-files/1739010/1739010-hd_1920_1080_30fps.mp4" type="video/mp4" />
+      <source src="img/Video/casa.mp4" type="video/mp4" />
     </video>
 
     <!-- Static image fallback (shown on mobile / when video fails) -->
     <img
       class="pool-video-fallback"
-      src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=1400&q=88"
+      src=""
       alt="The pool and courtyard at Casa De Mello, Saligao"
       loading="lazy"
     />
@@ -3545,15 +3423,14 @@ body img {
 
     <!-- Editorial content — bottom left -->
     <div class="pool-video-content">
-      <p class="pool-eyebrow">The Swimming Pool</p>
-      <h2 class="pool-heading">
+      <p class="pool-eyebrow"></p>
+      <!-- <h2 class="pool-heading">
         Where a pristine pool <br><em>rests under open skies.</em>
       </h2>
-      <div class="pool-rule" aria-hidden="true"></div>
+      <div class="pool-rule" aria-hidden="true"></div>-->
       <p class="pool-desc">
-        Tucked within the old-world setting, the pool offers <br>
-        a place to cool off and let the day ease on its own.
-      </p>
+        Stories from the House.
+      </p> 
     </div>
 
   </section>
@@ -4405,35 +4282,33 @@ document.querySelectorAll('.story-section, .rooms-section, .testimonial-section'
 })();
 </script>
 <script>
-/* ── Rooms carousel navigation ─────────────────── */
+/* ── Room / Suite tabs ─────────────────── */
 (function () {
-  const track = document.querySelector('[data-rooms-scroll]');
-  const previous = document.querySelector('[data-rooms-prev]');
-  const next = document.querySelector('[data-rooms-next]');
-  if (!track || !previous || !next) return;
+  document.querySelectorAll('[data-rs-block]').forEach((block) => {
+    const tabs = block.querySelectorAll('.rs-tab');
+    const grid = block.querySelector('[data-rs-grid]');
+    if (!tabs.length || !grid) return;
 
-  function updateState() {
-    previous.disabled = track.scrollLeft <= 2;
-    next.disabled = track.scrollLeft >= track.scrollWidth - track.clientWidth - 2;
-  }
+    tabs.forEach((tab) => {
+      tab.addEventListener('click', () => {
+        if (tab.classList.contains('is-active')) return;
+        const category = tab.dataset.rsTab;
 
-  previous.addEventListener('click', function () {
-    const card = track.querySelector('.room-card');
-    if (!card) return;
-    const gap = parseFloat(getComputedStyle(track).gap) || 0;
-    track.scrollBy({ left: -(card.getBoundingClientRect().width + gap), behavior: 'smooth' });
+        tabs.forEach((t) => {
+          t.classList.toggle('is-active', t === tab);
+          t.setAttribute('aria-selected', t === tab ? 'true' : 'false');
+        });
+
+        grid.style.opacity = '0';
+        setTimeout(() => {
+          grid.querySelectorAll('.rs-card').forEach((card) => {
+            card.classList.toggle('is-hidden', card.dataset.rsCat !== category);
+          });
+          grid.style.opacity = '1';
+        }, 180);
+      });
+    });
   });
-
-  next.addEventListener('click', function () {
-    const card = track.querySelector('.room-card');
-    if (!card) return;
-    const gap = parseFloat(getComputedStyle(track).gap) || 0;
-    track.scrollBy({ left: card.getBoundingClientRect().width + gap, behavior: 'smooth' });
-  });
-
-  track.addEventListener('scroll', updateState, { passive: true });
-  window.addEventListener('resize', updateState, { passive: true });
-  updateState();
 })();
 </script>
 <script src="scroll-controls.js"></script>
