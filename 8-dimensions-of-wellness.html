@@ -11,6 +11,13 @@
   <link rel="stylesheet" href="8-dimensions.css" />
   <link rel="stylesheet" href="css/site-brand.css" />
   <link rel="stylesheet" href="css/scroll-controls.css" />
+  <!-- editorial.css + css/header.css give access to the shared
+       .btn-ghost "Explore more →" component used elsewhere on the
+       site, so this page's CTA links stay in sync with any future
+       site-wide button change instead of re-implementing the look. -->
+  <link rel="stylesheet" href="editorial.css" />
+  <link rel="stylesheet" href="css/header.css" />
+  <link rel="stylesheet" href="css/site-footer.css" />
   <style>
     :root {
       --cream: #EAE4DB;
@@ -101,6 +108,94 @@
       .wellness-page-back { margin-bottom: 36px; }
       .wellness-page-intro { margin-bottom: 36px; }
     }
+
+    /* ── 8 Dimensions — alternating image/text blocks ───────────
+       One row per dimension: image + heading + tagline couplet +
+       body copy + "Explore more →" (the shared .btn-ghost link,
+       see editorial.css / css/header.css). Odd rows run
+       image-left/text-right; .dim-block--reverse flips even rows
+       to text-left/image-right, matching the alternating rhythm
+       used for paired editorial sections elsewhere on the site. */
+    .dim-blocks {
+      display: flex;
+      flex-direction: column;
+      gap: clamp(72px, 9vw, 112px);
+    }
+    .dim-block {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(40px, 5vw, 80px);
+      align-items: center;
+    }
+    .dim-block--reverse .dim-block-media { order: 2; }
+    .dim-block--reverse .dim-block-text { order: 1; }
+
+    .dim-block-media {
+      overflow: hidden;
+      border-radius: 14px;
+      background: var(--sand);
+      aspect-ratio: 4 / 3;
+    }
+    .dim-block-media img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.9s ease;
+    }
+    .dim-block-media:hover img {
+      transform: scale(1.04);
+    }
+
+    .dim-block-heading {
+      margin: 0 0 20px;
+      font-family: var(--serif);
+      font-weight: 300;
+      font-size: clamp(28px, 3.2vw, 40px);
+      line-height: 1.15;
+      color: var(--charcoal);
+    }
+    .dim-block-tagline {
+      margin: 0 0 22px;
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 17px;
+      line-height: 1.6;
+      color: var(--bark);
+    }
+    .dim-block-copy {
+      margin: 0 0 16px;
+      max-width: 520px;
+      font-size: 15px;
+      line-height: 1.9;
+      color: var(--muted);
+    }
+    .dim-block-copy:last-of-type {
+      margin-bottom: 28px;
+    }
+    .dim-block-cta.btn-ghost {
+      margin-top: 4px;
+    }
+
+    @media (max-width: 860px) {
+      .dim-block,
+      .dim-block--reverse {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+      .dim-block-media,
+      .dim-block--reverse .dim-block-media {
+        order: -1;
+      }
+      .dim-block-text,
+      .dim-block--reverse .dim-block-text {
+        order: 0;
+      }
+      .dim-block-copy,
+      .dim-block-copy:last-of-type {
+        max-width: none;
+      }
+    }
   </style>
 </head>
 <body>
@@ -118,18 +213,130 @@
 
   <main class="wellness-page">
     <div class="wellness-page-inner">
-      <a class="wellness-page-back" href="index.html#wellness" aria-label="Return to the wellness section">&larr; Back to wellness</a>
+      <a class="wellness-page-back" href="index.html#wellness" aria-label="Return to the wellness section">&larr; Back to Home</a>
       <header class="wellness-page-intro">
         <p class="wellness-page-eyebrow">A Comprehensive Approach</p>
         <h1 class="wellness-page-title">The 8<br /><em>Dimensions of Wellness</em></h1>
         <p class="wellness-page-copy">Wellness is shaped by many interconnected dimensions. Explore the animated visual that guides how Ridhira Retreats creates more balanced and fulfilling experiences.</p>
       </header>
-      <div class="wellness-page-visual">
-        <img src="img/Video/wellness-color.gif" alt="The 8 Dimensions of Wellness - animated" loading="eager" decoding="async" />
+      <div class="dim-blocks">
+
+        <!-- 1. Physical Wellness -->
+        <article class="dim-block">
+          <div class="dim-block-media">
+            <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?w=900&q=80" alt="Physical wellness — strength training and movement" loading="lazy" />
+          </div>
+          <div class="dim-block-text">
+            <h2 class="dim-block-heading">Physical Wellness: The Vital Rhythm of Life</h2>
+            <p class="dim-block-tagline">Strength that moves; nutrition, sleep, and recovery tuned to your life.<br>Routine creates durable, dependable fitness.</p>
+            <p class="dim-block-copy">At Ridhira, we build environments where movement is effortless - gyms, yoga decks, walking trails, wellness centres and preventive health diagnostics. Ode Spa complements this with therapies that restore vitality through ancient healing traditions and modern recovery science.</p>
+            <!-- <a class="btn-ghost dim-block-cta" href="index.html#wellness">Explore more<span class="arrow">→</span></a> -->
+          </div>
+        </article>
+
+        <!-- 2. Emotional Wellness -->
+        <article class="dim-block dim-block--reverse">
+          <div class="dim-block-media">
+            <img src="https://images.unsplash.com/photo-1497294815431-9365093b7331?w=900&q=80" alt="Emotional wellness — a quiet moment of calm and reflection" loading="lazy" />
+          </div>
+          <div class="dim-block-text">
+            <h2 class="dim-block-heading">Emotional Wellness: The Heart of Inner Balance</h2>
+            <p class="dim-block-tagline">Name it, regulate it, grow from it.<br>Emotional clarity turns stress into adaptive capacity.</p>
+            <p class="dim-block-copy">Ridhira cultivates mindful spaces that reduce pressure and support reflection. Ode Spa adds the science of touch and calm, enabling individuals to reset, recharge, and build lasting resilience.</p>
+            
+          </div>
+        </article>
+
+        <!-- 3. Intellectual Wellness -->
+        <article class="dim-block">
+          <div class="dim-block-media">
+            <img src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=900&q=80" alt="Intellectual wellness — reading and focused learning" loading="lazy" />
+          </div>
+          <div class="dim-block-text">
+            <h2 class="dim-block-heading">Intellectual Wellness: The Power of Thought</h2>
+            <p class="dim-block-tagline">Curiosity tested by evidence; ideas shaped into tools.<br>Learn, iterate, apply. Then raise the bar.</p>
+            <p class="dim-block-copy">We create environments in our Retreats and community spaces that spark ideas - quiet zones for focus, collaborative lounges for exchange, and technology that augments creativity. AI-driven tools and design innovation help individuals stretch their thinking and adapt to change.</p>
+            
+          </div>
+        </article>
+
+        <!-- 4. Social Wellness -->
+        <article class="dim-block dim-block--reverse">
+          <div class="dim-block-media">
+            <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=900&q=80" alt="Social wellness — friends gathered together" loading="lazy" />
+          </div>
+          <div class="dim-block-text">
+            <h2 class="dim-block-heading">Social Wellness: The Power of Connection</h2>
+            <p class="dim-block-tagline">Belonging grows where trust and reciprocity are practised.<br>Shared time creates networks that lift everyone.</p>
+            <p class="dim-block-copy">Ridhira brings people together through community clubs, shared experiences, and memberships that connect life at home with life beyond. At our Retreats, every interaction is designed to strengthen human connection.</p>
+            
+          </div>
+        </article>
+
+        <!-- 5. Spiritual Wellness -->
+        <article class="dim-block">
+          <div class="dim-block-media">
+            <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=900&q=80" alt="Spiritual wellness — candlelight and quiet reflection" loading="lazy" />
+          </div>
+          <div class="dim-block-text">
+            <h2 class="dim-block-heading">Spiritual Wellness: The Essence of Inner Alignment</h2>
+            <p class="dim-block-tagline">Meaning anchored in values, not noise.<br>Quiet attention widens perspective and steadies the day.</p>
+            <p class="dim-block-copy">Our spaces integrate nature and design to invite reflection. Ridhira Retreats go further, offering immersive journeys that encourage gratitude, mindfulness, and the rediscovery of purpose. Ode Spa supports this with therapies that align body, mind, and spirit.</p>
+            
+          </div>
+        </article>
+
+        <!-- 6. Environmental Wellness -->
+        <article class="dim-block dim-block--reverse">
+          <div class="dim-block-media">
+            <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=900&q=80" alt="Environmental wellness — a lush green forest canopy" loading="lazy" />
+          </div>
+          <div class="dim-block-text">
+            <h2 class="dim-block-heading">Environmental Wellness: Living in Harmony with Nature</h2>
+            <p class="dim-block-tagline">Clean air, safe water, natural light, low-impact systems.<br>Design that protects both people and planet.</p>
+            <p class="dim-block-copy">We prioritise sustainable planning - green corridors, water harvesting, clean energy, and biophilic design that reduces ecological impact. With the first-of-its-kind 3D Printed Resort Villa Community at Ridhira Zen, we are setting a new global benchmark for sustainable living.</p>
+            <p class="dim-block-copy">At Ridhira, nature is not an add-on but the framework of community life.</p>
+            
+          </div>
+        </article>
+
+        <!-- 7. Occupational Wellness -->
+        <article class="dim-block">
+          <div class="dim-block-media">
+            <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=900&q=80" alt="Occupational wellness — a calm, focused workspace" loading="lazy" />
+          </div>
+          <div class="dim-block-text">
+            <h2 class="dim-block-heading">Occupational Wellness: Fulfilment in Work and Purpose</h2>
+            <p class="dim-block-tagline">Work with cadence: focus, renewal, craft.<br>Progress without burnout. Achievement with dignity.</p>
+            <p class="dim-block-copy">Ridhira integrates co-working lounges, flexible retreats, and corporate programs that help professionals find rhythm in their work. Ode Spa complements this by offering treatments tailored for busy lives, helping performance and recovery coexist.</p>
+            
+          </div>
+        </article>
+
+        <!-- 8. Financial Wellness -->
+        <article class="dim-block dim-block--reverse">
+          <div class="dim-block-media">
+            <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=900&q=80" alt="Financial wellness — planning for long-term security" loading="lazy" />
+          </div>
+          <div class="dim-block-text">
+            <h2 class="dim-block-heading">Financial Wellness: Security and Freedom</h2>
+            <p class="dim-block-tagline">Clear goals, disciplined habits, and buffers.<br>Plan today to safeguard tomorrow's choices.</p>
+            <p class="dim-block-copy">We design opportunities that hold long-term value, from curated investments to community assets that grow in worth over time. Stability and growth enable individuals and families to feel secure while living fully in the present.</p>
+            
+          </div>
+        </article>
+
       </div>
     </div>
   </main>
 
+  <!-- Shared footer — markup lives in include-footer.js (FOOTER_HTML)
+       so it loads reliably whether the page is served or opened as a
+       plain local file. Editing that (or css/site-footer.css) updates
+       this and every other page that includes it. -->
+  <footer data-include="footer"></footer>
+
   <script src="scroll-controls.js"></script>
+  <script src="include-footer.js"></script>
 </body>
 </html>

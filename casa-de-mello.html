@@ -549,14 +549,14 @@
     position: absolute; left: 0; right: 0; bottom: 3%;
     z-index: 3;
   }
-  .arch-progress-rail {
+  /* .arch-progress-rail {
     height: 0.5px; background: rgba(250,248,244,0.18); position: relative;
-  }
-  .arch-progress-fill {
+  } */
+  /* .arch-progress-fill {
     position: absolute; top: 0; left: 0; height: 100%;
     width: 0%; background: var(--gold);
     transition: width 0.1s linear;
-  }
+  } */
   .arch-progress-nums {
     display: flex; justify-content: space-between;
     margin-top: 14px;
@@ -731,6 +731,14 @@
   .rs-discover:focus-visible {
     color: var(--gold);
     text-decoration-color: var(--gold);
+  }
+
+  /* "Take the House" CTA — centered below the rs-grid, same
+     64px rhythm as .rooms-header's own margin-bottom. Button
+     itself reuses .cdm-book-cta as-is, no new style added. */
+  .take-house-cta {
+    text-align: center;
+    margin-top: 64px;
   }
 
   /* Wellness / Ode Spa */
@@ -3175,7 +3183,7 @@ body img {
 
 
   <div class="detail-hero">
-    <img src="img/CDM/hero-section.png" alt="Casa De Mello" />
+    <img src="img/CDM/hero/darkoverlay.webp" alt="Casa De Mello" />
     <div class="detail-hero-overlay"></div>
     <div class="detail-hero-content">
       <p class="eyebrow">RIDHIRA RETREATS &nbsp;·&nbsp;  GOA</p>
@@ -3373,6 +3381,49 @@ body img {
         
 
       </div>
+    </div>
+  </section>
+
+     <!-- ══════════════════════════════════════════════ -->
+  <!-- TAKE THE HOUSE — full-house booking, reuses the same -->
+  <!-- .rooms-section / .rooms-header / .rs-grid / .rs-card  -->
+  <!-- classes as "Four Suites, One Heritage Home" above so  -->
+  <!-- padding, heading style and card treatment match       -->
+  <!-- exactly, and .cdm-book-cta so the CTA matches the     -->
+  <!-- page's existing booking button exactly. No new type   -->
+  <!-- scale or button style is introduced.                  -->
+  <!-- ══════════════════════════════════════════════ -->
+  <section class="rooms-section" id="take-the-house">
+    <div class="rooms-header">
+      <p class="label">One Home, Yours Alone.</p>
+      <h2>Take the <em>House.</em></h2>
+      <p class="rooms-header-copy">At its best, Casa De Mello is taken whole — not divided between separate bookings, but held completely for the people you've brought with you.</p>
+    </div>
+
+    <div class="rs-grid">
+
+      <article class="rs-card">
+        <div class="rs-card-media"><img src="img/CDM/hero-section.png" alt="Casa De Mello, reserved in full" loading="lazy" /></div>
+        <h3 class="rs-card-name">Full-House Stay</h3>
+        <p class="rs-card-desc">Reserve Casa De Mello in its entirety — every suite, courtyard, and shared space set aside for one party alone, with the whole house run to your own rhythm.</p>
+      </article>
+
+      <article class="rs-card">
+        <div class="rs-card-media"><img src="img/CDM/Accomodation-2.png" alt="A suite at Casa De Mello prepared for family and friends" loading="lazy" /></div>
+        <h3 class="rs-card-name">Family &amp; Friends</h3>
+        <p class="rs-card-desc">Six suites make Casa a natural home for multi-generational travel, with grandparents, parents, and children each finding their own quiet corner under one roof.</p>
+      </article>
+
+      <article class="rs-card">
+        <div class="rs-card-media"><img src="img/CDM/Accomodation-3.png" alt="The private dining room at Casa De Mello" loading="lazy" /></div>
+        <h3 class="rs-card-name">Private Dining</h3>
+        <p class="rs-card-desc">Meals are prepared and served within the house, shaped around your party's own hours rather than a fixed sitting — from long lunches to quiet family dinners.</p>
+      </article>
+
+    </div>
+
+    <div class="take-house-cta">
+      <a class="cdm-book-cta" href="contact-us.html#enquiry-form">Send Enquiry&nbsp;&nbsp;&rarr;</a>
     </div>
   </section>
 
@@ -3949,7 +4000,7 @@ body img {
       <div class="footer-col">
         <h4>Retreats</h4>
         <a href="#" href="casa-de-mello.html" onclick="window.location.href='casa-de-mello.html';return false">Casa De Mello, Goa</a>
-        <a href="#" onclick="window.location.href='tiger-hills-purple.html'">Tiger Hills, Udaipur</a>
+        <a href="#" onclick="window.location.href='tiger-hills.html'">Tiger Hills, Udaipur</a>
         <a href="#wellness">Wellness</a>
         <!-- <a href="#" >Karohi Haveli, Udaipur</a> -->
       </div>
@@ -3963,7 +4014,7 @@ body img {
       <div class="footer-col">
         <h4>Connect</h4>
         <a href="">Contact Us</a>
-        <a href="#">Press</a>
+        <a href="#"></a>
         <!-- <a href="#">Careers</a> -->
         <a href="#">Instagram</a>
 
@@ -3977,9 +4028,9 @@ body img {
 
   <footer class="site-shared-footer">
     <div class="site-shared-footer-columns">
-      <div class="site-shared-footer-column"><h4>Retreats</h4><a href="casa-de-mello.html">Casa De Mello, Goa</a><a href="tiger-hills-purple.html">Tiger Hills, Udaipur</a></div>
+      <div class="site-shared-footer-column"><h4>Retreats</h4><a href="casa-de-mello.html">Casa De Mello, Goa</a><a href="tiger-hills.html">Tiger Hills, Udaipur</a></div>
       <div class="site-shared-footer-column"><h4>Connect</h4><a href="https://ridhira.com/" target="_blank" rel="noopener noreferrer">Ridhira Group</a><a href="https://odespa.com/" target="_blank" rel="noopener noreferrer">Odespa</a></div>
-      <div class="site-shared-footer-column"><h4>Contact</h4><a href="contact-us.html">Contact Us</a><a href="#">Press</a></div>
+      <div class="site-shared-footer-column"><h4>Contact</h4><a href="contact-us.html">Contact Us</a><a href="#"></a></div>
       <div class="site-shared-footer-column"><h4>Legal</h4><a href="#">Terms and Conditions</a><a href="#">Privacy &amp; Cookies</a></div>
     </div>
     <div class="site-shared-footer-divider"></div>

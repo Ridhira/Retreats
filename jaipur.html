@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FS2S197XR8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FS2S197XR8');
+</script>
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Jaipur, Coming Soon | Ridhira Retreats</title>
+<meta name="description" content="A new Ridhira Retreats experience is coming to Jaipur, Rajasthan — art, design, craft and modern Rajasthan. Join the waitlist.">
+<link rel="stylesheet" href="EXPERIENCES.css">
+<link rel="stylesheet" href="Destinations.css">
+<link rel="stylesheet" href="8-dimensions.css">
+<link rel="stylesheet" href="editorial.css">
+<link rel="stylesheet" href="css/navbar.css">
+<link rel="stylesheet" href="css/header.css">
+<link rel="stylesheet" href="css/footer.css">
+<link rel="stylesheet" href="css/scroll-controls.css">
+<link rel="stylesheet" href="destination-page.css">
+<link rel="stylesheet" href="css/site-footer.css">
+<link href="img/logo/ridhira-retreats-logo.png" rel="shortcut icon" type="image/png">
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-uKQ39gEGiyUJl4AI6L+ekBdGKpGw4xJ55+xyJG7YFlJokPNYegn9KwQ3P8A7aFQAUtUsAQHep+d/lrGqrbPIDQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --cream: #EAE4DB;
+    --cream-dark: #E1DAD0;
+    --sand: #D3CABE;
+    --bark: #61574C;
+    --earth: #61574C;
+    --charcoal: #61574C;
+    --white: #EAE4DB;
+    --gold: #D5B881;
+    --muted: #61574C;
+    --serif: 'Cormorant Garamond', Georgia, serif;
+    --sans: 'Jost', sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--sans);
+    background: var(--cream);
+    color: var(--charcoal);
+    font-weight: 300;
+  }
+
+</style>
+</head>
+<body class="dp-body">
+
+<div class="mobile-nav" id="mobile-nav" role="banner">
+  <div class="mobile-nav-header">
+
+    <!-- Left: brand -->
+    <a
+      class="mobile-nav-logo"
+      href="index.html"
+      aria-label="Ridhira Retreats — Home"
+    >
+      <img src="img/logo/ridhira-retreats-logo.png" alt="Ridhira Retreats" width="42" height="66" />
+    </a>
+
+    <!-- Right: menu toggle -->
+    <button
+      class="hamburger"
+      id="hamburger-btn"
+      aria-label="Open navigation menu"
+      aria-expanded="false"
+      aria-controls="mobile-overlay"
+      type="button"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════
+     MOBILE MENU OVERLAY v2 — Luxury Glassmorphism
+     Opens on hamburger, closes via ✕ / Escape / outside tap.
+══════════════════════════════════════════════════════════ -->
+<div
+  class="mobile-overlay"
+  id="mobile-overlay"
+  role="dialog"
+  aria-modal="true"
+  aria-label="Site navigation"
+  aria-hidden="true"
+>
+  <div class="mobile-overlay-inner">
+
+    <!-- ── TOP ROW: "☰ Menu" label | "✕ Close" button ─────── -->
+    <div class="mobile-overlay-header">
+
+      <!-- Left: decorative "☰ Menu" label -->
+      <span class="mobile-overlay-menu-label" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+             stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
+          <line x1="3" y1="7"  x2="21" y2="7"/>
+          <line x1="3" y1="12" x2="21" y2="12"/>
+          <line x1="3" y1="17" x2="21" y2="17"/>
+        </svg>
+        Menu
+      </span>
+
+      <!-- Right: ✕ Close — always visible, always clickable -->
+      <button
+        class="mobile-close-btn"
+        id="mobile-close-btn"
+        aria-label="Close navigation menu"
+        type="button"
+      >
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+             stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+             aria-hidden="true">
+          <path d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+        Close
+      </button>
+    </div>
+
+    <!-- ── SCROLLABLE NAV LINKS ─────────────────────────────── -->
+    <div class="mobile-overlay-scroll">
+      <nav class="mobile-overlay-nav" aria-label="Mobile site navigation">
+        <ul>
+          <li class="mobile-nav-dropdown">
+            <button class="mobile-nav-link mobile-nav-dropdown-toggle" type="button" aria-expanded="false" aria-controls="mobile-retreats-menu">
+              <span>Retreats</span><span class="link-arrow" aria-hidden="true">⌄</span>
+            </button>
+            <div class="mobile-nav-dropdown-menu" id="mobile-retreats-menu">
+              <a class="mobile-nav-link" href="casa-de-mello.html">Casa De Mello, Goa</a>
+              <a class="mobile-nav-link" href="tiger-hills.html">Tiger Hills, Udaipur</a>
+            </div>
+          </li>
+          <li><a href="index.html#experiences" class="mobile-nav-link">Experiences<span class="link-arrow" aria-hidden="true">→</span></a></li>
+          <li><a href="index.html#wellness" class="mobile-nav-link">The Ridhira Way<span class="link-arrow" aria-hidden="true">→</span></a></li>
+          <li class="mobile-nav-dropdown">
+            <button class="mobile-nav-link mobile-nav-dropdown-toggle" type="button" aria-expanded="false" aria-controls="mobile-coming-soon-menu">
+              <span>Coming Soon</span><span class="link-arrow" aria-hidden="true">⌄</span>
+            </button>
+            <div class="mobile-nav-dropdown-menu" id="mobile-coming-soon-menu">
+              <a class="mobile-nav-link" href="jodhpur.html">Jodhpur</a>
+              <a class="mobile-nav-link" href="ayodhya.html">Ayodhya</a>
+              <a class="mobile-nav-link" href="jaipur.html">Jaipur</a>
+            </div>
+          </li>
+          <li><a href="index.html#retreat-grid-anchor" class="mobile-nav-link mobile-nav-enquire wl-trigger" data-destination="">Enquire Now<span class="link-arrow" aria-hidden="true">→</span></a></li>
+        </ul>
+      </nav>
+    </div>
+
+  </div><!-- /.mobile-overlay-inner -->
+</div><!-- /.mobile-overlay -->
+
+<!-- ── NAVIGATION ──────────────────────────────── -->
+<nav class="desktop-nav">
+  <a class="nav-brand-logo" href="index.html" aria-label="Ridhira Retreats — Home">
+    <img src="img/logo/ridhira-retreats-logo.png" alt="Ridhira Retreats" width="72" height="113" />
+  </a>
+
+  <!-- Right: nav links + CTA -->
+  <div class="nav-right">
+    <ul class="nav-links">
+      <li class="nav-dropdown">
+        <button class="nav-dropdown-toggle" type="button" aria-expanded="false" aria-controls="retreats-menu">Retreats<span class="nav-arrow" aria-hidden="true">⌄</span></button>
+        <div class="nav-dropdown-menu" id="retreats-menu">
+          <a href="casa-de-mello.html">Casa De Mello, Goa</a>
+          <a href="tiger-hills.html">Tiger Hills, Udaipur</a>
+        </div>
+      </li>
+      <li><a href="index.html#experiences">Experiences</a></li>
+      <li><a href="index.html#wellness">The Ridhira Way</a></li>
+      <li class="nav-dropdown">
+        <button class="nav-dropdown-toggle" type="button" aria-expanded="false" aria-controls="coming-soon-menu">Coming Soon<span class="nav-arrow" aria-hidden="true">⌄</span></button>
+        <div class="nav-dropdown-menu" id="coming-soon-menu">
+          <a href="jodhpur.html">Jodhpur</a>
+          <a href="ayodhya.html">Ayodhya</a>
+          <a href="jaipur.html">Jaipur</a>
+        </div>
+      </li>
+    </ul>
+    <a class="nav-book wl-trigger" href="index.html#retreat-grid-anchor" data-destination="">Enquire Now</a>
+  </div>
+</nav>
+
+
+<a class="dp-back" href="index.html">← Ridhira Retreats</a>
+
+<main>
+
+<!-- ══════════════════════════════════════════════ -->
+<!-- HERO                                            -->
+<!-- ══════════════════════════════════════════════ -->
+<section class="dp-hero" aria-label="Jaipur — Coming Soon">
+  <div class="dp-hero-img">
+    <img src="https://images.unsplash.com/photo-1477587458883-47145ed94245?w=1600&q=85" alt="Jaipur — the Pink City" />
+  </div>
+  <div class="dp-hero-overlay"></div>
+  <div class="dp-hero-content">
+    <p class="dp-hero-eyebrow">Rajasthan, India</p>
+    <h1 class="dp-hero-name">JAIPUR</h1>
+    <span class="dp-hero-badge">Coming Soon</span>
+    <p class="dp-hero-sub">The Pink City’s palaces, bazaars and craft workshops — Ridhira’s next retreat is finding its place among them.</p>
+  </div>
+  <button type="button" class="dp-scroll-indicator" aria-label="Scroll to explore">
+    <span>Explore</span>
+    <span class="dp-scroll-line" aria-hidden="true"></span>
+  </button>
+</section>
+
+<!-- ══════════════════════════════════════════════ -->
+<!-- DESTINATION INTRODUCTION                        -->
+<!-- ══════════════════════════════════════════════ -->
+<section class="dp-section dp-section--tight" id="dp-intro">
+  <div class="dp-intro">
+    <div class="ed-reveal">
+      <p class="dp-intro-eyebrow">A New Ridhira Experience Is Coming</p>
+      <h2 class="dp-intro-title">A city built on art,
+<em>design and craft.</em></h2>
+    </div>
+    <div class="dp-intro-copy ed-reveal ed-reveal-delay-1">
+      <p>Jaipur has always been a designed city — laid out on a precise grid in the 18th century, painted in a single rose-pink hue, and filled ever since with artisans working in stone, textile, metal and pigment. It is as much a living design school as it is a royal capital.</p>
+      <p>Ridhira’s Jaipur retreat is being shaped around that identity — a base for exploring the city’s palaces and workshops by day, and a considered, design-forward space to return to by night.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════ -->
+<!-- THE PROPERTY                                    -->
+<!-- ══════════════════════════════════════════════ -->
+<section class="dp-section dp-section--charcoal">
+  <div class="dp-property-head ed-reveal">
+    <div>
+      <p class="dp-property-label">The Property</p>
+      <h2 class="dp-property-title">A Ridhira Retreat in the Pink City</h2>
+    </div>
+    <!-- <span class="dp-property-status">Announcing Soon</span> -->
+  </div>
+
+  <div class="dp-property-gallery ed-reveal ed-reveal-delay-1">
+    <div class="dp-gallery-main">
+      <img src="https://images.unsplash.com/photo-1477587458883-47145ed94245?w=1600&q=85" alt="Jaipur — the Pink City" />
+    </div>
+  </div>
+
+  <div class="dp-property-copy dp-property-caption ed-reveal">
+    <p>Ramas Palace</p>
+  </div>
+
+  
+</section>
+
+
+
+<!-- ══════════════════════════════════════════════ -->
+<!-- ENQUIRE / WAITLIST CTA                          -->
+<!-- ══════════════════════════════════════════════ -->
+<section class="dp-section dp-section--charcoal-off" style="background:var(--cream-dark);">
+  <div class="dp-cta ed-reveal">
+    <p class="dp-cta-text">Be the first to know when <em>Jaipur</em> opens.</p>
+    <div class="dp-cta-actions">
+      <button type="button" class="exp-explore-btn wl-trigger" data-destination="Jaipur">Join the Waitlist<span class="exp-explore-arrow">→</span></button>
+      <button type="button" class="btn-ghost wl-trigger" data-destination="Jaipur">Enquire About the Property<span class="arrow">→</span></button>
+    </div>
+  </div>
+</section>
+
+</main>
+
+  <!-- Shared footer — markup lives in include-footer.js (FOOTER_HTML)
+       so it loads reliably whether the page is served or opened as a
+       plain local file. Editing that (or css/site-footer.css) updates
+       this and every other page that includes it. -->
+  <footer data-include="footer"></footer>
+
+
+<div class="wl-modal" id="waitlist-modal" role="dialog" aria-modal="true" aria-labelledby="wl-title" aria-hidden="true" hidden>
+  <div class="wl-backdrop" data-wl-close tabindex="-1"></div>
+  <div class="wl-panel" role="document">
+    <button type="button" class="wl-close" data-wl-close aria-label="Close waitlist form">×</button>
+
+    <div class="wl-form-view" id="wl-form-view">
+      <p class="wl-eyebrow">Coming Soon</p>
+      <h2 class="wl-title" id="wl-title">Join the Waitlist</h2>
+      <p class="wl-lead">Leave your details and we will let you know when this destination opens.</p>
+
+      <form id="waitlist-form" novalidate>
+        <label class="wl-field">
+          <span>Name</span>
+          <input type="text" name="name" id="wl-name" autocomplete="name" required />
+        </label>
+        <label class="wl-field">
+          <span>Email</span>
+          <input type="email" name="email" id="wl-email" autocomplete="email" required />
+        </label>
+        <label class="wl-field">
+          <span>Destination interest</span>
+          <select name="destination" id="wl-destination" required>
+            <option value="">Select a destination</option>
+            <option value="Ayodhya">Ayodhya</option>
+            <option value="Jodhpur">Jodhpur</option>
+            <option value="Jaipur">Jaipur</option>
+            <option value="All destinations">All destinations</option>
+          </select>
+        </label>
+        <label class="wl-field">
+          <span>Message <em>(optional)</em></span>
+          <textarea name="message" id="wl-message" rows="3" placeholder="Anything you’d like us to know…"></textarea>
+        </label>
+        <p class="wl-error" id="wl-error" role="alert" hidden></p>
+        <button type="submit" class="wl-submit" id="wl-submit">Join the Waitlist</button>
+      </form>
+    </div>
+
+    <div class="wl-success-view" id="wl-success-view" hidden>
+      <p class="wl-eyebrow">Thank you</p>
+      <h2 class="wl-title">You’re on the list.</h2>
+      <p class="wl-lead">We’ll be in touch when this retreat is ready to welcome you.</p>
+      <button type="button" class="wl-submit" data-wl-close>Close</button>
+    </div>
+  </div>
+</div>
+
+
+<script>
+(function () {
+  /* ── Mobile menu ─────────────────────────────────────────── */
+  var hamburger = document.getElementById('hamburger-btn');
+  var overlay = document.getElementById('mobile-overlay');
+  var closeBtn = document.getElementById('mobile-close-btn');
+
+  function openMenu() {
+    overlay.setAttribute('aria-hidden', 'false');
+    hamburger.setAttribute('aria-expanded', 'true');
+    document.body.classList.add('dp-menu-open');
+  }
+  function closeMenu() {
+    overlay.setAttribute('aria-hidden', 'true');
+    hamburger.setAttribute('aria-expanded', 'false');
+    document.body.classList.remove('dp-menu-open');
+  }
+  if (hamburger && overlay) {
+    hamburger.addEventListener('click', function () {
+      overlay.getAttribute('aria-hidden') === 'false' ? closeMenu() : openMenu();
+    });
+  }
+  if (closeBtn) closeBtn.addEventListener('click', closeMenu);
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') { closeMenu(); }
+  });
+
+  /* Dropdown toggles ("Retreats" / "Coming Soon") are handled by
+     the shared nav-dropdowns.js — see the <script src> below. */
+
+  /* ── Waitlist modal ──────────────────────────────────────── */
+  var modal = document.getElementById('waitlist-modal');
+  var formView = document.getElementById('wl-form-view');
+  var successView = document.getElementById('wl-success-view');
+  var form = document.getElementById('waitlist-form');
+  var destinationSelect = document.getElementById('wl-destination');
+  var wlTitle = document.getElementById('wl-title');
+
+  function openWaitlist(destination) {
+    if (!modal) return;
+    if (destination && destinationSelect) { destinationSelect.value = destination; }
+    if (destination && wlTitle) { wlTitle.textContent = 'Join the ' + destination + ' Waitlist'; }
+    modal.hidden = false;
+    modal.setAttribute('aria-hidden', 'false');
+    if (formView) formView.hidden = false;
+    if (successView) successView.hidden = true;
+    document.body.classList.add('dp-menu-open');
+  }
+  function closeWaitlist() {
+    if (!modal) return;
+    modal.hidden = true;
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('dp-menu-open');
+  }
+  document.querySelectorAll('.wl-trigger').forEach(function (trigger) {
+    trigger.addEventListener('click', function (e) {
+      e.preventDefault();
+      openWaitlist(trigger.getAttribute('data-destination') || 'Jaipur');
+    });
+  });
+  document.querySelectorAll('[data-wl-close]').forEach(function (el) {
+    el.addEventListener('click', closeWaitlist);
+  });
+  if (form) {
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (formView) formView.hidden = true;
+      if (successView) successView.hidden = false;
+    });
+  }
+
+  /* ── Scroll reveal ───────────────────────────────────────── */
+  var revealEls = document.querySelectorAll('.ed-reveal');
+  if ('IntersectionObserver' in window && revealEls.length) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    revealEls.forEach(function (el) { io.observe(el); });
+  } else {
+    revealEls.forEach(function (el) { el.classList.add('is-visible'); });
+  }
+
+  /* ── Hero scroll indicator ──────────────────────────────── */
+  var scrollBtn = document.querySelector('.dp-scroll-indicator');
+  if (scrollBtn) {
+    scrollBtn.addEventListener('click', function () {
+      var next = document.getElementById('dp-intro');
+      if (next) next.scrollIntoView({ behavior: 'smooth' });
+    });
+  }
+})();
+</script>
+
+<script src="nav-dropdowns.js"></script>
+<script src="include-footer.js"></script>
+</body>
+</html>

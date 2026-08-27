@@ -1,0 +1,204 @@
+/* ══════════════════════════════════════════════════════════════
+   SITE FOOTER — Hermès-style 4-column layout, Ridhira design system
+
+   Canonical stylesheet for the shared footer partial
+   (partials/footer.html, injected by include-footer.js). This is
+   the SAME footer used on the homepage — do not fork this file.
+   Edit here and every page that includes the partial picks up the
+   change.
+
+   Self-contained (does not depend on css/footer.css) so it renders
+   reliably regardless of stylesheet load order. Uses the site's
+   existing tokens: --serif, --gold, --sand, --charcoal, --white,
+   --muted — no new color scheme introduced.
+─────────────────────────────────────────────────────────────── */
+.site-footer {
+  background: var(--charcoal);
+  padding: 88px 80px 0;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Top: 4-column link grid ───────────────────────────────── */
+.sf-columns {
+  max-width: 1320px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+  padding-bottom: 64px;
+}
+.sf-col h4 {
+  font-family: var(--sans, inherit);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--white);
+  margin: 0 0 26px;
+}
+.sf-col {
+  display: flex;
+  flex-direction: column;
+}
+.sf-col a {
+  font-size: 13.5px;
+  line-height: 1;
+  color: rgba(250,248,244,0.62);
+  text-decoration: none;
+  margin-bottom: 20px;
+  width: fit-content;
+  transition: color 0.3s ease;
+}
+.sf-col a:last-child { margin-bottom: 0; }
+.sf-col a:hover { color: var(--gold); }
+
+/* ── Divider between columns and bottom strip ──────────────── */
+.sf-divider {
+  max-width: 1320px;
+  margin: 0 auto;
+  border-top: 0.5px solid rgba(250,248,244,0.14);
+}
+
+/* ── Bottom: Customer Service / Newsletter / Follow Us ─────── */
+.sf-bottom {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 56px 0;
+  display: grid;
+  grid-template-columns: 1fr 1.4fr 1fr;
+  gap: 48px;
+  align-items: start;
+}
+.sf-bottom-block h5 {
+  font-family: var(--sans, inherit);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--white);
+  margin: 0 0 18px;
+}
+
+/* Customer service */
+.sf-cs-hours {
+  font-size: 13px;
+  line-height: 1.6;
+  color: rgba(250,248,244,0.55);
+  margin: 0 0 10px;
+}
+.sf-cs-phone,
+.sf-cs-email {
+  display: block;
+  width: fit-content;
+  font-size: 13.5px;
+  color: rgba(250,248,244,0.8);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: rgba(250,248,244,0.3);
+  margin-bottom: 8px;
+  transition: color 0.3s ease;
+}
+.sf-cs-phone:hover,
+.sf-cs-email:hover { color: var(--gold); }
+
+/* Newsletter — centered block */
+.sf-newsletter { text-align: center; }
+.sf-newsletter h5 { text-align: center; }
+.sf-newsletter p {
+  font-size: 13.5px;
+  line-height: 1.7;
+  color: rgba(250,248,244,0.55);
+  /* max-width: 340px; */
+  margin: 0 auto 24px;
+}
+.sf-subscribe-form { display: flex; justify-content: center; }
+.sf-subscribe-btn {
+  font-family: var(--sans, inherit);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  background: transparent;
+  color: var(--white);
+  border: 1px solid rgba(250,248,244,0.45);
+  padding: 15px 44px;
+  cursor: pointer;
+  transition: background 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+.sf-subscribe-btn:hover {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--charcoal);
+}
+
+/* Follow us — icons */
+.sf-follow { display: flex; flex-direction: column; align-items: flex-end; }
+.sf-follow h5 { text-align: right; }
+.sf-social-icons {
+  display: flex;
+  gap: 18px;
+}
+.sf-social-icons a {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  text-decoration: none;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
+}
+.sf-social-icons a img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+.sf-social-icons a svg {
+  width: 24px;
+  height: 24px;
+  display: block;
+  color: #FFFFFF;
+  fill: currentColor;
+}
+.sf-social-icons a:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 22px rgba(0,0,0,0.28);
+  opacity: 0.92;
+}
+
+/* ── Legal / copyright strip ────────────────────────────────── */
+.sf-legal-strip {
+  max-width: 1320px;
+  margin: 0 auto;
+  border-top: 0.5px solid rgba(250,248,244,0.14);
+  padding: 26px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+}
+.sf-legal-strip p {
+  font-size: 11.5px;
+  letter-spacing: 0.02em;
+  color: rgba(250,248,244,0.38);
+  margin: 0;
+}
+
+/* ── Responsive ──────────────────────────────────────────────── */
+@media (max-width: 1100px) {
+  .sf-columns { grid-template-columns: repeat(2, 1fr); row-gap: 44px; }
+  .sf-bottom { grid-template-columns: 1fr; gap: 40px; }
+  .sf-newsletter, .sf-newsletter h5 { text-align: left; }
+  .sf-newsletter p { margin: 0 0 24px; }
+  .sf-subscribe-form { justify-content: flex-start; }
+  .sf-follow { align-items: flex-start; }
+  .sf-follow h5 { text-align: left; }
+}
+@media (max-width: 640px) {
+  .site-footer { padding: 64px 24px 0; }
+  .sf-columns { grid-template-columns: 1fr; gap: 36px; padding-bottom: 48px; }
+  .sf-bottom { padding: 40px 0; }
+  .sf-legal-strip { flex-direction: column; align-items: flex-start; gap: 8px; padding: 22px 0 28px; }
+}

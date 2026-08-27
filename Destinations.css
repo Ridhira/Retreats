@@ -65,6 +65,10 @@
 }
 .dest-coming-title {
   margin: 0;
+  font-weight: 300;
+    font-size: clamp(36px, 2vw, 58px);
+    line-height: 1.1;
+    font-family: 'Cormorant Garamond';
 }
 
 .dest-grid--soon {

@@ -8,6 +8,7 @@
   --dur-reveal: 700ms;
   --dur-hover: 650ms;
   --gold-line: rgba(213, 184, 129, 0.85);
+  --radius-btn: 4px; /* one soft corner radius, shared by every CTA */
 }
 
 /* ── 1. SCROLL REVEALS ─────────────────────────── */
@@ -43,10 +44,8 @@ html { scroll-behavior: smooth; }
 }
 
 .retreat-card:hover .card-img img,
-.exp-card-item:hover .exp-card-img img,
 .dest-card:hover .dest-card-img img,
 .retreat-card.is-revealed .card-img img,
-.exp-card-item.is-revealed .exp-card-img img,
 .dest-card.is-revealed .dest-card-img img,
 .img-editorial:hover {
   filter: brightness(1);
@@ -113,10 +112,6 @@ html { scroll-behavior: smooth; }
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
 }
-.exp-card-num {
-  color: rgba(250, 248, 244, 0.55) !important;
-}
-
 /* 8 Dimensions descriptions — always visible */
 .wd-dim-desc {
   max-height: none !important;
@@ -179,7 +174,8 @@ body.nav-compact .nav-brand-logo img {
 .nav-links a::after {
   content: '';
   position: absolute;
-  left: 0; right: 0; bottom: -6px;
+  left: 0; right: 0; 
+  bottom: 0px;
   height: 0.5px;
   background: var(--gold);
   transform: scaleX(0);
@@ -269,6 +265,18 @@ body.hero-visible .nav-book:focus-visible {
   outline-offset: 4px;
 }
 
+/* Shared corner treatment — same soft radius on every CTA that
+   renders a visible fill or border box, wherever these classes are
+   used (homepage, destination-page.css subpages, etc.). Text-link
+   style buttons like .btn-ghost have no visible box, so this is a
+   harmless no-op for them; it only matters where there's a fill. */
+.btn-ghost,
+.nav-book,
+.exp-explore-btn,
+.exp-arrow {
+  border-radius: var(--radius-btn);
+}
+
 .hero-btn-primary {
   background: var(--white);
   color: var(--charcoal);
@@ -302,6 +310,7 @@ body.hero-visible .nav-book:focus-visible {
 .exp-explore-btn:hover,
 .exp-explore-btn:focus-visible {
   background: var(--earth);
+  color: var(--white);
   outline: 1.5px solid var(--gold);
   outline-offset: 3px;
 }

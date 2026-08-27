@@ -128,7 +128,10 @@ footer.legacy-booking-footer { display: none; }
   text-underline-offset: 3px;
 }
 .site-shared-footer-newsletter { text-align: center; }
-.site-shared-footer-newsletter p { max-width: 340px; margin: 0 auto 24px; }
+.site-shared-footer-newsletter p { 
+    /* max-width: 340px;  */
+    margin: 0 auto 24px;
+   }
 .site-shared-footer-button {
   background: transparent;
   border: 1px solid rgba(250, 248, 244, 0.45);
@@ -150,6 +153,7 @@ footer.legacy-booking-footer { display: none; }
   display: block;
   width: 40px;
   height: 40px;
+  justify-items : flex-end;
 }
 .site-shared-footer-icons img {
   width: 100%;

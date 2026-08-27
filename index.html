@@ -28,6 +28,7 @@
 <link rel="stylesheet" href="css/footer.css">
 <!-- <link rel="stylesheet" href="css/casa.css"> -->
 <link rel="stylesheet" href="css/what-awaits-card-radius.css">
+<link rel="stylesheet" href="css/site-footer.css">
 <link href="img/logo/ridhira-retreats-logo.png" rel="shortcut icon" type="image/png">
 
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
@@ -1182,6 +1183,19 @@ body.menu-open {
     line-height: 1.4;
     text-transform: uppercase;
   }
+  .mobile-nav-dropdown:not(.is-open) .mobile-nav-dropdown-toggle:hover .link-arrow,
+  .mobile-nav-dropdown:not(.is-open) .mobile-nav-dropdown-toggle:active .link-arrow {
+    opacity: 1;
+    transform: none;
+  }
+  .mobile-nav-dropdown-menu .mobile-nav-link:hover,
+  .mobile-nav-dropdown-menu .mobile-nav-link:active {
+    color: rgba(250, 248, 244, 0.48);
+    background: transparent;
+    font-weight: 300;
+    text-decoration: none;
+    transform: none;
+  }
 
   /* ══════════════════════════════════════════════════════════
      STICKY FOOTER — Book CTA + Contact Links
@@ -1502,7 +1516,7 @@ body.menu-open {
   display: block;
   width: 100% !important;
   height: 100% !important;
-  object-fit: contain !important;   /* no cropping, no distortion */
+  /* object-fit: contain !important;   no cropping, no distortion */
   object-position: center;
   max-width: 100%;
 }
@@ -1585,12 +1599,14 @@ body.menu-open {
 /* ── 5. CURSOR-FOLLOWING LABEL — smaller, more compact pill ────
    Same trailing/show-hide behaviour (JS untouched) — just a
    tighter footprint and a soft rounded corner instead of the
-   larger cut-corner shape, to match the button system above. */
-.cursor-cta {
+   larger cut-corner shape, to match the button system above.
+   Sizing lives on .cursor-cta-inner — see the outer/inner split
+   explained further down (PART 2, the trailing-pill block). */
+.cursor-cta-inner {
   font-size: 10.5px;
   padding: 9px 18px 9px 14px;
-  clip-path: none;
   border-radius: var(--radius-btn);
+  letter-spacing: 0.02em;
 }
 
 /* ── 6. "OUR RETREATS" GRID — symmetrical, compact pair ────────
@@ -1841,6 +1857,7 @@ body.menu-open {
 ══════════════════════════════════════════════════════════════ */
 .dest-card-minimal {
   border-radius: var(--radius-btn);
+  scroll-margin-top: 116px; /* clears the fixed nav (92px) + breathing room when linked to directly */
 }
 .dest-card-minimal .dest-card-body {
   padding: 18px;
@@ -1886,6 +1903,43 @@ body.menu-open {
 
 
   .dest-card-minimal { height: 200px; }
+}
+
+/* ══════════════════════════════════════════════════════════════
+   HOMEPAGE REFINEMENTS — PART 5b
+   Ayodhya / Jodhpur / Jaipur — clickable "Coming Soon" cards
+   Each of these three tiles now opens its own dedicated
+   destination page (ayodhya.html / jodhpur.html / jaipur.html).
+   .dest-card-minimal keeps cursor:default from Destinations.css
+   for any future non-linked "coming soon" tile, so the pointer
+   and the lift live on this new .dest-card-linked class only —
+   applied in the markup to these three articles alongside
+   .dest-card-minimal, nothing in Destinations.css is touched.
+   The hover treatment (image scale/darken, gold left edge,
+   name nudge) is already inherited free from .dest-card:hover —
+   this block only adds the whole-card lift + focus ring that a
+   genuinely clickable tile needs.
+══════════════════════════════════════════════════════════════ */
+.dest-card-linked {
+  cursor: pointer;
+  transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.5s ease;
+}
+.dest-card-linked:hover,
+.dest-card-linked:focus-visible {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 40px rgba(42,36,32,0.22);
+}
+.dest-card-linked:focus-visible {
+  outline: 1.5px solid var(--gold);
+  outline-offset: 3px;
+}
+.dest-card-linked:active {
+  transform: translateY(-1px);
+}
+/* Notify button keeps its own hit target — stays put on hover/lift */
+.dest-card-linked .dest-notify-btn {
+  position: relative;
+  z-index: 2;
 }
 
 /* ══════════════════════════════════════════════════════════════
@@ -2050,6 +2104,71 @@ body.menu-open {
 }
 
 /* ══════════════════════════════════════════════════════════════
+   HOMEPAGE REFINEMENTS — PART 6b
+   8 Dimensions of Wellness — hover-reveal "Discover →" CTA
+   Reuses the shared cursor-following pill (#cursorCta /
+   .cursor-cta, see the floating-cursor-CTA script near the end of
+   the page) rather than building a new component: .wd-visuals is
+   simply added to that script's allowedSections, and the script
+   toggles a `cursor-cta--wellness` modifier whenever the tracked
+   zone lives inside .wd-visuals, so this section gets its own
+   fully-rounded pill shape without touching the Retreats-card
+   pill's own styling.
+   A second, static pill (.wd-gif-fallback-cta) covers keyboard
+   users — the mouse-tracked pill can't follow a focus outline, so
+   focusing the GIF link reveals this instead, centered.
+══════════════════════════════════════════════════════════════ */
+.wd-img-primary.wd-gif-primary {
+  position: relative;
+  overflow: hidden;
+}
+.wd-gif-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(20, 16, 12, 0.16);
+  opacity: 0;
+  transition: opacity 0.3s ease-out;
+  pointer-events: none;
+}
+.wd-gif-link:hover .wd-gif-overlay,
+.wd-gif-link:focus-visible .wd-gif-overlay {
+  opacity: 1;
+}
+
+.wd-gif-fallback-cta,
+#cursorCta.cursor-cta--wellness .cursor-cta-inner {
+  border-radius: 9999px;
+  padding: 12px 22px;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  /* text-transform: uppercase; */
+}
+.wd-gif-fallback-cta {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: inline-block;
+  background: var(--white);
+  color: var(--charcoal);
+  box-shadow: 0 6px 18px rgba(42,36,32,0.22);
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.9);
+  transition: opacity 0.22s ease-out, transform 0.22s ease-out;
+}
+.wd-gif-link:focus-visible .wd-gif-fallback-cta {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+/* Belt-and-braces: a mouse click can leave the link focused without
+   :focus-visible matching in most browsers, but never both pills at
+   once if it ever does — the tracked pill wins on hover. */
+.wd-gif-link:hover .wd-gif-fallback-cta {
+  opacity: 0;
+}
+
+/* ══════════════════════════════════════════════════════════════
    HOMEPAGE REFINEMENTS — PART 7
    "Our Retreats" cards — smaller, sleeker, editorial
    Same "loaded last" override approach as Parts 1–6 — markup,
@@ -2201,31 +2320,14 @@ nav,
   align-items: center;
   height: 38px;
   min-height: 38px;
-  padding: 0;
+  /* padding: 0; */
   line-height: 1.2;
   box-sizing: border-box;
 }
 .nav-links .nav-dropdown-menu a {
-  position: relative;
   display: block;
   height: auto;
   min-height: 42px;
-}
-.nav-links .nav-dropdown-menu a::after {
-  content: '';
-  position: absolute;
-  right: 14px;
-  bottom: 5px;
-  left: 14px;
-  height: 1px;
-  background: var(--gold);
-  transform: scaleX(0);
-  transform-origin: left center;
-  transition: transform 0.28s ease;
-}
-.nav-links .nav-dropdown-menu a:hover::after,
-.nav-links .nav-dropdown-menu a:focus-visible::after {
-  transform: scaleX(1);
 }
 .nav-book {
   display: inline-flex;
@@ -2279,8 +2381,23 @@ nav,
 /* The trailing cursor-CTA pill must always be viewport-fixed and
    out of normal flow — it's positioned purely via JS transform,
    so it should never be able to add height to the document, on
-   any page/breakpoint. (Its follow animation is unchanged — this
-   only guarantees it stays out of the flow.)
+   any page/breakpoint.
+
+   Split into two layers so the "translate to follow the cursor"
+   animation (written to .style.transform every frame by JS) never
+   fights the "fade + scale in/out" reveal animation (a plain CSS
+   transition driven by the .is-visible class):
+     #cursorCta / .cursor-cta   — outer, viewport-fixed. JS only
+                                   ever sets its translate(); never
+                                   carries a CSS transition itself.
+     .cursor-cta-inner          — inner, the visible pill. Owns
+                                   background/text/shadow and its
+                                   own opacity+scale transition —
+                                   free to be resized/restyled per
+                                   section via a modifier class
+                                   (e.g. .cursor-cta--wellness)
+                                   without touching the tracking
+                                   logic at all.
    Background/text color are pinned here too: they were resolving
    from an external stylesheet not present in this file, so the
    pill was rendering as bare text with no fill. Restored to the
@@ -2292,12 +2409,21 @@ nav,
   left: 0;
   margin: 0;
   pointer-events: none;
+  z-index: 9999;
+}
+.cursor-cta-inner {
+  display: inline-block;
   background: var(--white);
   color: var(--charcoal);
   box-shadow: 0 6px 18px rgba(42,36,32,0.22);
+  white-space: nowrap;
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 0.22s ease-out, transform 0.22s ease-out;
 }
-.cursor-cta:not(.is-visible) {
-  visibility: hidden;
+.cursor-cta.is-visible .cursor-cta-inner {
+  opacity: 1;
+  transform: scale(1);
 }
 .cursor-cta span {
   color: inherit;
@@ -2308,200 +2434,123 @@ html, body { min-height: 0; }
 
 /* ══════════════════════════════════════════════════════════════
    SITE FOOTER — Hermès-style 4-column layout, Ridhira design system
-   Self-contained (does not depend on css/footer.css) so it renders
-   reliably regardless of stylesheet load order. Uses the site's
-   existing tokens: --serif, --gold, --sand, --charcoal, --white,
-   --muted — no new color scheme introduced.
+   Moved to css/site-footer.css so this same stylesheet can be
+   shared by the Ayodhya/Jodhpur/Jaipur pages (and any future page)
+   via the include-footer.js partial loader — see
+   <footer data-include="footer"> further down this file. Do not
+   re-add .site-footer/.sf-* rules here; edit css/site-footer.css.
 ─────────────────────────────────────────────────────────────── */
-.site-footer {
-  background: var(--charcoal);
-  padding: 88px 80px 0;
-  position: relative;
-  z-index: 1;
+
+/* ══════════════════════════════════════════════════════════════
+   HOMEPAGE REFINEMENTS — PART 9
+   "Extraordinary Retreats" — Tiger Hills (Udaipur) + Casa De Mello
+   (Goa) featured pair, scaled down ~20%.
+   Same "loaded last" override approach as the parts above — Destinations.css
+   and the Part 3 block above it are untouched; this simply overrides
+   the featured-pair sizing/typography at every breakpoint so both
+   cards shrink together, stay matched, and stay centered. Only the
+   two "Now Open" cards are targeted (.dest-featured-pair /
+   .dest-featured-main / .dest-featured-side) — the "Coming Soon"
+   row and every other section are unaffected.
+══════════════════════════════════════════════════════════════ */
+
+/* ── Card size: narrower shared container, same 1fr/1fr split,
+   image height cut in the same proportion so the crop/aspect
+   ratio each card shows is unchanged — just ~20% smaller overall. ── */
+.destinations-section .dest-featured-pair {
+  /* was effectively 1200px → -20% */
+  margin-left: auto;
+  margin-right: auto;
+}
+.destinations-section .dest-featured-img {
+  height: 300px; /* was 520px → -20% */
+}
+.destinations-section .dest-featured-content,
+.destinations-section .dest-featured-side .dest-featured-content {
+  left: 45px;
+  bottom: 45px;
+  max-width: 352px; /* was 440px → -20% */
 }
 
-/* ── Top: 4-column link grid ───────────────────────────────── */
-.sf-columns {
-  max-width: 1320px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 40px;
-  padding-bottom: 64px;
+/* ── Typography: scaled down to match the smaller cards, same
+   font-family / weight / letter-spacing / style throughout ── */
+.destinations-section .dest-featured .dest-badge {
+  font-size: 8px;
+  padding: 4px 11px;
 }
-.sf-col h4 {
-  font-family: var(--sans, inherit);
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--white);
-  margin: 0 0 26px;
+.destinations-section .dest-featured-region {
+  font-size: 9px;
 }
-.sf-col {
-  display: flex;
-  flex-direction: column;
+.destinations-section .dest-featured-name,
+.destinations-section .dest-featured-name--side {
+  font-size: clamp(34px, 3.7vw, 31px) !important; /* was clamp(42px,4.6vw,64px) → -20% */
 }
-.sf-col a {
-  font-size: 13.5px;
-  line-height: 1;
-  color: rgba(250,248,244,0.62);
-  text-decoration: none;
-  margin-bottom: 20px;
-  width: fit-content;
-  transition: color 0.3s ease;
+.destinations-section .dest-featured-sub {
+  font-size: 13px; /* was 16px → -20% */
+  margin-bottom: 16px;
 }
-.sf-col a:last-child { margin-bottom: 0; }
-.sf-col a:hover { color: var(--gold); }
-
-/* ── Divider between columns and bottom strip ──────────────── */
-.sf-divider {
-  max-width: 1320px;
-  margin: 0 auto;
-  border-top: 0.5px solid rgba(250,248,244,0.14);
+.destinations-section .dest-featured-desc,
+.destinations-section .dest-featured-side .dest-featured-desc {
+  font-size: 14px !important; /* was 17px → ~-20% */
+  line-height: 1.75;
+  margin-bottom: 22px;
+}
+.destinations-section .dest-featured .dest-cta-btn {
+  font-size: 10px; /* was 11px */
+  padding: 11px 26px; /* was 14px 32px → -20% */
 }
 
-/* ── Bottom: Customer Service / Newsletter / Follow Us ─────── */
-.sf-bottom {
-  max-width: 1320px;
-  margin: 0 auto;
-  padding: 56px 0;
-  display: grid;
-  grid-template-columns: 1fr 1.4fr 1fr;
-  gap: 48px;
-  align-items: start;
-}
-.sf-bottom-block h5 {
-  font-family: var(--sans, inherit);
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--white);
-  margin: 0 0 18px;
-}
-
-/* Customer service */
-.sf-cs-hours {
-  font-size: 13px;
-  line-height: 1.6;
-  color: rgba(250,248,244,0.55);
-  margin: 0 0 10px;
-}
-.sf-cs-phone,
-.sf-cs-email {
-  display: block;
-  width: fit-content;
-  font-size: 13.5px;
-  color: rgba(250,248,244,0.8);
-  text-decoration: underline;
-  text-underline-offset: 3px;
-  text-decoration-color: rgba(250,248,244,0.3);
-  margin-bottom: 8px;
-  transition: color 0.3s ease;
-}
-.sf-cs-phone:hover,
-.sf-cs-email:hover { color: var(--gold); }
-
-/* Newsletter — centered block */
-.sf-newsletter { text-align: center; }
-.sf-newsletter h5 { text-align: center; }
-.sf-newsletter p {
-  font-size: 13.5px;
-  line-height: 1.7;
-  color: rgba(250,248,244,0.55);
-  max-width: 340px;
-  margin: 0 auto 24px;
-}
-.sf-subscribe-form { display: flex; justify-content: center; }
-.sf-subscribe-btn {
-  font-family: var(--sans, inherit);
-  font-size: 11px;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  background: transparent;
-  color: var(--white);
-  border: 1px solid rgba(250,248,244,0.45);
-  padding: 15px 44px;
-  cursor: pointer;
-  transition: background 0.3s ease, border-color 0.3s ease, color 0.3s ease;
-}
-.sf-subscribe-btn:hover {
-  background: var(--gold);
-  border-color: var(--gold);
-  color: var(--charcoal);
+@media (min-width: 901px) and (max-width: 1100px) {
+  .destinations-section .dest-featured-img {
+    height: 368px; /* was 460px → -20% */
+  }
+  .destinations-section .dest-featured-content,
+  .destinations-section .dest-featured-side .dest-featured-content {
+    left: 26px;
+    bottom: 29px;
+  }
+  .destinations-section .dest-featured-name,
+  .destinations-section .dest-featured-name--side {
+    font-size: clamp(34px, 4vw, 46px) !important; /* was clamp(42px,5vw,58px) → -20% */
+  }
+  .destinations-section .dest-featured-desc,
+  .destinations-section .dest-featured-side .dest-featured-desc {
+    font-size: 12px !important;
+    max-width: 288px;
+  }
 }
 
-/* Follow us — icons */
-.sf-follow { display: flex; flex-direction: column; align-items: flex-end; }
-.sf-follow h5 { text-align: right; }
-.sf-social-icons {
-  display: flex;
-  gap: 18px;
-}
-.sf-social-icons a {
-  width: 40px;
-  height: 40px;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
-}
-.sf-social-icons a img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  display: block;
-}
-.sf-social-icons a svg {
-  width: 24px;
-  height: 24px;
-  display: block;
-  color: #FFFFFF;
-  fill: currentColor;
-}
-.sf-social-icons a:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 22px rgba(0,0,0,0.28);
-  opacity: 0.92;
+@media (max-width: 900px) {
+  .destinations-section .dest-featured-pair {
+    max-width: 100%;
+  }
+  .destinations-section .dest-featured-img {
+    height: clamp(272px, 54vw, 336px); /* was clamp(340px,68vw,420px) → -20% */
+  }
+  .destinations-section .dest-featured-name,
+  .destinations-section .dest-featured-name--side {
+    font-size: clamp(34px, 10vw, 48px) !important; /* was clamp(42px,12vw,60px) → -20% */
+  }
+  .destinations-section .dest-featured-desc,
+  .destinations-section .dest-featured-side .dest-featured-desc {
+    font-size: 12px !important;
+  }
 }
 
-/* ── Legal / copyright strip ────────────────────────────────── */
-.sf-legal-strip {
-  max-width: 1320px;
-  margin: 0 auto;
-  border-top: 0.5px solid rgba(250,248,244,0.14);
-  padding: 26px 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 24px;
-}
-.sf-legal-strip p {
-  font-size: 11.5px;
-  letter-spacing: 0.02em;
-  color: rgba(250,248,244,0.38);
-  margin: 0;
-}
-
-/* ── Responsive ──────────────────────────────────────────────── */
-@media (max-width: 1100px) {
-  .sf-columns { grid-template-columns: repeat(2, 1fr); row-gap: 44px; }
-  .sf-bottom { grid-template-columns: 1fr; gap: 40px; }
-  .sf-newsletter, .sf-newsletter h5 { text-align: left; }
-  .sf-newsletter p { margin: 0 0 24px; }
-  .sf-subscribe-form { justify-content: flex-start; }
-  .sf-follow { align-items: flex-start; }
-  .sf-follow h5 { text-align: left; }
-}
-@media (max-width: 640px) {
-  .site-footer { padding: 64px 24px 0; }
-  .sf-columns { grid-template-columns: 1fr; gap: 36px; padding-bottom: 48px; }
-  .sf-bottom { padding: 40px 0; }
-  .sf-legal-strip { flex-direction: column; align-items: flex-start; gap: 8px; padding: 22px 0 28px; }
+@media (max-width: 540px) {
+  .destinations-section .dest-featured-img {
+    height: 288px; /* was 360px → -20% */
+  }
+  .destinations-section .dest-featured-content,
+  .destinations-section .dest-featured-side .dest-featured-content {
+    left: 18px;
+    right: 18px;
+    bottom: 20px;
+  }
+  .destinations-section .dest-featured-name,
+  .destinations-section .dest-featured-name--side {
+    font-size: clamp(32px, 12vw, 42px) !important; /* was clamp(38px,14vw,52px) → -20% */
+  }
 }
 
 </style>
@@ -2613,7 +2662,7 @@ html, body { min-height: 0; }
             </button>
             <div class="mobile-nav-dropdown-menu" id="mobile-retreats-menu">
               <a class="mobile-nav-link" href="casa-de-mello.html">Casa De Mello, Goa</a>
-              <a class="mobile-nav-link" href="tiger-hills-purple.html">Tiger Hills, Udaipur</a>
+              <a class="mobile-nav-link" href="tiger-hills.html">Tiger Hills, Udaipur</a>
             </div>
           </li>
           <li><a href="#experiences" class="mobile-nav-link">Experiences<span class="link-arrow" aria-hidden="true">→</span></a></li>
@@ -2623,10 +2672,9 @@ html, body { min-height: 0; }
               <span>Coming Soon</span><span class="link-arrow" aria-hidden="true">⌄</span>
             </button>
             <div class="mobile-nav-dropdown-menu" id="mobile-coming-soon-menu">
-              <a class="mobile-nav-link" href="#destinations">Jodhpur</a>
-              <a class="mobile-nav-link" href="#destinations">Ayodhya</a>
-              <a class="mobile-nav-link" href="#destinations">Jaipur</a>
-              <a class="mobile-nav-link" href="#destinations">Chanod</a>
+              <a class="mobile-nav-link" href="#jodhpur">Jodhpur</a>
+              <a class="mobile-nav-link" href="#ayodhya">Ayodhya</a>
+              <a class="mobile-nav-link" href="#jaipur">Jaipur</a>
             </div>
           </li>
           <li><a href="#retreat-grid-anchor" class="mobile-nav-link mobile-nav-enquire wl-trigger" data-destination="">Enquire Now<span class="link-arrow" aria-hidden="true">→</span></a></li>
@@ -2647,21 +2695,20 @@ html, body { min-height: 0; }
   <div class="nav-right">
     <ul class="nav-links">
       <li class="nav-dropdown">
-        <button class="nav-dropdown-toggle" type="button" aria-expanded="false" aria-controls="retreats-menu">Retreats<span aria-hidden="true">⌄</span></button>
+        <button class="nav-dropdown-toggle" type="button" aria-expanded="false" aria-controls="retreats-menu">Retreats<span class="nav-arrow" aria-hidden="true">⌄</span></button>
         <div class="nav-dropdown-menu" id="retreats-menu">
           <a href="casa-de-mello.html">Casa De Mello, Goa</a>
-          <a href="tiger-hills-purple.html">Tiger Hills, Udaipur</a>
+          <a href="tiger-hills.html">Tiger Hills, Udaipur</a>
         </div>
       </li>
       <li><a href="#experiences">Experiences</a></li>
       <li><a href="#wellness">The Ridhira Way</a></li>
       <li class="nav-dropdown">
-        <button class="nav-dropdown-toggle" type="button" aria-expanded="false" aria-controls="coming-soon-menu">Coming Soon<span aria-hidden="true">⌄</span></button>
+        <button class="nav-dropdown-toggle" type="button" aria-expanded="false" aria-controls="coming-soon-menu">Coming Soon<span class="nav-arrow" aria-hidden="true">⌄</span></button>
         <div class="nav-dropdown-menu" id="coming-soon-menu">
-          <a href="#destinations">Jodhpur</a>
-          <a href="#destinations">Ayodhya</a>
-          <a href="#destinations">Jaipur</a>
-          <a href="#destinations">Chanod</a>
+          <a href="#jodhpur">Jodhpur</a>
+          <a href="#ayodhya">Ayodhya</a>
+          <a href="#jaipur">Jaipur</a>
         </div>
       </li>
     </ul>
@@ -2834,10 +2881,9 @@ html, body { min-height: 0; }
     <p>From historic homes to private contemporary enclaves, each Ridhira Retreat has its own character, rhythm, and reason to be remembered.</p>
     <p class="listing-hero-coming-soon">
       Coming Soon —
-      <a href="#destinations">Jodhpur</a><span class="coming-soon-separator" aria-hidden="true">·</span>
-      <a href="#destinations">Ayodhya</a><span class="coming-soon-separator" aria-hidden="true">·</span>
-      <a href="#destinations">Jaipur</a><span class="coming-soon-separator" aria-hidden="true">·</span>
-      <a href="#destinations">Chanod</a>
+      <a href="#jodhpur">Jodhpur</a><span class="coming-soon-separator" aria-hidden="true">·</span>
+      <a href="#ayodhya">Ayodhya</a><span class="coming-soon-separator" aria-hidden="true">·</span>
+      <a href="#jaipur">Jaipur</a>
     </p>
   </div>
 
@@ -2865,7 +2911,7 @@ html, body { min-height: 0; }
       </div>
     </div>
 
-    <div class="retreat-card" onclick="window.location.href='tiger-hills-purple.html'">
+    <div class="retreat-card" onclick="window.location.href='tiger-hills.html'">
       
       <div class="card-body">
         <p class="card-location">Ridhira Retreat Udaipur</p>
@@ -2945,7 +2991,6 @@ html, body { min-height: 0; }
           <div class="exp-card-overlay"></div>
         </div>
         <div class="exp-card-body">
-          <span class="exp-card-num">01</span>
           <h3>Heritage and Architecture</h3>
           <p>Step through old doors and carved walls, where history reveals itself in quiet layers.</p>
         </div>
@@ -2957,7 +3002,6 @@ html, body { min-height: 0; }
           <div class="exp-card-overlay"></div>
         </div>
         <div class="exp-card-body">
-          <span class="exp-card-num">02</span>
           <h3>Local Flavours</h3>
           <p>Discover regional cuisine and the stories carried in every recipe.</p>
         </div>
@@ -2969,7 +3013,6 @@ html, body { min-height: 0; }
           <div class="exp-card-overlay"></div>
         </div>
         <div class="exp-card-body">
-          <span class="exp-card-num">03</span>
           <h3>Spa Therapies</h3>
           <p>Restore the body with therapies inspired by time-honoured healing traditions.</p>
         </div>
@@ -2981,7 +3024,6 @@ html, body { min-height: 0; }
           <div class="exp-card-overlay"></div>
         </div>
         <div class="exp-card-body">
-          <span class="exp-card-num">04</span>
           <h3>Wellness Rituals</h3>
           <p>Make space for yoga, meditation, and practices that bring the day into balance.</p>
         </div>
@@ -3006,14 +3048,14 @@ html, body { min-height: 0; }
       <h2 class="dest-title">Extraordinary <em>Retreats.</em></h2>
     </div>
     <div class="dest-header-right">
-      <p>Coming Soon — The Ridhira Journey Continues. We're expanding the collection with destinations shaped by wellness, luxury, and meaningful travel.</p>
+      <p>The Ridhira Journey Continues. We're expanding the collection with destinations shaped by wellness, luxury, and meaningful travel.</p>
     </div>
   </div>
 
   <!-- Open now — featured pair -->
   <div class="dest-featured-pair">
-    <article class="dest-featured dest-featured-main" onclick="window.location.href='tiger-hills-purple.html'" role="link" tabindex="0" aria-label="Udaipur — Tiger Hills" onkeydown="if(event.key==='Enter'){window.location.href='tiger-hills-purple.html'}">
-      <div class="dest-featured-img" data-cursor-cta="Tiger Hills →">
+    <article class="dest-featured dest-featured-main" onclick="window.location.href='tiger-hills.html'" role="link" tabindex="0" aria-label="Udaipur — Tiger Hills" onkeydown="if(event.key==='Enter'){window.location.href='tiger-hills.html'}">
+      <div class="dest-featured-img" data-cursor-cta="Discover →">
         <img src="img/Home/m-tiger-hills.png" alt="Udaipur — City of Lakes" />
         <div class="dest-featured-overlay"></div>
         <div class="dest-featured-content">
@@ -3022,13 +3064,13 @@ html, body { min-height: 0; }
           <h3 class="dest-featured-name">Udaipur</h3>
           <p class="dest-featured-sub">City of Lakes</p>
           <p class="dest-featured-desc">Home to Tiger Hills — a contemporary enclave shaped by privacy, curation, and belonging.</p>
-          <button class="dest-cta-btn" type="button">Tiger Hills →</button>
+          <!-- <button class="dest-cta-btn" type="button">Discover →</button> -->
         </div>
       </div>
     </article>
 
     <article class="dest-featured dest-featured-side" onclick="window.location.href='casa-de-mello.html'" role="link" tabindex="0" aria-label="Goa — Casa De Mello" onkeydown="if(event.key==='Enter'){window.location.href='casa-de-mello.html'}">
-      <div class="dest-featured-img" data-cursor-cta="Casa De Mello →">
+      <div class="dest-featured-img" data-cursor-cta="Discover →">
         <img src="img/Home/Home-Page.png" alt="Goa — Casa De Mello" />
         <div class="dest-featured-overlay"></div>
         <div class="dest-featured-content">
@@ -3037,7 +3079,7 @@ html, body { min-height: 0; }
           <h3 class="dest-featured-name dest-featured-name--side">Goa</h3>
           <p class="dest-featured-sub">Saligao</p>
           <p class="dest-featured-desc">Casa De Mello — a restored Portuguese home where heritage and quiet wellness meet.</p>
-          <button class="dest-cta-btn" type="button">Casa De Mello →</button>
+          <!-- <button class="dest-cta-btn" type="button">Discover →</button> -->
         </div>
       </div>
     </article>
@@ -3045,11 +3087,11 @@ html, body { min-height: 0; }
 
   <!-- Coming soon — quiet row -->
   <div class="dest-soon-header">
-    <h2 class="dest-title dest-coming-title">Coming Soon.</h2>
+    <h2 class="dest-coming-title">Coming Soon.</h2>
   </div>
   <div class="dest-grid dest-grid--soon">
 
-    <article class="dest-card dest-card-soon dest-card-minimal">
+    <article class="dest-card dest-card-soon dest-card-minimal dest-card-linked" id="ayodhya" onclick="window.location.href='ayodhya.html'" role="link" tabindex="0" aria-label="Ayodhya — Coming Soon. View destination page" onkeydown="if(event.key==='Enter'){window.location.href='ayodhya.html'}">
       <div class="dest-card-img">
         <img src="https://i.pinimg.com/736x/8b/03/2f/8b032f931b613e38dedbdcc7e224347d.jpg" alt="Ayodhya" />
         <div class="dest-card-overlay"></div>
@@ -3057,11 +3099,11 @@ html, body { min-height: 0; }
       <div class="dest-card-body">
         <p class="dest-card-region">Uttar Pradesh</p>
         <h3 class="dest-card-name">Ayodhya</h3>
-        <button type="button" class="dest-notify-btn" data-destination="Ayodhya">Notify Me When Open</button>
+        <button type="button" class="dest-notify-btn" data-destination="Ayodhya" onclick="event.stopPropagation()">Notify Me When Open</button>
       </div>
     </article>
 
-    <article class="dest-card dest-card-soon dest-card-minimal">
+    <article class="dest-card dest-card-soon dest-card-minimal dest-card-linked" id="jodhpur" onclick="window.location.href='jodhpur.html'" role="link" tabindex="0" aria-label="Jodhpur — Coming Soon. View destination page" onkeydown="if(event.key==='Enter'){window.location.href='jodhpur.html'}">
       <div class="dest-card-img">
         <img src="https://www.thepinnaclelist.com/wp-content/uploads/2021/12/Jaswant-Thada-and-Mehrangarh-Fort-Jodhpur-Rajasthan-India.jpg" alt="Jodhpur" />
         <div class="dest-card-overlay"></div>
@@ -3069,11 +3111,11 @@ html, body { min-height: 0; }
       <div class="dest-card-body">
         <p class="dest-card-region">Rajasthan</p>
         <h3 class="dest-card-name">Jodhpur</h3>
-        <button type="button" class="dest-notify-btn" data-destination="Jodhpur">Notify Me When Open</button>
+        <button type="button" class="dest-notify-btn" data-destination="Jodhpur" onclick="event.stopPropagation()">Notify Me When Open</button>
       </div>
     </article>
 
-    <article class="dest-card dest-card-soon dest-card-minimal">
+    <article class="dest-card dest-card-soon dest-card-minimal dest-card-linked" id="jaipur" onclick="window.location.href='jaipur.html'" role="link" tabindex="0" aria-label="Jaipur — Coming Soon. View destination page" onkeydown="if(event.key==='Enter'){window.location.href='jaipur.html'}">
       <div class="dest-card-img">
         <img src="https://images.unsplash.com/photo-1477587458883-47145ed94245?w=900&q=85" alt="Jaipur" />
         <div class="dest-card-overlay"></div>
@@ -3081,7 +3123,7 @@ html, body { min-height: 0; }
       <div class="dest-card-body">
         <p class="dest-card-region">Rajasthan</p>
         <h3 class="dest-card-name">Jaipur</h3>
-        <button type="button" class="dest-notify-btn" data-destination="Jaipur">Notify Me When Open</button>
+        <button type="button" class="dest-notify-btn" data-destination="Jaipur" onclick="event.stopPropagation()">Notify Me When Open</button>
       </div>
     </article>
 
@@ -3116,14 +3158,16 @@ At Ridhira Retreats, these 8 Dimensions of Wellness guide how we shape each expe
     <div class="wd-visuals">
       <a class="wd-orbit wd-gif-link" id="wd-orbit" href="8-dimensions-of-wellness.html" aria-label="Explore 8 Dimensions of Wellness">
 
-        <div class="wd-img-primary wd-gif-primary">
+        <div class="wd-img-primary wd-gif-primary" data-cursor-cta="Discover →">
           <img
             class="wd-gif"
-            src="img/Video/wellness-color.gif"
+            src="img/Video/gif main7.gif"
             alt="The 8 Dimensions of Wellness — animated"
             loading="eager"
             decoding="async"
           />
+          <div class="wd-gif-overlay" aria-hidden="true"></div>
+          <span class="wd-gif-fallback-cta" aria-hidden="true">Discover →</span>
         </div>
 
       </a>
@@ -3150,73 +3194,11 @@ At Ridhira Retreats, these 8 Dimensions of Wellness guide how we shape each expe
   </div>
 </section>
 
-  <footer class="site-footer">
-    <div class="sf-columns">
-      <div class="sf-col">
-        <h4>Retreats</h4>
-        <a href="casa-de-mello.html">Casa De Mello, Goa</a>
-        <a href="tiger-hills-purple.html">Tiger Hills, Udaipur</a>
-        
-      </div>
-      <div class="sf-col">
-        <h4>Connect</h4>
-        <a href="https://ridhira.com/" target="_blank" rel="noopener noreferrer">Ridhira Group</a>
-        <a href="https://odespa.com/" target="_blank" rel="noopener noreferrer">Odespa</a>
-        
-      </div>
-      <div class="sf-col">
-        <h4>Contact</h4>
-        <a href="tel:+91 741 628 2288" >Contact Us</a>
-        <a >Press</a>
-       
-      </div>
-      <div class="sf-col">
-        <h4>Legal</h4>
-        <a >Terms and Conditions</a>
-        <a >Privacy &amp; Cookies</a>
-        
-      </div>
-    </div>
-
-    <div class="sf-divider"></div>
-
-    <div class="sf-bottom">
-      <div class="sf-bottom-block sf-cs">
-        <h5>Customer Service</h5>
-        <p class="sf-cs-hours">Monday to Saturday 10am – 9pm IST</p>
-        <a class="sf-cs-phone" href="tel:+91 741 628 2288">741 628 2288</a>
-        <a class="sf-cs-email" href="mailto:gocdm@ridhiraretreats.com">Email us</a>
-      </div>
-
-      <div class="sf-bottom-block sf-newsletter">
-        <h5>Newsletter</h5>
-        <p>Receive our newsletter and discover our stories, retreats, and surprises.</p>
-        <form class="sf-subscribe-form" onsubmit="return false;">
-          <button type="submit" class="sf-subscribe-btn">Subscribe</button>
-        </form>
-      </div>
-
-      <div class="sf-bottom-block sf-follow">
-        <h5>Follow Us</h5>
-        <div class="sf-social-icons">
-          <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Follow Ridhira Retreats on Instagram">
-            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3.5" y="3.5" width="17" height="17" rx="5" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="17.4" cy="6.7" r="1" fill="currentColor"/></svg>
-          </a>
-          <a href="https://wa.me/18004414488" target="_blank" rel="noopener noreferrer" aria-label="Chat with Ridhira Retreats on WhatsApp">
-            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 11.5a8 8 0 0 1-11.8 7.1L4 20l1.4-4A8 8 0 1 1 20 11.5Z" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M9 8.5c.3-.3.6-.3.8 0l1 1.4c.2.3.2.6 0 .9l-.5.6c.7 1.2 1.5 2 2.7 2.7l.6-.5c.3-.2.6-.2.9 0l1.4 1c.3.2.3.5 0 .8-.5.6-1.2.9-1.9.7-2.2-.6-4.8-3.2-5.4-5.4-.2-.8.1-1.5.7-2.2Z" fill="currentColor"/></svg>
-          </a>
-          <a href="https://x.com/" target="_blank" rel="noopener noreferrer" aria-label="Follow Ridhira Retreats on X (formerly Twitter)">
-            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 4h3.8l4.1 5.4L17.6 4H20l-5.9 6.8L20.5 20h-3.8l-4.5-5.9L7.1 20H4.7l6.2-7.3L5 4Zm3.1 1.7H6.9l9.8 12.6h1.2L8.1 5.7Z" fill="currentColor"/></svg>
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <div class="sf-legal-strip">
-      <p>© Ridhira Group of Companies. All rights reserved.</p>
-      <p>Privacy Policy &nbsp;·&nbsp; Terms of Use</p>
-    </div>
-  </footer>
+  <!-- Shared footer — markup lives in include-footer.js (FOOTER_HTML)
+       so it loads reliably whether the page is served or opened as a
+       plain local file. Editing that (or css/site-footer.css) updates
+       this and every other page that includes it. -->
+  <footer data-include="footer"></footer>
 </div>
 
 <!-- ══════════════════════════════════════════════ -->
@@ -3484,7 +3466,7 @@ At Ridhira Retreats, these 8 Dimensions of Wellness guide how we shape each expe
       <div class="footer-col">
         <h4>Retreats</h4>
         <a href="#" href="casa-de-mello.html" onclick="window.location.href='casa-de-mello.html';return false">Casa De Mello, Goa</a>
-        <a href="#" onclick="window.location.href='tiger-hills-purple.html'">Tiger Hills, Udaipur</a>
+        <a href="#" onclick="window.location.href='tiger-hills.html'">Tiger Hills, Udaipur</a>
         <a href="#" >Karohi Haveli
 , Udaipur</a>
       </div>
@@ -3702,7 +3684,7 @@ is the only Ridhira property where Ode Spa and Ode Life — Ridhira's longevity 
       <div class="footer-col">
         <h4>Retreats</h4>
         <a href="#" href="casa-de-mello.html" onclick="window.location.href='casa-de-mello.html';return false">Casa De Mello, Goa</a>
-        <a href="#" onclick="window.location.href='tiger-hills-purple.html'">Tiger Hills, Udaipur</a>
+        <a href="#" onclick="window.location.href='tiger-hills.html'">Tiger Hills, Udaipur</a>
         <a href="#" >Karohi Haveli
 , Udaipur</a>
       </div>
@@ -4123,49 +4105,11 @@ document.querySelectorAll('.story-section, .rooms-section, .testimonial-section'
 
 })();
 </script>
-<script>
-/* ── Click-controlled desktop and mobile dropdowns ───────────── */
-(function () {
-  'use strict';
-
-  var dropdowns = document.querySelectorAll('.nav-dropdown, .mobile-nav-dropdown');
-  if (!dropdowns.length) return;
-
-  function closeDropdown(dropdown) {
-    var toggle = dropdown.querySelector('.nav-dropdown-toggle, .mobile-nav-dropdown-toggle');
-    dropdown.classList.remove('is-open');
-    if (toggle) toggle.setAttribute('aria-expanded', 'false');
-  }
-
-  function closeAll(except) {
-    dropdowns.forEach(function (dropdown) {
-      if (dropdown !== except) closeDropdown(dropdown);
-    });
-  }
-
-  dropdowns.forEach(function (dropdown) {
-    var toggle = dropdown.querySelector('.nav-dropdown-toggle, .mobile-nav-dropdown-toggle');
-    if (!toggle) return;
-
-    toggle.addEventListener('click', function (event) {
-      event.stopPropagation();
-      var shouldOpen = !dropdown.classList.contains('is-open');
-      closeAll(dropdown);
-      dropdown.classList.toggle('is-open', shouldOpen);
-      toggle.setAttribute('aria-expanded', String(shouldOpen));
-    });
-
-    dropdown.querySelectorAll('.nav-dropdown-menu a, .mobile-nav-dropdown-menu a').forEach(function (link) {
-      link.addEventListener('click', function () { closeAll(); });
-    });
-  });
-
-  document.addEventListener('click', function () { closeAll(); });
-  document.addEventListener('keydown', function (event) {
-    if (event.key === 'Escape') closeAll();
-  });
-})();
-</script>
+<!-- Shared nav-dropdown behavior — see nav-dropdowns.js. Also
+     included by the Ayodhya/Jodhpur/Jaipur destination pages so
+     "Retreats" / "Coming Soon" open/close the same way everywhere
+     from one file. -->
+<script src="nav-dropdowns.js"></script>
 <script>
 /* ════════════════════════════════════════════════════════════════
    FULL-SCREEN LOADING SCREEN — rotating brand mark
@@ -4243,11 +4187,11 @@ document.querySelectorAll('.story-section, .rooms-section, .testimonial-section'
 
      Scoped intentionally: this pill must only ever appear/move while
      the pointer is directly over a [data-cursor-cta] zone inside the
-     "Our Retreats" grid (Casa De Mello / Tiger Hills) or the
-     "Extraordinary Retreats" section (Udaipur / Goa). Every other
-     section — including the "coming soon" cards inside Extraordinary
-     Retreats and every other part of the page — uses the plain
-     browser cursor.
+     "Our Retreats" grid (Casa De Mello / Tiger Hills), the
+     "Extraordinary Retreats" section (Udaipur / Goa), or the
+     "8 Dimensions of Wellness" GIF. Every other section — including
+     the "coming soon" cards inside Extraordinary Retreats and every
+     other part of the page — uses the plain browser cursor.
 
      Implementation note: state is derived synchronously from the
      real event target on every mousemove (via closest()), rather
@@ -4258,7 +4202,7 @@ document.querySelectorAll('.story-section, .rooms-section, .testimonial-section'
      every time means there's no stale state to get stuck in: the
      pill is always exactly "on" or "off" based on where the cursor
      is right now. -->
-<div class="cursor-cta" id="cursorCta" aria-hidden="true"><span id="cursorCtaLabel"></span></div>
+<div class="cursor-cta" id="cursorCta" aria-hidden="true"><div class="cursor-cta-inner"><span id="cursorCtaLabel"></span></div></div>
 <script>
   (function () {
     var canHover = window.matchMedia &&
@@ -4269,10 +4213,11 @@ document.querySelectorAll('.story-section, .rooms-section, .testimonial-section'
     var label = document.getElementById('cursorCtaLabel');
     if (!pill || !label) return;
 
-    /* The ONLY two sections allowed to drive the custom cursor. */
+    /* The ONLY sections allowed to drive the custom cursor. */
     var allowedSections = [
       document.querySelector('.retreat-grid'),
-      document.querySelector('.destinations-section')
+      document.querySelector('.destinations-section'),
+      document.querySelector('.wd-visuals')
     ].filter(Boolean);
     if (!allowedSections.length) return;
 
@@ -4317,6 +4262,7 @@ document.querySelectorAll('.story-section, .rooms-section, .testimonial-section'
       if (zone && allowActivate) {
         activeZone = zone;
         label.textContent = zone.getAttribute('data-cursor-cta') || '';
+        pill.classList.toggle('cursor-cta--wellness', !!zone.closest('.wd-visuals'));
         pill.classList.add('is-visible');
         active = true;
       } else if (zone && zone === activeZone) {
@@ -4368,7 +4314,7 @@ document.querySelectorAll('.story-section, .rooms-section, .testimonial-section'
         curX += (targetX - curX) * 0.14;
         curY += (targetY - curY) * 0.14;
         pill.style.transform =
-          'translate(' + curX + 'px, ' + curY + 'px) translate(-50%, -50%) scale(1)';
+          'translate(' + curX + 'px, ' + curY + 'px) translate(-50%, -50%)';
       }
       requestAnimationFrame(tick);
     }
@@ -4435,5 +4381,6 @@ document.querySelectorAll('.story-section, .rooms-section, .testimonial-section'
   })();
 </script>
 <script src="scroll-controls.js"></script>
+<script src="include-footer.js"></script>
 </body>
 </html>
