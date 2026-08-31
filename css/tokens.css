@@ -1,0 +1,17 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --cream:      #EAE4DB;
+  --cream-dark: #E1DAD0;
+  --sand:       #D3CABE;
+  --bark:       #61574C;
+  --earth:      #61574C;
+  --charcoal:   #61574C;
+  --white:      #EAE4DB;
+  --gold:       #D5B881;
+  --muted:      #61574C;
+  --serif:      'Cormorant Garamond', Georgia, serif;
+  --sans:       'Jost', sans-serif;
+}
+
+html { scroll-behavior: smooth; }
