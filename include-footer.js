@@ -37,7 +37,7 @@
       </div>\
       <div class="sf-col">\
         <h4>Contact</h4>\
-        <a href="tel:+91 741 628 2288">Contact Us</a>\
+        <a href="tel:+917416782288">Contact Us</a>\
       </div>\
       <div class="sf-col">\
         <h4>Legal</h4>\
@@ -50,7 +50,7 @@
       <div class="sf-bottom-block sf-cs">\
         <h5>Customer Service</h5>\
         <p class="sf-cs-hours">Monday to Saturday 10am – 9pm IST</p>\
-        <a class="sf-cs-phone" href="tel:+91 741 628 2288">741 628 2288</a>\
+        <a class="sf-cs-phone" href="tel:+917416782288">741 678 2288</a>\
         <a class="sf-cs-email" href="mailto:gocdm@ridhiraretreats.com">Email us</a>\
       </div>\
       <div class="sf-bottom-block sf-newsletter">\

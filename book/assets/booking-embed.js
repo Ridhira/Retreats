@@ -100,7 +100,7 @@
     var host = getContainer();
     if (!host) return;
     hideLoading();
-    var phone = cfg.phone || "+91 74162 82288";
+    var phone = cfg.phone || "+91 74167 82288";
     var tel = "tel:" + phone.replace(/\s+/g, "");
     host.innerHTML =
       '<div class="bk-fallback">The booking engine could not be loaded right now.<br>' +

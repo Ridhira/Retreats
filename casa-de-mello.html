@@ -14,16 +14,34 @@
 
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Casa De Mello, Goa — Ridhira Retreats</title>
-<meta name="description" content="Casa De Mello is a restored 1863 Portuguese heritage home in Saligao, Goa. A premium wellness retreat offering curated experiences, four heritage suites, Ode Spa treatments, and poolside serenity.">
+<title>Casa De Mello, Saligao Goa — Heritage Luxury Retreat | Ridhira Retreats</title>
+<meta name="description" content="Stay at Casa De Mello — a restored 1863 Portuguese manor in Saligao, North Goa. Four heritage suites, Ode Spa treatments, and a curated experience of Portuguese-Goan living. A place to slow down and stay longer.">
+<link rel="canonical" href="https://www.ridhiraretreats.com/casa-de-mello" />
+<meta name="robots" content="index, follow" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Ridhira Retreats" />
+<meta property="og:title" content="Casa De Mello, Saligao Goa — Heritage Luxury Retreat | Ridhira Retreats" />
+<meta property="og:description" content="A restored 1863 Portuguese manor in Saligao, North Goa — four heritage suites, Ode Spa, and the unhurried cadence of Goa's village heartland." />
+<meta property="og:url" content="https://www.ridhiraretreats.com/casa-de-mello" />
+<meta property="og:image" content="https://www.ridhiraretreats.com/img/CDM/hero/darkoverlay.webp" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Casa De Mello, Saligao Goa — Heritage Luxury Retreat | Ridhira Retreats" />
+<meta name="twitter:description" content="A restored 1863 Portuguese manor in Saligao, North Goa — four heritage suites, Ode Spa, and the unhurried cadence of Goa's village heartland." />
+
+<!-- Preconnect for fonts and preload LCP hero image -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preload" as="image" href="img/CDM/hero/darkoverlay.webp" fetchpriority="high" />
 
 <!-- Shared CSS files -->
 <link rel="stylesheet" href="css/tokens.css">
 <link rel="stylesheet" href="EXPERIENCES.css">
-<link rel="stylesheet" href="8-dimensions.css">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="css/footer.css">
 <link rel="stylesheet" href="css/site-brand.css">
+
+<!-- Google Fonts — loaded async so it never blocks first render -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" media="print" onload="this.media='all'" />
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" /></noscript>
 
 <style>
   /* ── FULL-SCREEN LOADING SCREEN (rotating brand mark) ── */
@@ -580,7 +598,7 @@
   /* Rooms */
   .rooms-section {
     max-width: 1200px; margin: 0 auto;
-    padding: 120px 80px;
+    padding-top: 120px;
   }
   .rooms-header { margin-bottom: 64px; }
   .rooms-header .label {
@@ -721,6 +739,7 @@
   .take-house-cta {
     text-align: center;
     margin-top: 64px;
+    margin-bottom: 64px;
   }
 
   /* Wellness / Ode Spa */
@@ -3052,14 +3071,25 @@ body img {
   .testimonial-track { min-height: 330px; }
 }
 
-/* Room / Suite tabbed grid: 3 columns desktop, 2 tablet, 1 mobile. */
+/* Suite tabbed grid: 4 columns; Take the House grid keeps the base 3-column rule. */
+[data-rs-block] .rs-grid { grid-template-columns: repeat(4, 1fr); gap: 28px; }
+
+/* Specificity-matched overrides so media queries can collapse the 4-col suite grid. */
 @media (max-width: 1100px) {
-  .rs-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; }
+  .rs-grid,
+  [data-rs-block] .rs-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+}
+@media (max-width: 900px) {
+  .rooms-section { padding-top: 80px; padding-bottom: 80px; }
+  .rooms-header { margin-bottom: 40px; }
 }
 @media (max-width: 600px) {
-  .rs-grid { grid-template-columns: 1fr; gap: 24px; }
+  .rs-grid,
+  [data-rs-block] .rs-grid { grid-template-columns: 1fr; gap: 20px; }
   .rs-tabs { width: 100%; }
   .rs-tab { flex: 1; text-align: center; }
+  .rooms-section { padding-top: 56px; padding-bottom: 56px; }
+  .rooms-header { margin-bottom: 28px; }
 }
 
 
@@ -3206,7 +3236,7 @@ body img {
       </div> -->
     </div>
     <div class="story-visual">
-      <img src="img/CDM/Our Story.png" alt="Casa De Mello interior" />
+      <img src="img/CDM/Our Story.png" alt="Casa De Mello interior" loading="lazy" />
       <div class="story-visual-accent"></div>
     </div>
   </section>
@@ -3321,7 +3351,7 @@ body img {
   <section class="rooms-section" id="accomodation">
     <div class="rooms-header">
       <p class="label">Love, Without Saying It.</p>
-      <h2>Four Suites,<br>One Heritage Home</h2>
+      <h2>Five Suites,<br>One Heritage Home</h2>
       <p class="rooms-header-copy">At Casa, care is expressed quietly.</p>
       <p class="rooms-header-copy">A room prepared for the way you like to rest. A meal that introduces you to the place. A treatment that leaves the body lighter. A recommendation made by someone who knows the road well.</p>
       <p class="rooms-header-copy">Nothing is excessive. Nothing feels impersonal. The house gives you space, while the people around it make the time feel considered.</p>
@@ -3329,38 +3359,46 @@ body img {
     </div>
     <div class="rs-block" data-rs-block>
       <div class="rs-tabs" role="tablist" aria-label="Room and suite categories">
-        <button type="button" class="rs-tab is-active" data-rs-tab="room" role="tab" aria-selected="true">Children's Rooms</button>
-        <button type="button" class="rs-tab" data-rs-tab="suite" role="tab" aria-selected="false">Suite Rooms</button>
+        <button type="button" class="rs-tab is-active" data-rs-tab="suite" role="tab" aria-selected="true">Suite Rooms</button>
+        <button type="button" class="rs-tab" data-rs-tab="room" role="tab" aria-selected="false">Children's Rooms</button>
       </div>
 
       <div class="rs-grid" data-rs-grid>
 
-        <!-- TODO: confirm real guest capacity and size specs for each room/suite -->
-        <article class="rs-card" data-rs-cat="room">
+        <article class="rs-card" data-rs-cat="suite">
+          <div class="rs-card-media"><img src="img/CDM/Accomodation-1.png" alt="Suite I at Casa De Mello" loading="lazy" /></div>
+          <h3 class="rs-card-name">Suite I</h3>
+          <div class="rs-card-meta"></div>
+          <a class="rs-discover" href="book/casa-de-mello/">Book Now</a>
+        </article>
+
+        <article class="rs-card" data-rs-cat="suite">
+          <div class="rs-card-media"><img src="img/CDM/Accomodation-2.png" alt="Suite II at Casa De Mello" loading="lazy" /></div>
+          <h3 class="rs-card-name">Suite II</h3>
+          <div class="rs-card-meta"></div>
+          <a class="rs-discover" href="book/casa-de-mello/">Book Now</a>
+        </article>
+
+        <article class="rs-card" data-rs-cat="suite">
+          <div class="rs-card-media"><img src="img/CDM/Accomodation-3.png" alt="Suite III at Casa De Mello" loading="lazy" /></div>
+          <h3 class="rs-card-name">Suite III</h3>
+          <div class="rs-card-meta"></div>
+          <a class="rs-discover" href="book/casa-de-mello/">Book Now</a>
+        </article>
+
+        <article class="rs-card" data-rs-cat="suite">
+          <div class="rs-card-media"><img src="img/CDM/Accomodation-4.png" alt="Suite IV at Casa De Mello" loading="lazy" /></div>
+          <h3 class="rs-card-name">Suite IV</h3>
+          <div class="rs-card-meta"></div>
+          <a class="rs-discover" href="book/casa-de-mello/">Book Now</a>
+        </article>
+
+        <article class="rs-card is-hidden" data-rs-cat="room">
           <div class="rs-card-media"><img src="img/CDM/Accomodation-4.png" alt="Children's Room at Casa De Mello" loading="lazy" /></div>
           <h3 class="rs-card-name">Children's Room</h3>
-          <div class="rs-card-meta">
-            <!-- <span class="rs-meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.5-7 8-7s8 3 8 7"/></svg>2 Guests</span>
-            <span class="rs-meta-sep"></span>
-            <span class="rs-meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15v5h5M20 9V4h-5M20 4l-7 7M4 20l7-7"/></svg>18 sq m | 194 sq ft</span> -->
-          </div>
-          <p class="rs-card-desc">A welcoming room for younger guests, thoughtfully prepared with the same care and character as the rest of Casa.</p>
+          <div class="rs-card-meta"></div>
           <a class="rs-discover" href="book/casa-de-mello/">Book Now</a>
         </article>
-
-        <article class="rs-card is-hidden" data-rs-cat="suite">
-          <div class="rs-card-media"><img src="img/CDM/Accomodation-1.png" alt="The Mello Suite" loading="lazy" /></div>
-          <h3 class="rs-card-name">Suite Room</h3>
-          <div class="rs-card-meta">
-            <!-- <span class="rs-meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.5-7 8-7s8 3 8 7"/></svg>3 Guests</span>
-            <span class="rs-meta-sep"></span>
-            <span class="rs-meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15v5h5M20 9V4h-5M20 4l-7 7M4 20l7-7"/></svg>40 sq m | 430 sq ft</span> -->
-          </div>
-          <p class="rs-card-desc">A spacious suite with a private lounge, featuring a single bed, a double bed, and essential amenities.</p>
-          <a class="rs-discover" href="book/casa-de-mello/">Book Now</a>
-        </article>
-
-        
 
       </div>
     </div>
@@ -3505,7 +3543,7 @@ body img {
       <p class="din-sub">
         At Casa, food is part of the welcome. Local ingredients, familiar recipes, and thoughtful preparation bring the character of Goa to the table.
       </p>
-      <a class="din-cta" href="tel:+917416282288">
+      <a class="din-cta" href="tel:+917416782288">
         BOOK NOW
         <span class="din-cta-arr" aria-hidden="true">→</span>
       </a>
@@ -3947,7 +3985,7 @@ body img {
       <h2 style="font-family: var(--serif); font-weight: 300; font-size: clamp(30px, 3.5vw, 48px); line-height: 1.1; color: var(--charcoal); margin-bottom: 12px;">Plan Your Stay with us at<br><em style="font-style:italic; color: var(--bark);">Casa De Mello</em></h2>
       <p style="font-size: 14px; color: var(--muted); margin-bottom: 38px; line-height: 1.7;">Check live availability, choose your suite, and confirm your reservation instantly on our dedicated booking page.</p>
       <a class="cdm-book-cta" href="book/casa-de-mello/">Book Now&nbsp;&nbsp;&rarr;</a>
-      <p style="font-size: 12px; color: var(--muted); margin-top: 30px; letter-spacing: 0.08em;">Prefer to speak with us? Call <a href="tel:+917416282288" style="color: var(--bark); text-decoration: none; border-bottom: 0.5px solid var(--bark);">+91 74162 82288</a></p>
+      <p style="font-size: 12px; color: var(--muted); margin-top: 30px; letter-spacing: 0.08em;">Prefer to speak with us? Call <a href="tel:+917416782288" style="color: var(--bark); text-decoration: none; border-bottom: 0.5px solid var(--bark);">+91 74167 82288</a></p>
     </div>
   </section>
 
@@ -4017,7 +4055,7 @@ body img {
     </div>
     <div class="site-shared-footer-divider"></div>
     <div class="site-shared-footer-bottom">
-      <div><h5>Customer Service</h5><p>Monday to Saturday 10am - 9pm IST</p><a href="tel:+917416282288">741 628 2288</a><a href="mailto:gocdm@ridhiraretreats.com">Email us</a></div>
+      <div><h5>Customer Service</h5><p>Monday to Saturday 10am - 9pm IST</p><a href="tel:+917416782288">741 678 2288</a><a href="mailto:gocdm@ridhiraretreats.com">Email us</a></div>
       <div class="site-shared-footer-newsletter"><h5>Newsletter</h5><p>Receive our newsletter and discover our stories, retreats, and surprises.</p><button class="site-shared-footer-button" type="button">Subscribe</button></div>
       <div class="site-shared-footer-follow"><h5>Follow Us</h5><div class="site-shared-footer-icons"><a href="https://www.instagram.com/" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="17.4" cy="6.7" r="1" fill="currentColor"/></svg></a><a href="https://wa.me/18004414488" aria-label="WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11.5a8 8 0 0 1-11.8 7.1L4 20l1.4-4A8 8 0 1 1 20 11.5Z" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M9 8.5c.3-.3.6-.3.8 0l1 1.4c.2.3.2.6 0 .9l-.5.6c.7 1.2 1.5 2 2.7 2.7l.6-.5c.3-.2.6-.2.9 0l1.4 1c.3.2.3.5 0 .8-.5.6-1.2.9-1.9.7-2.2-.6-4.8-3.2-5.4-5.4-.2-.8.1-1.5.7-2.2Z" fill="currentColor"/></svg></a><a href="https://x.com/" aria-label="X"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h3.8l4.1 5.4L17.6 4H20l-5.9 6.8L20.5 20h-3.8l-4.5-5.9L7.1 20H4.7l6.2-7.3L5 4Zm3.1 1.7H6.9l9.8 12.6h1.2L8.1 5.7Z" fill="currentColor"/></svg></a></div></div>
     </div>
@@ -4245,8 +4283,8 @@ document.querySelectorAll('.story-section, .rooms-section, .testimonial-section'
     return;
   }
 
-  var MIN_VISIBLE_MS = 400;   // avoids a jarring flash on very fast loads
-  var SAFETY_MS      = 6000;  // never hold the site hostage if load stalls
+  var MIN_VISIBLE_MS = 300;   // avoids a jarring flash on very fast loads
+  var SAFETY_MS      = 3000;  // never hold the site hostage if DCL is slow
   var startTime       = Date.now();
   var closed           = false;
 
@@ -4265,10 +4303,12 @@ document.querySelectorAll('.story-section, .rooms-section, .testimonial-section'
     }, wait);
   }
 
-  if (document.readyState === 'complete') {
-    finish();
+  // Fire on DOMContentLoaded (HTML parsed) rather than window.load
+  // (which waits for every image/video), so users see content sooner.
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', finish);
   } else {
-    window.addEventListener('load', finish);
+    finish();
   }
   setTimeout(finish, SAFETY_MS); // fallback safety net
 })();
