@@ -2654,6 +2654,7 @@ html, body { min-height: 0; }
               <span>Retreats</span><span class="link-arrow" aria-hidden="true">⌄</span>
             </button>
             <div class="mobile-nav-dropdown-menu" id="mobile-retreats-menu">
+              <a class="mobile-nav-link" href="gandipet.html">Gandipet, Hyderabad</a>
               <a class="mobile-nav-link" href="casa-de-mello.html">Casa De Mello, Goa</a>
               <a class="mobile-nav-link" href="tiger-hills.html">Tiger Hills, Udaipur</a>
             </div>
@@ -2690,6 +2691,7 @@ html, body { min-height: 0; }
       <li class="nav-dropdown">
         <button class="nav-dropdown-toggle" type="button" aria-expanded="false" aria-controls="retreats-menu">Retreats<span class="nav-arrow" aria-hidden="true">⌄</span></button>
         <div class="nav-dropdown-menu" id="retreats-menu">
+          <a href="gandipet.html">Gandipet, Hyderabad</a>
           <a href="casa-de-mello.html">Casa De Mello, Goa</a>
           <a href="tiger-hills.html">Tiger Hills, Udaipur</a>
         </div>
@@ -2779,6 +2781,7 @@ html, body { min-height: 0; }
         <span class="hero-booking-copy"><span class="hero-booking-label">Where do you want to travel?</span><span class="hero-booking-value" id="hero-destination-value">Destination, hotel name</span></span>
       </button>
       <div class="hero-booking-panel" id="hero-destination-panel">
+        <button class="hero-booking-option" type="button" data-destination="gandipet" data-label="Gandipet, Hyderabad">Gandipet, Hyderabad</button>
         <button class="hero-booking-option" type="button" data-destination="casa" data-label="Casa De Mello, Goa">Casa De Mello, Goa</button>
         <button class="hero-booking-option" type="button" data-destination="tiger" data-label="Tiger Hills, Udaipur">Tiger Hills, Udaipur</button>
       </div>
@@ -2927,6 +2930,28 @@ html, body { min-height: 0; }
         <span class="card-num">02 / 03</span>
       </div>
       
+    </div>
+
+    <div class="retreat-card" onclick="window.location.href='gandipet.html'">
+      <div class="card-img" data-cursor-cta="Discover Gandipet">
+        <img class="card-img-primary" src="img/Gandipet/lakefront-lawn.jpg" alt="Ridhira Retreat, Gandipet — lakefront lawn" />
+        <img class="card-img-secondary" src="img/Gandipet/lakeside-mandap.jpg" alt="Ridhira Retreat, Gandipet — lakeside mandap" />
+        <div class="card-img-overlay"></div>
+        <span class="card-num">03 / 03</span>
+      </div>
+      <div class="card-body">
+        <p class="card-location">Ridhira Retreat Hyderabad</p>
+        <h2>Gandipet</h2>
+        <p class="subtitle">A lakefront sanctuary in Hyderabad.</p>
+        <p>Two and a half acres of lawns on the shore of Gandipet lake, minutes from the Outer Ring Road — for weddings, offsites and celebrations by the water.</p>
+        <div class="card-tags">
+          <span class="tag">Lakefront</span>
+          <span class="tag">Weddings</span>
+          <span class="tag">Corporate Offsites</span>
+          <span class="tag">Villa &amp; Pool</span>
+        </div>
+        <button class="btn-ghost">Discover Gandipet<span class="arrow">→</span></button>
+      </div>
     </div>
 
     <!--<div class="retreat-card" >
@@ -3737,6 +3762,8 @@ is the only Ridhira property where Ode Spa and Ode Life — Ridhira's longevity 
     option.addEventListener('click', function () {
       selectedDestination = option.getAttribute('data-destination');
       document.getElementById('hero-destination-value').textContent = option.getAttribute('data-label');
+      /* Dates are only needed for the room booking engines */
+      checkIn.required = checkOut.required = selectedDestination !== 'gandipet';
       closeFields();
     });
   });
@@ -3765,6 +3792,12 @@ is the only Ridhira property where Ode Spa and Ode Life — Ridhira's longevity 
       closeFields(destinationField);
       destinationField.classList.add('is-open');
       destinationField.querySelector('.hero-booking-trigger').setAttribute('aria-expanded', 'true');
+      return;
+    }
+    /* Gandipet is an event venue with no room booking engine — send
+       the search to its enquiry section (call / WhatsApp) instead. */
+    if (selectedDestination === 'gandipet') {
+      window.location.href = 'gandipet.html#dp-enquire';
       return;
     }
     if (!form.reportValidity()) return;
